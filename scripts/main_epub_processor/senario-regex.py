@@ -14,8 +14,8 @@ for file in os.listdir("formatted"):
     with open(f"./formatted/{file}", "r", encoding="utf-8") as f:
         chap = f.readlines()
         for line in chap:
-            if line.startswith("<system>["):
-                line = line.replace("<system>[", "").replace("]", "").replace("\n", "")
+            if line.startswith("<!>["):
+                line = line.replace("<!>[", "").replace("]", "").replace("\n", "")
                 lines.append(line)
 
 linesBackup1 = lines.copy()

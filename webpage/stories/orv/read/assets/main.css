@@ -1,0 +1,138 @@
+:root {
+    --body-background: #14151b;
+    --primary: #1f2129;
+    --secondary: #1f2129;
+    --nav: #18191f;
+    --text-primary: #b6bccc;
+    --text-secondary: #c6cee2;
+    --icons-color: brightness(0) saturate(100%) invert(80%) sepia(12%) saturate(302%) hue-rotate(184deg) brightness(99%) contrast(97%);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
+    background-color: var(--body-background);
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-secondary);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.orv_main h1 {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    margin: 1rem 0;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.orv_main {
+    width: min(100%, 800px);
+    margin: 0 auto;
+    background-color: var(--secondary);
+    color: var(--text-primary);
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+
+/* This is for the images */
+.orv_image {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.orv_image img {
+    width: auto;
+    height: min(90vh, 130vw);
+}
+
+.orv_cover {
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    width: min(100%, 800px);
+}
+
+.orv_cover img {
+    padding: 2vh;
+    width: auto;
+    height: min(90vh, 130vw);
+}
+
+.title_mobile {
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    width: min(100%, 800px);
+}
+
+.title_mobile img {
+    padding: 2vh;
+    width: auto;
+    height: clamp(70px, 20vh, min(200px, 90vw));
+}
+
+/* This is for the navbar */
+.menu {
+    display: flex;
+    justify-content: end;
+    align-content: center;
+    background-color: var(--nav);
+    width: 100%;
+    height: fit-content;
+    position: relative;
+}
+
+.menu a:first-child {
+    margin-right: auto;
+}
+
+.menu a {
+    margin: 1vh clamp(0px, 1vw, 20px);
+    transition-duration: 250ms;
+    display: flex;
+    align-content: center;
+    padding: min(1vw, 5px);
+}
+
+.menu a:hover {
+    transform: scale(1.2);
+    transition: transform 500ms;
+}
+
+.menu a svg {
+    height: clamp(35px, 4vh, 70px);
+    width: auto;
+    filter: var(--icons-color);
+    scale: 0.8;
+}
+
+
+/* for the comments */
+
+.giscus {
+    position: relative;
+    top: 5vh;
+    max-width: clamp(100px, 90%, 900px);
+}

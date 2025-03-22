@@ -10,8 +10,8 @@ for file in os.listdir("formatted"):
     with open(f"./formatted/{file}", "r", encoding="utf-8") as f:
         chap = f.readlines()
         for line in chap:
-            if line.startswith("<outerGod>【"):
-                lines.append(line.replace("<outerGod>【", "").replace("】", ""))
+            if line.startswith("<#>【"):
+                lines.append(line.replace("<#>【", "").replace("】", ""))
 
 
 print(len(lines))

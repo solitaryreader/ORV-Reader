@@ -26,16 +26,17 @@ for file in os.listdir("OEBPS"):
             tag_text = str(tag.text)
             if tag.has_attr("id"):
                 tag_id = tag.a["href"]
-                chap += f"<!>{tag_id}\n"
+                chap += f"{tag.text}\n"
+                chap += f"<?>{tag_id}\n"
             elif tag_text.startswith("["):
                 cleaned_text = re.sub(r"[\[\]]", "", tag_text)
-                chap += f"<system>[{cleaned_text}]\n"
+                chap += f"<!>[{cleaned_text}]\n"
             elif tag_text.startswith("【"):
                 cleaned_text = re.sub(r"[【】]", "", tag_text)
-                chap += f"<outergod>【{cleaned_text}】\n"
+                chap += f"<#>【{cleaned_text}】\n"
             elif tag_text.startswith("「"):
                 cleaned_text = re.sub(r"[「」]", "", tag_text)
-                chap += f"<quote>「{cleaned_text}」\n"
+                chap += f"<&>「{cleaned_text}」\n"
             else:
                 chap += f"{tag.text}\n"
 
@@ -66,6 +67,6 @@ for file in os.listdir("OEBPS"):
 
     for tag_aside in soup.find_all("aside"):
         tag_id = tag_aside["id"]
-        chap = chap.replace(f"<!>#{tag_id}", f"<!>{tag_aside.text.strip()}")
+        chap = chap.replace(f"<?>#{tag_id}", f"<?>{tag_aside.text.strip()}")
     with open(f"./formatted/{file[:-5]}txt", "w", encoding="utf-8") as f:
         f.write(chap)
