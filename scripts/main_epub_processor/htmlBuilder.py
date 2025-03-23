@@ -43,16 +43,11 @@ for file_index,file in enumerate(os.listdir("formatted")):
                 skip_line += 1
                 if window_line == "++":
                     break
-                window_line = f"<p>{window_line}</p>"
+                window_line = f'<p class="orv_line">{window_line}</p>'
                 window_text.append(window_line)
             window_text.append("</div>")
             html.extend(window_text)
             continue
-
-        if "<s>" in line:
-            line = line.replace("<s>", '<span class="orv_shake">').replace(
-                "</s>", "</span>"
-            )
 
         if line.startswith("<title>"):
             line = re.sub(r"<title>", '<div class="orv_title"><h1>', line)

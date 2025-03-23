@@ -50,10 +50,6 @@
 
 
 
-
-
-
-
 .orv_system.theme1 {
     margin-left: 0.8em;
     place-self: unset;
@@ -64,6 +60,7 @@
 }
 
 .orv_window.theme1 {
+    margin-left: 0.8em;
     width: 100%;
     margin-top: var(--line-space);
     padding: unset;
@@ -318,7 +315,7 @@
 
 .orv_constellation.theme3 {
     margin-top: var(--line-space);
-    margin-left: 1em;
+    margin-left: 0.8em;
     border-radius: 0.3em;
     text-align: left;
     padding: 0.5em 0.25em;
@@ -391,7 +388,7 @@ div.orv_quote.theme2::after {
 
 .orv_quote.theme3 {
     margin-top: var(--line-space);
-    margin-left: 1em;
+    margin-left: 0.8em;
     border-radius: 0.3em;
     text-align: left;
     padding: 0.5em 0.25em;
@@ -428,7 +425,7 @@ div.orv_quote.theme2::after {
     margin-top: var(--paragraph-space);
     margin-left: auto;
     margin-right: auto;
-    width: min(600,90%);
+    width: min(400, 90%);
     background-color: var(--text-secondary);
 }
 
@@ -437,38 +434,11 @@ div.orv_quote.theme2::after {
     border-radius: 15px;
     background-color: var(--primary);
     width: 95%;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
-
-/* 
-.orv_outergod.theme2 {
-    margin-top: var(--paragraph-space);
-    padding: 0.75em 1.5em;
-    position: relative;
-}
-
-.orv_outergod.theme2:after,
-.orv_outergod.theme2:before {
-    border: .5em solid var(--text-primary);
-    border-radius: 0.25em;
-    bottom: 0;
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 1em;
-}
-
-.orv_outergod.theme2:after {
-    border-left: none;
-    right: 1em;
-}
-
-.orv_outergod.theme2:before {
-    border-right: none;
-    left: 1em;
-} */
 
 
 
@@ -477,7 +447,7 @@ div.orv_quote.theme2::after {
 
 .orv_outergod.theme3 {
     margin-top: var(--line-space);
-    margin-left: 1em;
+    margin-left: 0.8em;
     border-radius: 0.3em;
     text-align: left;
     padding: 0.5em 0.25em;
@@ -491,9 +461,105 @@ div.orv_quote.theme2::after {
 
 
 
+/* this is for notice */
+
+.orv_notice.theme1 {
+    margin-left: 0.8em;
+    margin-top: var(--paragraph-space);
+}
+
+.orv_notice.theme1 p::before {
+    content: "(Note: ";
+}
+
+.orv_notice.theme1 p::after {
+    content: ")";
+}
 
 
-/* This is for the shaking text */
+
+
+
+
+.orv_notice.theme2 {
+    margin-left: 0.8em;
+    margin-top: var(--paragraph-space);
+}
+
+.orv_notice.theme2 p::before {
+    color: #003a92;
+    filter: brightness(200%);
+    font-weight: bold;
+    content: "ⓘ Note: ";
+}
+
+.orv_notice.theme2 p{
+    filter: brightness(80%);
+}
+
+
+
+
+
+
+.orv_notice.theme3 {
+    margin-top: var(--line-space);
+    filter: brightness(80%);
+    margin-left: 0.8em;
+    border-radius: 0.3em;
+    text-align: left;
+    padding: 0.5em 0.25em;
+    border-left: 3px solid #e91eb3;
+    width: clamp(90%, fit-content, 400px);
+}
+
+.orv_notice.theme3 p::before {
+    color: #003a92;
+    filter: brightness(200%);
+    font-weight: bold;
+    content: "ⓘ Note: ";
+}
+
+.orv_notice.theme3 p {
+    padding-left: 0.5em;
+}
+
+
+
+/* This is for Orv Generic Box */
+
+.orv_box.theme1 {
+    margin-top: var(--paragraph-space);
+    /* border: var(--text-secondary) solid 0.1em; */
+}
+
+.orv_box.theme1 p{
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
+
+.orv_box.theme2 {
+    margin-top: var(--paragraph-space);
+    border: var(--text-secondary) solid 0.1em;
+}
+
+.orv_box.theme2 p{
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* this if for the normal text */
 .orv_line {

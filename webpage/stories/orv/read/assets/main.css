@@ -14,7 +14,8 @@
 }
 
 body {
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
     width: 100%;
     background-color: var(--body-background);
     font-family: sans-serif;
@@ -135,4 +136,112 @@ body {
     position: relative;
     top: 5vh;
     max-width: clamp(100px, 90%, 900px);
+}
+
+/* For chapters */
+
+.chapters,
+.settings {
+    background-color: var(--primary);
+    display: none;
+    z-index: 5;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100dvh;
+    width: min(600px, 100%);
+    box-shadow: -12px 2px 20px 0px rgba(0, 0, 0, 0.75);
+}
+
+.close-chapters-btn,
+.close-settings-btn {
+    position: fixed;
+    top: 0px;
+    display: flex;
+    width: min(3vw, 30px);
+    width: min(3vw, 30px);
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 1em;
+    font-size: 30px;
+}
+
+.chapters {
+    overflow-y: scroll;
+}
+
+.search_reasult {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+
+.chapters input {
+    position: sticky;
+    top: 2em;
+    margin: 2em;
+    padding: 1em 2em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.chapters input::placeholder {
+    font-weight: bold;
+    color: gray;
+}
+
+
+.chapter_item {
+    border-radius: 0.5em;
+    border: var(--text-primary) 0.1em solid;
+    color: var(--text-primary);
+    text-align: center;
+    margin: 0.5em;
+    padding: 1em;
+    width: min(300px,90%);
+    align-self: center;
+    text-wrap: wrap;
+}
+
+#current-chapter {
+    background-color: var(--text-primary);
+    color: var(--primary);
+}
+
+.chapters a,
+.chapters a:link,
+.chapters a:visited,
+.chapters a:hover,
+.chapters a:active,
+.chapters a:focus {
+    all: unset;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    display: inline;
+}
+
+
+
+
+
+/* for print */
+
+@media print {
+    .menu,
+    .giscus,
+    .chapters,
+    .settings {
+        display: none;
+    }
+
+    .orv_main,
+    .orv_cover,
+    .title_mobile {
+        width: 100%;
+    }
 }
