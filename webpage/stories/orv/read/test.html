@@ -6,16 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ORV-Reader</title>
     <meta property="og:title" content="ORV CH:000 - The Creaking" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/rich-text.css">
     <link rel="stylesheet" media="" href="./assets/main.css" />
-    <script src="https://giscus.app/client.js" data-repo="Bittu5134/ORV-Reader" data-repo-id="R_kgDOOHNFOQ"
-        data-category="General" data-category-id="DIC_kwDOOHNFOc4CoREL" data-mapping="og:title" data-strict="1"
-        data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="dark" data-lang="en"
-        data-loading="lazy" crossorigin="anonymous" async defer>
-        </script>
 </head>
 
 <body>
@@ -34,7 +27,7 @@
                 <path
                     d="M240-400h480v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM880-80 720-240H160q-33 0-56.5-23.5T80-320v-480q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v720ZM160-320h594l46 45v-525H160v480Zm0 0v-480 480Z" />
             </svg></a>
-        <a href="#" onclick="print()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+        <a href="#" onclick="document.getElementById('download').style.display = 'flex'"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
                 width="24px" fill="#e3e3e3">
                 <path
                     d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
@@ -64,80 +57,113 @@
     </nav>
     <nav class="settings" id="settings">
         <span class="close-settings-btn" onclick="document.getElementById('settings').style.display = 'none'">X</span>
-        <div class="setting_item">Theme <select name="set-theme" id="set-theme">
-                <option value="theme1">Dark Theme</option>
-                <option value="theme2">Light Theme</option>
-                <option value="theme3">Sepia Theme</option>
-            </select></div>
-        <div class="setting_item">Font <select name="set-font" id="set-font">
-                <option value="Verdana" style="font-family: Verdana;">Verdana</option>
-                <option value="system-ui" style="font-family: system-ui;">System-UI</option>
-                <option value="Arial" style="font-family: Arial;">Arial</option>
-                <option value="Georgia" style="font-family: Georgia;">Georgia</option>
-                <option value="Times New Roman" style="font-family: 'Times New Roman';">Times New Roman</option>
-                <option value="Trebuchet MS" style="font-family: 'Trebuchet MS';">Trebuchet MS</option>
-                <option value="Courier New" style="font-family: 'Courier New';">Courier New</option>
-                <option value="Tahoma" style="font-family: Tahoma;">Tahoma</option>
-                <option value="Lucida Sans Unicode" style="font-family: 'Lucida Sans Unicode';">Lucida Sans Unicode
-                </option>
-                <option value="Arial Black" style="font-family: 'Arial Black';">Arial Black</option>
-                <option value="Impact" style="font-family: Impact;">Impact</option>
-            </select></div>
-        <div class="setting_item">Font Size
-            <input type="number" min="5" max="100"
-                oninput="if(this.value > 100) this.value = 100; console.log(this.value)" id="set-font-size">
-        </div>
-        <div class="setting_item">Font Weight
-            <input type="number" min="5" max="100"
-                oninput="if(this.value > 100) this.value = 100; console.log(this.value)" id="set-font-weight">
-        </div>
-        <div class="setting_item">line Height
-            <input type="number" min="5" max="100"
-                oninput="if(this.value > 100) this.value = 100; console.log(this.value)" id="set-line-height">
-        </div>
-        <hr>
-        <div class="setting_item">Rich Text Features <input type="checkbox" name="set-rich-text-toggle"
-                id="set-rich-text-toggle"></div>
-        <div class="setting_item">System Message Style <select name="set-rich-system-msg" id="set-rich-system-msg">
-                <option value="theme1">Disabled</option>
-                <option value="theme2">Brackets</option>
-                <option value="theme3">Hologram</option>
-                <option value="theme4">Box</option>
-                <option value="theme5">Alert</option>
-            </select></div>
-        <div class="setting_item">System Window Style <select name="set-rich-system-window" id="set-rich-system-window">
-                <option value="theme1">Disabled</option>
-                <option value="theme2">Brackets</option>
-                <option value="theme3">Hologram</option>
-                <option value="theme4">Box</option>
-                <option value="theme5">Alert</option>
-            </select></div>
-        <div class="setting_item">Constellations Speech Style <select name="set-rich-const" id="set-rich-const">
-                <option value="theme1">Disabled</option>
-                <option value="theme2">Brackets</option>
-                <option value="theme3">Alert</option>
-            </select></div>
-        <div class="setting_item">Outer God Speech Style <select name="set-rich-outer" id="set-rich-outer">
-                <option value="theme1">Disabled</option>
-                <option value="theme2">Brackets</option>
-                <option value="theme3">Alert</option>
-            </select></div>
-        <div class="setting_item">Quote Style <select name="set-rich-quote" id="set-rich-quote">
-                <option value="theme1">Disabled</option>
-                <option value="theme2">Brackets</option>
-                <option value="theme3">Alert</option>
-            </select></div>
-        <div class="setting_item">Notice Style <select name="set-rich-notice" id="set-rich-notice">
-                <option value="theme1">Disabled</option>
-                <option value="theme2">Highlighted</option>
-                <option value="theme3">Alert</option>
-            </select></div>
-        <div class="setting_item">Generic Box Style <select name="set-rich-box" id="set-rich-box">
-                <option value="theme1">Disabled</option>
-                <option value="theme2">box</option>
-            </select></div>
+
+        <form class="setting_items" id="settings-form">
+            <div class="setting_item">Theme <select name="set-theme" id="set-theme">">
+                    <option value="dark" selected>Dark</option>
+                    <option value="light">Light</option>
+                    <option value="sepia">Sepia</option>
+                    <option value="pastel">Pastel</option>
+                    <option value="midnight">Midnight</option>
+                    <option value="forest">Forest</option>
+                    <option value="paper">Paper</option>
+                    <option value="lavender">Lavender</option>
+                    <option value="dark-sepia">Dark Sepia</option>
+                    <option value="dark-pastel">Dark Pastel</option>
+                    <option value="dark-forest">Dark Forest</option>
+                    <option value="dark-paper">Dark Paper</option>
+                    <option value="dark-lavender">Dark Lavender</option>
+                </select></div>
+            <div class="setting_item">Font <select name="set-font" id="set-font">
+                    <option value="system-ui" style="font-family: system-ui;">System-UI</option>
+                    <option value="Verdana" style="font-family: Verdana;" selected>Verdana</option>
+                    <option value="Arial" style="font-family: Arial;">Arial</option>
+                    <option value="Georgia" style="font-family: Georgia;">Georgia</option>
+                    <option value="Times New Roman" style="font-family: 'Times New Roman';">Times New Roman</option>
+                    <option value="Trebuchet MS" style="font-family: 'Trebuchet MS';">Trebuchet MS</option>
+                    <option value="Courier New" style="font-family: 'Courier New';">Courier New</option>
+                    <option value="Tahoma" style="font-family: Tahoma;">Tahoma</option>
+                    <option value="Lucida Sans Unicode" style="font-family: 'Lucida Sans Unicode';">Lucida Sans Unicode
+                    </option>
+                    <option value="Arial Black" style="font-family: 'Arial Black';">Arial Black</option>
+                    <option value="Impact" style="font-family: Impact;">Impact</option>
+
+                </select></div>
+            <div class="setting_item">Font Size
+                <input type="number" min="30" max="100" value="48" id="set-font-size">
+            </div>
+            <div class="setting_item">Font Weight
+                <select name="set-font-weight" id="set-font-weight">
+                    <option value="normal" style="font-weight: unset;" selected>Normal</option>
+                    <option value="lighter" style="font-weight: lighter;">Lighter</option>
+                    <option value="bold" style="font-weight: bold;">Bold</option>
+                    <option value="bolder" style="font-weight: bolder;">Bolder</option>
+
+                </select>
+            </div>
+            <div class="setting_item">Line Height
+                <input type="number" min="1" max="100" value="30" oninput="" id="set-line-height">
+            </div>
+            <hr>
+            <div class="setting_item">Rich Text Features <input type="checkbox" name="set-rich-text-toggle"
+                    id="set-rich-text-toggle" checked></div>
+            <div class="setting_item">System Message Style <select name="set-rich-system-msg" id="set-rich-system-msg">
+                    <option value="theme1">Disabled</option>
+                    <option value="theme2">Brackets</option>
+                    <option value="theme3">Hologram</option>
+                    <option value="theme4">Box</option>
+                    <option value="theme5" selected>Alert</option>
+                </select></div>
+            <div class="setting_item">System Window Style <select name="set-rich-system-window"
+                    id="set-rich-system-window">
+                    <option value="theme1">Disabled</option>
+                    <option value="theme2">Brackets</option>
+                    <option value="theme3" selected>Hologram</option>
+                    <option value="theme4">Box</option>
+                    <option value="theme5">Alert</option>
+                </select></div>
+            <div class="setting_item">Constellations Speech Style <select name="set-rich-const" id="set-rich-const">
+                    <option value="theme1">Disabled</option>
+                    <option value="theme2" selected>Brackets</option>
+                    <option value="theme3">Alert</option>
+                </select></div>
+            <div class="setting_item">Outer God Speech Style <select name="set-rich-outer" id="set-rich-outer">
+                    <option value="theme1">Disabled</option>
+                    <option value="theme2" selected>Brackets</option>
+                    <option value="theme3">Alert</option>
+                </select></div>
+            <div class="setting_item">Quote Style <select name="set-rich-quote" id="set-rich-quote">
+                    <option value="theme1">Disabled</option>
+                    <option value="theme2">Brackets</option>
+                    <option value="theme3" selected>Alert</option>
+                </select></div>
+            <div class="setting_item">Notice Style <select name="set-rich-notice" id="set-rich-notice">
+                    <option value="theme1">Disabled</option>
+                    <option value="theme2" selected>Highlighted</option>
+                    <option value="theme3">Alert</option>
+                </select></div>
+            <div class="setting_item">Generic Box Style <select name="set-rich-box" id="set-rich-box">
+                    <option value="theme1">Disabled</option>
+                    <option value="theme2" selected>box</option>
+                </select></div>
+
+            <input class="setting_reset" type="reset" value="Reset Everything">
+        </form>
 
     </nav>
+    <nav class="download" id="download">
+        <span class="close-download-btn" onclick="document.getElementById('download').style.display = 'none'">X</span>
+        <hr>
+        <h1>Print this page content as PDF</h1>
+        <button onclick="print()">
+            Print This Page
+        </button>
+        <hr>
+        <h1>Download the Entire Novel</h1>
+        <button onclick="redirectToDownload()">More Downloads</button>
+        <hr>
+    </nav>
+
     <div class="main">
         <!-- <div class="orv_cover"><img src="https://preview.redd.it/eu55ytijnnc81.jpg?width=500&format=pjpg&auto=webp&s=687f7fa715275b334898600e49bd073190b71a63" alt="Cover Image"></div> -->
         <div class="title_mobile"><img src="./assets/od-stigma.webp" alt="title mobile"></div>
@@ -286,7 +312,7 @@
                 me. I
                 controlled my breathing and walked to the demonic people.</p>
             <p class="orv_line">"Kuweeok?"</p>
-            <div class="orv_box theme2">
+            <div class="orv_box theme1">
                 <p class="orv_line">Fortunately, it wasn't difficult to make them fall down the bridge using inertia. I
                     reduced
                     their
@@ -363,7 +389,7 @@
             <div class="orv_system theme5">
                 <p>[Bringing up the list of available bookmarks.]</p>
             </div>
-            <div class="orv_window theme1">
+            <div class="orv_window theme3">
                 <p class="orv_window_title">[People Listed in the Bookmark Slots]</p>
                 <p>1. The Delusion Demon Kim Namwoon (Understanding 25).</p>
                 <p>2. Steel Sword Lee Hyunsung (Understanding 35).</p>

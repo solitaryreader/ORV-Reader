@@ -1,17 +1,21 @@
 :root {
     --body-background: #14151b;
     --primary: #1f2129;
-    --secondary: #1f2129;
     --nav: #18191f;
     --text-primary: #b6bccc;
     --text-secondary: #c6cee2;
     --line-space: 1.5rem;
-    --paragraph-space: 1.2rem;
+    --paragraph-space: calc(var(--line-space)*0.8);
     --default-font: sans-serif;
     --icons-color: brightness(0) saturate(100%) invert(80%) sepia(12%) saturate(302%) hue-rotate(184deg) brightness(99%) contrast(97%);
 }
 
+.test {
+    color: #000;
+}
+
 .orv_main {
+
     line-height: var(--line-space);
     color: var(--text-primary);
 }
@@ -25,7 +29,6 @@
 /* this is for the system messages */
 /* default features */
 .orv_system {
-    font-family: 'Roboto Mono', monospace;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -33,7 +36,6 @@
 }
 
 .orv_window {
-    font-family: 'Roboto Mono', monospace;
     margin-left: auto;
     margin-right: auto;
     width: min(400px, 90%);
@@ -238,7 +240,7 @@
 .orv_system.theme5,
 .orv_window.theme5 {
     margin-top: var(--line-space);
-    margin-left: 1em;
+    margin-left: 0.8em;
     text-align: left;
     padding: 0.8em 0.25em;
     border-left: 3px solid #1f6feb;
@@ -493,7 +495,7 @@ div.orv_quote.theme2::after {
     content: "ⓘ Note: ";
 }
 
-.orv_notice.theme2 p{
+.orv_notice.theme2 p {
     filter: brightness(80%);
 }
 
@@ -533,9 +535,19 @@ div.orv_quote.theme2::after {
     /* border: var(--text-secondary) solid 0.1em; */
 }
 
-.orv_box.theme1 p{
+.orv_box.theme1 p {
     margin-top: 0.4em;
     margin-bottom: 0.4em;
+}
+
+.orv_box.theme1::before {
+    content: "++";
+    margin-left: 0.8em;
+}
+
+.orv_box.theme1::after {
+    content: "++";
+    margin-left: 0.8em;
 }
 
 
@@ -544,7 +556,7 @@ div.orv_quote.theme2::after {
     border: var(--text-secondary) solid 0.1em;
 }
 
-.orv_box.theme2 p{
+.orv_box.theme2 p {
     margin-top: 0.4em;
     margin-bottom: 0.4em;
 }

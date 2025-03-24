@@ -1,7 +1,6 @@
 :root {
     --body-background: #14151b;
     --primary: #1f2129;
-    --secondary: #1f2129;
     --nav: #18191f;
     --text-primary: #b6bccc;
     --text-secondary: #c6cee2;
@@ -9,6 +8,7 @@
 }
 
 * {
+    font-family: var(--default-font);
     margin: 0;
     box-sizing: border-box;
 }
@@ -45,7 +45,7 @@ body {
 .orv_main {
     width: min(100%, 800px);
     margin: 0 auto;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     color: var(--text-primary);
     padding: 1rem;
     box-sizing: border-box;
@@ -69,7 +69,7 @@ body {
 }
 
 .orv_cover {
-    background-color: var(--secondary);
+    background-color: var(--primary);
     display: flex;
     justify-content: center;
     width: min(100%, 800px);
@@ -82,7 +82,7 @@ body {
 }
 
 .title_mobile {
-    background-color: var(--secondary);
+    background-color: var(--primary);
     display: flex;
     justify-content: center;
     width: min(100%, 800px);
@@ -141,7 +141,8 @@ body {
 /* For chapters */
 
 .chapters,
-.settings {
+.settings,
+.download {
     background-color: var(--primary);
     display: none;
     z-index: 5;
@@ -154,7 +155,8 @@ body {
 }
 
 .close-chapters-btn,
-.close-settings-btn {
+.close-settings-btn,
+.close-download-btn {
     position: fixed;
     top: 0px;
     display: flex;
@@ -167,7 +169,7 @@ body {
 }
 
 .chapters {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .search_reasult {
@@ -225,7 +227,49 @@ body {
     display: inline;
 }
 
+/* This is for settings */
 
+.settings {
+    overflow-y: auto;
+}
+
+.setting_items {
+    margin-top: 6vh;
+}
+
+.setting_item {
+    padding: 1em;
+}
+
+.setting_reset {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+}
+
+.setting_item input, select {
+    float: right;
+    height: min(25px,10vh);
+    width: min(150px,25vw);
+}
+
+/* for download tab */
+
+.download {
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.download h1,button {
+    text-align: center;
+    padding: 1em;
+    font-size: large;
+    margin: 2vh auto;
+    width: min(300px,90%);
+
+}
 
 
 
@@ -235,7 +279,8 @@ body {
     .menu,
     .giscus,
     .chapters,
-    .settings {
+    .settings,
+    .download {
         display: none;
     }
 
