@@ -27,8 +27,8 @@
                 <path
                     d="M240-400h480v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM880-80 720-240H160q-33 0-56.5-23.5T80-320v-480q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v720ZM160-320h594l46 45v-525H160v480Zm0 0v-480 480Z" />
             </svg></a>
-        <a href="#" onclick="document.getElementById('download').style.display = 'flex'"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
-                width="24px" fill="#e3e3e3">
+        <a href="#" onclick="document.getElementById('download').style.display = 'flex'"><svg
+                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
                 <path
                     d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
             </svg></a>
@@ -160,19 +160,29 @@
         </button>
         <hr>
         <h1>Download the Entire Novel</h1>
-        <button onclick="redirectToDownload()">More Downloads</button>
+        <a href="https://github.com/Bittu5134/ORV-Reader/blob/main/download.md" target="_blank"
+            rel="noopener noreferrer"><button>More Downloads</button></a>
         <hr>
     </nav>
     <nav class="edit" id="edit">
         <span class="close-edit-btn" onclick="document.getElementById('edit').style.display = 'none'">X</span>
         <hr>
-        <h1>Print this page content as PDF</h1>
-        <button onclick="print()">
-            Print This Page
-        </button>
+        <h1>Edit This Page on Github</h1>
+        <a href="https://github.com/Bittu5134/ORV-Reader/" target="_blank" rel="noopener noreferrer"><button>
+                Edit
+        </a></button>
         <hr>
-        <h1>Download the Entire Novel</h1>
-        <button onclick="redirectToDownload()">More Downloads</button>
+        <h1>Read This First Before Doing Anything</h1>
+        <a href="https://github.com/Bittu5134/ORV-Reader/blob/main/contribute.md" target="_blank"
+            rel="noopener noreferrer"><button>
+                Contribution Guide
+        </a></button>
+        <hr>
+        <h1>How to Format Text</h1>
+        <a href="https://github.com/Bittu5134/ORV-Reader/blob/main/contribute.md" target="_blank"
+            rel="noopener noreferrer"><button>
+                Formatting Guide
+        </a></button>
         <hr>
     </nav>
 
@@ -550,8 +560,14 @@
             <br>
         </article>
         <div class="change-ch">
-            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>Previous</a>
-            <a href="#">Next<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg></a>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#e3e3e3">
+                    <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+                </svg>Previous</a>
+            <a href="#">Next<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#e3e3e3">
+                    <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                </svg></a>
         </div>
         <div class="giscus" id="comments">
         </div>
