@@ -17,10 +17,15 @@ for file in os.listdir("OEBPS"):
         soup = BeautifulSoup(text, "lxml")
 
     chap = ""
-    chap += f"<title>{soup.h3.text}\n"
+    title = soup.h3.text
+    chap += f"<title>{title.replace("Chapter","Ch")}\n"
+    title_found = False
 
     for tag in soup.body.children:
         tag: bs4.element.Tag
+
+        if tag.name == "div":
+            title_found = True
 
         if tag.name == "p":
             tag_text = str(tag.text)
@@ -59,12 +64,17 @@ for file in os.listdir("OEBPS"):
                 tag_src = urllib.parse.unquote(tag["src"])
             if tag.has_attr("alt"):
                 tag_alt = tag["alt"]
-            chap += f"<img>[{tag_src}][{tag_alt}]\n"
+
+            if title_found:
+                chap += f"<img>[{tag_src}][{tag_alt}]\n"
+            else:
+                chap += f"<cover>[{tag_src}][{tag_alt}]\n"
+
+
         elif tag.name == None or "div" or "aside":
             pass
         else:
             print(f"passed tag <{tag.name}>")
-
     for tag_aside in soup.find_all("aside"):
         tag_id = tag_aside["id"]
         chap = chap.replace(f"<?>#{tag_id}", f"<?>{tag_aside.text.strip()}")

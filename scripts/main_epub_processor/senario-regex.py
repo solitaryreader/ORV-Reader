@@ -35,6 +35,7 @@ for index, line in enumerate(lines):
     lines[index] = match
 
 linesBackup2 = lines.copy()
+print(len(linesBackup2))
 
 regexList = [
     {
