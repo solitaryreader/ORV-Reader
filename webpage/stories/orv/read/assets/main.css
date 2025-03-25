@@ -273,7 +273,18 @@ body {
     font-size: large;
     margin: 2vh auto;
     width: min(300px,90%);
+}
 
+.download a{
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    color: black;
+    width: min(300px,90%);
+}
+
+.download a button{
+    width: 100%;
 }
 
 /* for edit tab */
@@ -292,6 +303,15 @@ body {
     margin: 2vh auto;
     width: min(300px,90%);
 
+}
+.edit a,
+.edit a:link,
+.edit a:visited,
+.edit a:hover,
+.edit a:active,
+.edit a:focus {
+    text-decoration: none;
+    color: black;
 }
 
 /* Navigation button */
@@ -325,17 +345,31 @@ body {
 /* for print */
 
 @media print {
+    /* Hide non-essential elements for printing */
     .menu,
     .giscus,
     .chapters,
     .settings,
-    .download {
-        display: none;
+    .download,
+    .edit,
+    .change-ch {
+        display: none !important;
     }
 
+    /* Ensure main content takes full width */
     .orv_main,
     .orv_cover,
     .title_mobile {
         width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Adjust images for better print layout */
+    .orv_image img,
+    .orv_cover img,
+    .title_mobile img {
+        max-width: 100%;
+        height: auto;
     }
 }
