@@ -142,7 +142,8 @@ body {
 
 .chapters,
 .settings,
-.download {
+.download,
+.edit {
     background-color: var(--primary);
     display: none;
     z-index: 5;
@@ -156,7 +157,8 @@ body {
 
 .close-chapters-btn,
 .close-settings-btn,
-.close-download-btn {
+.close-download-btn,
+.close-edit-btn {
     position: fixed;
     top: 0px;
     display: flex;
@@ -266,6 +268,24 @@ body {
 }
 
 .download h1,button {
+    text-align: center;
+    padding: 1em;
+    font-size: large;
+    margin: 2vh auto;
+    width: min(300px,90%);
+
+}
+
+/* for edit tab */
+
+.edit {
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.edit h1,button {
     text-align: center;
     padding: 1em;
     font-size: large;
