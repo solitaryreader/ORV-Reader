@@ -11,11 +11,10 @@ for file_index, file in enumerate(os.listdir("formatted")):
         textStr = f.read()
         text = textStr.split("\n")
 
-    skip_line = 0
-    for index, line in enumerate(text):
+    for  line in text:
         if line.startswith("<title>"):
             line = re.sub(r"<title>", "", line)
-            titles.append({"index": index, "title": str(line)})
+            titles.append({"index": file_index, "title": str(line)})
 
 # Ensure non-ASCII characters are written properly
 json.dump(titles, open("titles.json", "w", encoding="utf-8"), indent=4, ensure_ascii=False)

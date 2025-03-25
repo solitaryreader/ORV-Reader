@@ -203,10 +203,13 @@ body {
     color: var(--text-primary);
     text-align: center;
     margin: 0.5em;
-    padding: 1em;
-    width: min(300px,90%);
+    width: min(400px,90%);
     align-self: center;
     text-wrap: wrap;
+}
+
+.chapter_item p {
+    padding: 0.5em;
 }
 
 #current-chapter {
@@ -271,6 +274,32 @@ body {
 
 }
 
+/* Navigation button */
+
+.change-ch {
+    width: min(100%, 800px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em; /* Adjust padding as needed */
+    background-color: var(--primary);
+  }
+  
+  .change-ch a {
+    display: flex;
+    align-items: center;
+    color: #e3e3e3;
+    text-decoration: none;
+    font-size: 16px; /* Adjust font size as needed */
+  }
+  
+  .change-ch a svg {
+    margin: 0 5px; /* Add space between text and SVG */
+  }
+  
+  .change-ch a:hover {
+    text-decoration: underline; /* Optional: Underline on hover */
+  }
 
 
 /* for print */

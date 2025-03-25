@@ -352,7 +352,7 @@ const ChapterList = [];
 
 function addAllChapters() {
   if (!chFetchStatus) {
-    fetch('../../../../meta/titles.json')
+    fetch('../../../../meta/orv_titles.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok ' + response.statusText);
@@ -379,7 +379,8 @@ function addAllChapters() {
             chapterID = "current-chapter";
             chapter.index = "";
           }
-          chSearchresult.push(`<div class="chapter_item" id="${chapterID}"><p><a href="#${chapter.index}">${chapter.title}</a></p></div>`);
+          // chSearchresult.push(`<div class="chapter_item" id="${chapterID}"><p><a href="#${chapter.index}">${chapter.title}</a></p></div>`);
+          chSearchresult.push(`<div class="chapter_item" id="${chapterID}"><a href="../read/${chapter.index+1}"><p>${chapter.title}</p></a></div>`);
           chapterID = "";
         });
 
@@ -407,7 +408,7 @@ function findChapter() {
     let chSearchindex = title.indexOf(chapter.toLowerCase());
     let index = ChapterList[i].index;
     if (chSearchindex !== -1) {
-      chSearchresult.push(`<div class="chapter_item"><p><a href="#${index}">${title}</a></p></div>`);
+      chSearchresult.push(`<div class="chapter_item"><a href="./read/${index+1}"><p>${title}</p></a></div>`);
     }
 
   }
