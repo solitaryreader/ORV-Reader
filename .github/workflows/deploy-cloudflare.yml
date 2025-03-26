@@ -1,0 +1,35 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      # Step 4: Create the webpage folder and run the script
+      - name: Build HTML files
+        run: |
+          cp -r website
+          python scripts/main_epub_processor/htmlBuilder.py
+
+      # Step 5: Deploy to Cloudflare Pages
+      - name: Commit and push to a new branch
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git checkout -b generated-website
+          git add webpage
+          git commit -m "Add generated website files"
+          git push origin generated-website --force
