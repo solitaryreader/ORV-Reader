@@ -14,7 +14,7 @@ for file_index,file in enumerate(os.listdir("chapters/orv")):
         textStr = f.read()
         text = textStr.split("\n")
 
-    with open("template.html","r",encoding="utf-8") as f:
+    with open(r"scripts\main_epub_processor\data\template.html","r",encoding="utf-8") as f:
         template = f.read()
     
     html = []
