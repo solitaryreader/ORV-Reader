@@ -3,6 +3,9 @@ name: Build Website
 on:
   workflow_dispatch: # Manual trigger
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: windows-latest
