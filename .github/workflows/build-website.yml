@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       # Step 1: Checkout the repository
@@ -32,6 +32,8 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git checkout -b website
-          git add .  # Add all modified and newly created files
+          git rm -rf .  # Remove all files in the branch
+          git clean -fd  # Ensure all untracked files are removed
+          git add ./website  # Add all modified and newly created files
           git commit -m "Add generated website files"
           git push origin website --force
