@@ -5,8 +5,8 @@ import urllib.parse as urlparse
 
 for file_index,file in enumerate(os.listdir("formatted")):
 
-    # if not file_index == 1:
-    #     continue
+    if not file_index == 1:
+        continue
 
     if not file.endswith(".txt"):
         continue
@@ -58,8 +58,8 @@ for file_index,file in enumerate(os.listdir("formatted")):
             continue
 
         if line.startswith("<title>"):
+            template = template.replace(r"{{TITLE}}",line.replace("<title>",""))
             line = re.sub(r"<title>", '<div class="orv_title"><h1>', line)
-            template.replace(r"{{TITLE}}",line)
             html.insert(0,f"{line}</h1></div>")
         elif line.startswith("<!>"):
             line = re.sub(r"<!>", '<div class="orv_system"><p>', line)
@@ -95,19 +95,27 @@ for file_index,file in enumerate(os.listdir("formatted")):
 
     if file_index == 0:
         template = template.replace(r"{{PREV}}","..\\")
+        template = template.replace(r"{{PREV-SVG}}",'<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>')
     else:
-        template = template.replace(r"{{PREV}}",f"./{file_index}")
+        template = template.replace(r"{{PREV}}",f"{file_index}")
+        template = template.replace(r"{{PREV-SVG}}",'<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" /></svg>')
 
     if file_index == len(os.listdir("formatted"))-1:
         template = template.replace(r"{{NEXT}}","../")
+        template = template.replace(r"{{NEXT-SVG}}",'<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>')
     else:
-        template = template.replace(r"{{NEXT}}",f"./{file_index+2}")
+        template = template.replace(r"{{NEXT}}",f"{file_index+2}")
+        template = template.replace(r"{{NEXT-SVG}}",'<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" /></svg>')
 
     template = template.replace(r"{{CONTENT}}",str("\n".join(html)))
+    template = template.replace(r"{{PATH}}",f"orv/{file_index+1}")
 
     template = template.replace(r"{{TITLE}}","")
     template = template.replace(r"{{COVER}}","")
     template = template.replace(r"{{PREV}}","")
     template = template.replace(r"{{NEXT}}","")
+    template = template.replace(r"{{PREV-SVG}}","")
+    template = template.replace(r"{{NEXT-SVG}}","")
+
     with open(f"webpage/stories/orv/read/{file_index+1}.html", "w", encoding="utf-8") as f:
         f.write(template)
