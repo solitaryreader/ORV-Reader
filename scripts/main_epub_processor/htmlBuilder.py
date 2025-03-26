@@ -5,8 +5,8 @@ import urllib.parse as urlparse
 
 for file_index,file in enumerate(os.listdir("formatted")):
 
-    if not file_index == 1:
-        continue
+    # if not file_index == 1:
+    #     continue
 
     if not file.endswith(".txt"):
         continue
@@ -74,11 +74,11 @@ for file_index,file in enumerate(os.listdir("formatted")):
             line = re.sub(r"<&>", '<div class="orv_quote"><p>', line)
             html.append(f"{line}</p></div>")
         elif line.startswith("<?>"):
-            line = re.sub(r"<?>", '<div class="orv_notice"><p>', line)
+            line = re.sub(r"<\?>", '<div class="orv_notice"><p>', line)
             html.append(f"{line}</p></div>")
         elif line.startswith("<img>"):
             line = re.findall(r"\[(.*?)\]", line)
-            html.append(f'<div class="orv_image"><img src="{line[0]}" alt="{line[1]}" loading="lazy"></div>')
+            html.append(f'<div class="orv_image"><img src="../../../assets/images/{line[0]}" alt="{line[1]}" loading="lazy"></div>')
         elif line == "":
             html.append(f"<br>")
         elif line == "***":
@@ -88,7 +88,7 @@ for file_index,file in enumerate(os.listdir("formatted")):
             html.append(f"{line}")
         elif line.startswith("<cover>"):
             line = re.findall(r"\[(.*?)\]", line)
-            template = template.replace(r"{{COVER}}",f'<div class="orv_cover"><img src="../../../assets/{urlparse.quote(line[0])}" alt="{line[1]}"></div>')
+            template = template.replace(r"{{COVER}}",f'<div class="orv_cover"><img src="../../../assets/images/{urlparse.quote(line[0])}" alt="{line[1]}"></div>')
         else:
             html.append(f'<p class="orv_line">{line}</p>')
 
@@ -96,19 +96,18 @@ for file_index,file in enumerate(os.listdir("formatted")):
     if file_index == 0:
         template = template.replace(r"{{PREV}}","..\\")
     else:
-        template = template.replace(r"{{PREV}}",f"./{file_index})")
+        template = template.replace(r"{{PREV}}",f"./{file_index}")
 
     if file_index == len(os.listdir("formatted"))-1:
         template = template.replace(r"{{NEXT}}","../")
     else:
-        template = template.replace(r"{{NEXT}}",f"./{file_index+2})")
+        template = template.replace(r"{{NEXT}}",f"./{file_index+2}")
 
+    template = template.replace(r"{{CONTENT}}",str("\n".join(html)))
 
     template = template.replace(r"{{TITLE}}","")
     template = template.replace(r"{{COVER}}","")
     template = template.replace(r"{{PREV}}","")
     template = template.replace(r"{{NEXT}}","")
-    print(template)
-    with open(f"./sample.html", "w", encoding="utf-8") as f:
-        f.write("\n".join(html))
-    exit()
+    with open(f"webpage/stories/orv/read/{file_index+1}.html", "w", encoding="utf-8") as f:
+        f.write(template)

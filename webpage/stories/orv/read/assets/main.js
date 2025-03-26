@@ -1,7 +1,3 @@
-function redirectToDownload() {
-  window.location.assign("https://www.example.com");
-}
-
 function changeGiscusTheme(theme) {
   const scriptId = 'giscus-script';
   const existingScript = document.getElementById(scriptId);
@@ -116,6 +112,8 @@ loadSettingsFromLocalStorage();
 
 
 document.addEventListener('DOMContentLoaded', function () {
+
+  // Apply giscus theme
 
   // this is for settings
   const settingsForm = document.getElementById('settings-form');
