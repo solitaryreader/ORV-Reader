@@ -34,3 +34,12 @@ jobs:
           git add ./website  # Add all modified and newly created files
           git commit -m "Update generated website files" || echo "No changes to commit"
           git push origin HEAD
+
+      # Step 6: Deploy the website branch to Cloudflare Pages
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: orv
+          directory: ./website
