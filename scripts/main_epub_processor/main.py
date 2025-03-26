@@ -27,6 +27,22 @@ for file in os.listdir("OEBPS"):
         if tag.name == "div":
             title_found = True
 
+        elif tag.name == "img":
+            tag_src = ""
+            tag_alt = ""
+            if tag.has_attr("src"):
+                tag_src = urllib.parse.unquote(tag["src"])
+            if tag.has_attr("alt"):
+                tag_alt = tag["alt"]
+
+            if title_found:
+                chap += f"<img>[{tag_src}][{tag_alt}]\n"
+            else:
+                chap += f"<cover>[{tag_src}][{tag_alt}]\n"
+
+        if title_found == False:
+            continue
+
         if tag.name == "p":
             tag_text = str(tag.text)
             if tag.has_attr("id"):
@@ -57,19 +73,6 @@ for file in os.listdir("OEBPS"):
 
             chap += f"+\n{cleaned_text}\n+\n"
 
-        elif tag.name == "img":
-            tag_src = ""
-            tag_alt = ""
-            if tag.has_attr("src"):
-                tag_src = urllib.parse.unquote(tag["src"])
-            if tag.has_attr("alt"):
-                tag_alt = tag["alt"]
-
-            if title_found:
-                chap += f"<img>[{tag_src}][{tag_alt}]\n"
-            else:
-                chap += f"<cover>[{tag_src}][{tag_alt}]\n"
-
 
         elif tag.name == None or "div" or "aside":
             pass
@@ -78,5 +81,5 @@ for file in os.listdir("OEBPS"):
     for tag_aside in soup.find_all("aside"):
         tag_id = tag_aside["id"]
         chap = chap.replace(f"<?>#{tag_id}", f"<?>{tag_aside.text.strip()}")
-    with open(f"./formatted/{file[:-5]}txt", "w", encoding="utf-8") as f:
+    with open(f"./chapters/orv/{file[:-5]}txt", "w", encoding="utf-8") as f:
         f.write(chap)

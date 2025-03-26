@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ORV-Reader</title>
-    <meta property="og:title" content="{{TITLE}}" />
+    <title>{{TITLE}}</title>
     <link rel="manifest" href="../../../assets/manifest.json">
     <link rel="shortcut icon" href="../../../assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../assets/reader.css">
     <link rel="stylesheet" href="../../../assets/reader-rich-text.css">
+    <meta name="description" content="Read Omniscient Reader's Viewpoint online">
 </head>
 
 <body>
@@ -135,8 +135,8 @@
                 </select></div>
             <div class="setting_item">Quote Style <select name="set-rich-quote" id="set-rich-quote">
                     <option value="theme1">Disabled</option>
-                    <option value="theme2">Brackets</option>
-                    <option value="theme3" selected>Alert</option>
+                    <option value="theme2" selected>Brackets</option>
+                    <option value="theme3">Alert</option>
                 </select></div>
             <div class="setting_item">Notice Style <select name="set-rich-notice" id="set-rich-notice">
                     <option value="theme1">Disabled</option>
@@ -169,7 +169,8 @@
         <span class="close-edit-btn" onclick="document.getElementById('edit').style.display = 'none'">X</span>
         <hr>
         <h1>Edit This Page on Github</h1>
-        <a href="https://github.com/Bittu5134/ORV-Reader/chapters/{{PATH}}" target="_blank" rel="noopener noreferrer"><button>
+        <a href="https://github.com/Bittu5134/ORV-Reader/chapters/{{PATH}}" target="_blank"
+            rel="noopener noreferrer"><button>
                 Edit
         </a></button>
         <hr>
@@ -189,7 +190,7 @@
 
     <div class="main">
         {{COVER}}
-        <div class="title_mobile"><img src="./assets/od-stigma.webp" alt="title mobile"></div>
+        <div class="title_mobile"><img src="../../../../assets/od-stigma.webp" alt="title mobile"></div>
         <article class="orv_main">
             {{CONTENT}}
         </article>
@@ -201,23 +202,12 @@
         </div>
     </div>
 
-    <script id="main-script" data-titles="../../../../meta/orv_titles.json" src="../../../assets/reader.js"></script>
-    <script src="https://giscus.app/client.js"
-    id="giscus-script"
-    data-repo="Bittu5134/ORV-Reader"
-    data-repo-id="R_kgDOOHNFOQ"
-    data-category="General"
-    data-category-id="DIC_kwDOOHNFOc4CoREL"
-    data-mapping="og:title"
-    data-strict="1"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="top"
-    data-theme="dark"
-    data-lang="en"
-    crossorigin="anonymous"
-    async>
-</script>
+    <script id="main-script" data-titles="../../../../meta/orv_titles.json" data-index="{{INDEX}}" src="../../../assets/reader.js"></script>
+    <script src="https://giscus.app/client.js" id="giscus-script" data-repo="Bittu5134/ORV-Reader"
+        data-repo-id="R_kgDOOHNFOQ" data-category="General" data-category-id="DIC_kwDOOHNFOc4CoREL"
+        data-mapping="title" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0"
+        data-input-position="top" data-theme="dark" data-lang="en" crossorigin="anonymous" async>
+        </script>
 
 </body>
 
