@@ -32,7 +32,6 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git checkout -b website
-          git rm -rf .  # Remove all files in the branch
           git clean -fd  # Ensure all untracked files are removed
           git add ./website  # Add all modified and newly created files
           git commit -m "Add generated website files"
