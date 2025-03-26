@@ -27,12 +27,10 @@ jobs:
           python scripts/main_epub_processor/htmlBuilder.py
 
       # Step 5: Commit and push modified content to a new branch
-      - name: Commit and push website content to a new branch
+      - name: Commit and push website content to the branch
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git checkout -b website
-          git clean -fd  # Ensure all untracked files are removed
           git add ./website  # Add all modified and newly created files
-          git commit -m "Add generated website files"
-          git push origin website --force
+          git commit -m "Update generated website files" || echo "No changes to commit"
+          git push origin HEAD
