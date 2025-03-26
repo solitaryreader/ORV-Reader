@@ -21,7 +21,7 @@ jobs:
       # Step 4: Create the webpage folder and run the script
       - name: Build HTML files
         run: |
-          cp -r webpage_template website
+          cp -r website_template website
           python scripts/main_epub_processor/htmlBuilder.py
 
       # Step 5: Deploy to Cloudflare Pages
