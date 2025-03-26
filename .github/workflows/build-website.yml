@@ -28,7 +28,7 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git checkout -b generated-website
-          git add webpage
+          git checkout -b website
+          git add website
           git commit -m "Add generated website files"
-          git push origin generated-website --force
+          git push origin website --force
