@@ -104,7 +104,7 @@ body {
     background-color: var(--nav);
     width: 100%;
     height: fit-content;
-    position: relative;
+    position: static;
 }
 
 .menu a:first-child {
@@ -245,7 +245,7 @@ body {
 }
 
 .setting_item {
-    padding: 1em;
+    padding: 0.75em;
 }
 
 .setting_reset {
@@ -307,7 +307,18 @@ button {
     font-size: large;
     margin: 2vh auto;
     width: min(300px, 90%);
+}
 
+.edit a {
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    color: black;
+    width: min(300px, 90%);
+}
+
+.edit a button {
+    width: 100%;
 }
 
 .edit a,

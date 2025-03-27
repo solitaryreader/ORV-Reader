@@ -110,7 +110,7 @@ for file_index,file in enumerate(os.listdir("chapters/orv")):
         template = template.replace(r"{{NEXT-SVG}}",'<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" /></svg>')
 
     template = template.replace(r"{{CONTENT}}",str("\n".join(html)))
-    template = template.replace(r"{{PATH}}",f"orv/{file_index+1}")
+    template = template.replace(r"{{PATH}}",f"orv/{file}")
     template = template.replace(r"{{INDEX}}", str(file_index))
 
 
@@ -121,6 +121,7 @@ for file_index,file in enumerate(os.listdir("chapters/orv")):
     template = template.replace(r"{{PREV-SVG}}","")
     template = template.replace(r"{{NEXT-SVG}}","")
     template = template.replace(r"{{INDEX}}", "")
+
 
 
     with open(f"website/stories/orv/read/ch_{file_index+1}.html", "w", encoding="utf-8") as f:

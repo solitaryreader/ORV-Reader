@@ -59,37 +59,13 @@ function changeGiscusTheme(theme) {
 
 }
 
-let scrolled80 = false
-
-function checkScroll() {
-    const orvMain = document.querySelector('.orv_main');
-    if (!orvMain) return; // Exit if the element doesn't exist
-  
-    const scrollPosition = window.scrollY || window.pageYOffset;
-    const divHeight = orvMain.offsetHeight;
-    const windowHeight = window.innerHeight;
-  
-    localStorage.setItem("lastscroll",String(scrollPosition))
-
-    const scrollThreshold = (divHeight - windowHeight) * 0.8;
-  
-    if (scrollPosition >= scrollThreshold) {
-      myFunction();
-      window.removeEventListener('scroll', checkScroll);
-    }
-  }
-  
-  function myFunction() {
-    if (scrolled80) return
+setTimeout(() => {
     const scriptElement = document.getElementById('main-script');
     let index = scriptElement.dataset.index;
+    let type = scriptElement.dataset.type;
     localStorage.setItem("lastread",String(index))
-    console.log('User has scrolled 80% of .orv_main!');
-    
-  }
-  
-  window.addEventListener('scroll', checkScroll);
-
+    localStorage.setItem("lasttype",String(type))
+}, 60000);
 
 function classChangeTheme(elementClass, elemetTheme) {
     let element = document.getElementsByClassName(elementClass)
@@ -170,18 +146,6 @@ loadSettingsFromLocalStorage();
 
 document.addEventListener('DOMContentLoaded', function () {
 
-
-    // scroll to last position
-    const scriptElement = document.getElementById('main-script');
-    let FileIndex = scriptElement.dataset.index
-    
-    
-    if (FileIndex == parseInt(localStorage.getItem("lastread"))) {
-        console.log(parseInt(localStorage.getItem("lastscroll")));
-        
-        window.scrollTo(0, parseInt(localStorage.getItem("lastscroll")),behavior="smooth")
-        
-    }
     
 
     // this is for settings
@@ -202,7 +166,6 @@ document.addEventListener('DOMContentLoaded', function () {
         let quoteStyle = document.getElementById('set-rich-quote').value;
         let noticeStyle = document.getElementById('set-rich-notice').value;
         let genericBoxStyle = document.getElementById('set-rich-box').value;
-
 
         if (fontSize < 30) { fontSize = 30; }
         if (fontSize > 100) { fontSize = 100; }

@@ -3,13 +3,16 @@ const script = document.getElementById('main-script');
 
 document.addEventListener('DOMContentLoaded', function () {
     const LastRead = parseInt(localStorage.getItem("lastread"))
+    const lastType = localStorage.getItem("lasttype")
 
-    if (LastRead){
-        const readbtn = document.getElementById("read")
-        const reada = document.getElementById("read-a")
+    console.log(LastRead, lastType)
 
-        reada.href = `./read/ch_${LastRead+1}`
-        readbtn.textContent= "Continue"
+    if (LastRead && lastType === script.dataset.type) {
+        const readbtn = document.getElementById("read");
+        const reada = document.getElementById("read-a");
+
+        reada.href = `./read/ch_${LastRead + 1}`;
+        readbtn.textContent = "Continue";
     }
 });
 
