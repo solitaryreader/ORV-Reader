@@ -10,6 +10,9 @@ downloads
 .wrangler
 credentials.json
 website/stories/orv/read/ch_[0-9]*\.html
+website/stories/cont/read/ch_[0-9]*\.html
+token.json
+
 
 
 
