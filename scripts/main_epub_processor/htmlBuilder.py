@@ -10,6 +10,7 @@ for file_index,file in enumerate(os.listdir("chapters/orv")):
 
     if not file.endswith(".txt"):
         continue
+    file_index = int(file.replace(".txt","").replace("chap_",""))-1
     with open(f"./chapters/orv/{file}", "r", encoding="utf-8") as f:
         textStr = f.read()
         text = textStr.split("\n")
