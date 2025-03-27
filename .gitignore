@@ -8,6 +8,9 @@ website_template
 Github
 downloads
 .wrangler
+credentials.json
+website/stories/orv/read/ch_[0-9]*\.html
+
 
 
 npx wrangler --version

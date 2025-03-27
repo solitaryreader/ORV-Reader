@@ -14,7 +14,7 @@ for file_index,file in enumerate(os.listdir("chapters/orv")):
         textStr = f.read()
         text = textStr.split("\n")
 
-    with open("scripts/main_epub_processor/data/template.html","r",encoding="utf-8") as f:
+    with open("website/stories/orv/read/template.html","r",encoding="utf-8") as f:
         template = f.read()
     
     html = []
@@ -59,6 +59,7 @@ for file_index,file in enumerate(os.listdir("chapters/orv")):
 
         if line.startswith("<title>"):
             template = template.replace(r"{{TITLE}}",line.replace("<title>",""))
+            print(file_index+1,line.replace("<title>",""))
             line = re.sub(r"<title>", '<div class="orv_title"><h1>', line)
             html.insert(0,f"{line}</h1></div>")
         elif line.startswith("<!>"):
@@ -120,5 +121,6 @@ for file_index,file in enumerate(os.listdir("chapters/orv")):
     template = template.replace(r"{{NEXT-SVG}}","")
     template = template.replace(r"{{INDEX}}", "")
 
-    with open(f"website/stories/orv/read/{file_index+1}.html", "w", encoding="utf-8") as f:
+
+    with open(f"website/stories/orv/read/ch_{file_index+1}.html", "w", encoding="utf-8") as f:
         f.write(template)

@@ -459,7 +459,7 @@ function addAllChapters() {
                         chapter.index = "";
                     }
                     // chSearchresult.push(`<div class="chapter_item" id="${chapterID}"><p><a href="#${chapter.index}">${chapter.title}</a></p></div>`);
-                    chSearchresult.push(`<div class="chapter_item" id="${chapterID}"><a href="./${chapter.index + 1}"><p>${chapter.title}</p></a></div>`);
+                    chSearchresult.push(`<div class="chapter_item" id="${chapterID}"><a href="./ch_${chapter.index + 1}"><p>${chapter.title}</p></a></div>`);
                     chapterID = "";
                 });
 
@@ -487,7 +487,7 @@ function findChapter() {
         let chSearchindex = title.indexOf(chapter.toLowerCase());
         let index = ChapterList[i].index;
         if (chSearchindex !== -1) {
-            chSearchresult.push(`<div class="chapter_item"><a href="./${index + 1}"><p>${title}</p></a></div>`);
+            chSearchresult.push(`<div class="chapter_item"><a href="./ch_${index + 1}"><p>${title}</p></a></div>`);
         }
 
     }

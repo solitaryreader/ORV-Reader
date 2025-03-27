@@ -1,90 +1,151 @@
-import os
 import json
-import requests
-from urllib.parse import urljoin
+import os
+from google.oauth2.credentials import Credentials
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+from google.oauth2 import service_account  # For service account authentication
 
-def download_files_from_shared_folder(shared_folder_url, local_download_path, index_file_path="index-files.json"):
-    """
-    Downloads all files from a shared folder URL, checks against an index file,
-    and updates the index with new files.
+# --- Configuration ---
+SHARED_FOLDER_ID = '19J6wpAUaxkvlUzZbS6xigD7kzMuya9ie'  # Replace with the actual ID of your shared folder
+INDEX_FILE_NAME = 'index-ch.json'
+DOWNLOAD_PATH = 'downloads'
+CREDENTIALS_FILE = 'scripts/side-stories-processor/credentials.json'  # Path to your client secret or service account key file
+# --- End Configuration ---
 
-    Args:
-        shared_folder_url (str): The URL of the shared folder.
-        local_download_path (str): The local path to save downloaded files.
-        index_file_path (str): The path to the index JSON file.
-    """
+def load_index(drive_service, index_file_name):
+    """Loads the index file from Google Drive if it exists, otherwise returns an empty set."""
+    try:
+        results = drive_service.files().list(q=f"name='{index_file_name}' and trashed=false",
+                                             spaces='drive').execute()
+        items = results.get('files',)
+        if items:
+            # Assuming only one index file exists
+            file_id = items[0]['id']
+            request = drive_service.files().get_media(fileId=file_id)
+            index_content = request.execute().decode('utf-8')
+            return set(json.loads(index_content))
+        else:
+            return set()
+    except HttpError as error:
+        print(f'An error occurred while loading index: {error}')
+        return set()
+    except json.JSONDecodeError:
+        print(f'Error decoding JSON from {index_file_name}. Starting with an empty index.')
+        return set()
 
-    if not os.path.exists(local_download_path):
-        os.makedirs(local_download_path)
+def save_index(drive_service, index_file_name, indexed_files):
+    """Saves the updated index file to Google Drive."""
+    index_content = json.dumps(list(indexed_files), indent=4)
+    media = googleapiclient.http.MediaIoBaseUpload(
+        io.BytesIO(index_content.encode('utf-8')),
+        mimetype='application/json'
+    )
+    try:
+        results = drive_service.files().list(q=f"name='{index_file_name}' and trashed=false",
+                                             spaces='drive').execute()
+        items = results.get('files',)
+        if items:
+            # Update existing file
+            file_id = items[0]['id']
+            updated_file = drive_service.files().update(fileId=file_id, media_body=media).execute()
+            print(f"Updated index file: {updated_file.get('name')}, ID: {updated_file.get('id')}")
+        else:
+            # Create new file
+            file_metadata = {'name': index_file_name}
+            created_file = drive_service.files().create(body=file_metadata, media_body=media,
+                                                        fields='id, name').execute()
+            print(f"Created index file: {created_file.get('name')}, ID: {created_file.get('id')}")
+    except HttpError as error:
+        print(f'An error occurred while saving index: {error}')
+
+def list_shared_folder_files(drive_service, folder_id):
+    """Lists all files in the specified shared folder."""
+    try:
+        results = drive_service.files().list(q=f"'{folder_id}' in parents and trashed=false",
+                                             includeItemsFromAllDrives=True,
+                                             supportsAllDrives=True,
+                                             fields="nextPageToken, files(id, name)").execute()
+        items = results.get('files',)
+        return {item['name']: item['id'] for item in items}
+    except HttpError as error:
+        print(f'An error occurred while listing files: {error}')
+        return {}
+
+def download_file(drive_service, file_id, file_name, download_path):
+    """Downloads a file from Google Drive."""
+    try:
+        os.makedirs(download_path, exist_ok=True)
+        file_path = os.path.join(download_path, file_name)
+        request = drive_service.files().get_media(fileId=file_id)
+        with open(file_path, 'wb') as fh:
+            downloader = googleapiclient.http.MediaIoBaseDownload(fh, request)
+            done = False
+            while not done:
+                status, done = downloader.next_chunk()
+                print(f'Download {int(status.progress() * 100)}%.')
+        print(f'Downloaded "{file_name}" to "{file_path}"')
+        return True
+    except HttpError as error:
+        print(f'An error occurred while downloading "{file_name}": {error}')
+        return False
+
+def main():
+    # Authenticate with Google Drive API
+    creds = None
+    if os.path.exists('token.json'):
+        creds = Credentials.from_authorized_user_file('token.json', ['https://www.googleapis.com/auth/drive'])
+    elif os.path.exists(CREDENTIALS_FILE):
+        # Use service account (replace with your preferred authentication method)
+        creds = service_account.Credentials.from_service_account_file(
+            CREDENTIALS_FILE, scopes=['https://www.googleapis.com/auth/drive'])
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(google.auth.transport.requests.Request())
+            with open('token.json', 'w') as token:
+                token.write(creds.to_json())
+        else:
+            flow = google_auth_oauthlib.flow.InstalledAppFlow.from_client_secrets_file(
+                CREDENTIALS_FILE, ['https://www.googleapis.com/auth/drive'])
+            creds = flow.run_local_server(port=0)
+            with open('token.json', 'w') as token:
+                token.write(creds.to_json())
 
     try:
-        response = requests.get(shared_folder_url)
-        response.raise_for_status()  # Raise HTTPError for bad responses (4xx or 5xx)
-        # Assuming the shared folder provides a listing of files as HTML or JSON.
-        # This part is highly dependent on how the shared folder is structured.
-        # In this example, we'll assume it's a simple HTML listing.
-        # Adapt this part to the actual structure of your shared folder listing.
+        service = build('drive', 'v3', credentials=creds)
 
-        # Example: Simple HTML parsing (adapt to the actual structure)
-        # This example assumes that the HTML contains <a> tags with href attributes
-        # pointing to the files.
-        # You will need to adapt this part based on the actual HTML structure.
+        # Load the index file
+        indexed_files = load_index(service, INDEX_FILE_NAME)
+        print(f"Initial indexed files: {indexed_files}")
 
-        # Example using a very basic and fragile parsing.
-        # For real-world scenarios, consider using a proper HTML parsing library like BeautifulSoup.
+        # List files in the shared folder
+        shared_folder_files = list_shared_folder_files(service, SHARED_FOLDER_ID)
+        print(f"Files in shared folder: {shared_folder_files.keys()}")
 
-        html_content = response.text
-        file_urls = []
-        for line in html_content.splitlines():
-            if '<a href="' in line:
-                start = line.find('<a href="') + len('<a href="')
-                end = line.find('"', start)
-                file_url = line[start:end]
-                # If the file_url is relative, make it absolute
-                if not file_url.startswith('http'):
-                    file_url = urljoin(shared_folder_url, file_url)
-                file_urls.append(file_url)
+        # Identify new files
+        new_files_to_download = {}
+        for file_name, file_id in shared_folder_files.items():
+            if file_name not in indexed_files:
+                new_files_to_download[file_name] = file_id
 
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching file list: {e}")
-        return
+        print(f"New files to download: {new_files_to_download.keys()}")
 
-    # Load existing index or create a new one
-    try:
-        with open(index_file_path, "r") as f:
-            downloaded_files = json.load(f)
-    except FileNotFoundError:
-        downloaded_files = []
+        # Download new files and update the index
+        for file_name, file_id in new_files_to_download.items():
+            if download_file(service, file_id, file_name, DOWNLOAD_PATH):
+                indexed_files.add(file_name)
 
-    new_downloads = []
+        # Save the updated index
+        save_index(service, INDEX_FILE_NAME, indexed_files)
+        print(f"Updated indexed files: {indexed_files}")
 
-    for file_url in file_urls:
-        filename = os.path.basename(file_url)
-        local_file_path = os.path.join(local_download_path, filename)
+    except HttpError as error:
+        print(f'An error occurred: {error}')
 
-        if filename not in [os.path.basename(f) for f in downloaded_files]:
-            try:
-                file_response = requests.get(file_url, stream=True)
-                file_response.raise_for_status()
+if __name__ == '__main__':
+    import google.auth
+    import google_auth_httplib2
+    import google_auth_oauthlib.flow
+    import googleapiclient.http
+    import io
 
-                with open(local_file_path, "wb") as f:
-                    for chunk in file_response.iter_content(chunk_size=8192):
-                        f.write(chunk)
-
-                print(f"Downloaded: {filename}")
-                new_downloads.append(filename)
-
-            except requests.exceptions.RequestException as e:
-                print(f"Error downloading {filename}: {e}")
-
-    # Update and save the index
-    downloaded_files.extend(new_downloads)
-    with open(index_file_path, "w") as f:
-        json.dump(downloaded_files, f, indent=4)
-
-    print("Index updated.")
-
-# Example usage:
-shared_folder_url = "https://drive.google.com/drive/u/0/folders/19J6wpAUaxkvlUzZbS6xigD7kzMuya9ie" # Replace with your shared folder's URL.
-local_download_path = "downloads"
-download_files_from_shared_folder(shared_folder_url, local_download_path)
+    main()

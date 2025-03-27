@@ -26,16 +26,7 @@ jobs:
         run: |
           python scripts/main_epub_processor/htmlBuilder.py
 
-      # # Step 5: Commit and push modified content to a new branch
-      # - name: Commit and push website content to the branch
-      #   run: |
-      #     git config user.name "GitHub Actions"
-      #     git config user.email "actions@github.com"
-      #     git add ./website  # Add all modified and newly created files
-      #     git commit -m "Update generated website files" || echo "No changes to commit"
-      #     git push origin HEAD
-
-      # Step 6: Deploy the website branch to Cloudflare Pages
+      # Step 5: Deploy the website branch to Cloudflare Pages
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
