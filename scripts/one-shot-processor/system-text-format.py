@@ -12,19 +12,15 @@ with open('.\scripts\side-stories-processor\data.csv', 'r') as file:
         if i["type"] == "true":
             systemLines.append(i["line"])
 
-with open("scripts/side-stories-processor/newFiles.txt", "r", encoding="utf-8") as f:
-    newFiles = f.read().split("\n")
-
 
 images = []
 counter = 0
 
-for file in newFiles:
-    file_index = int(file.replace(".txt", ""))
+for file_index,file in enumerate(os.listdir("chapters/side")):
     if not file.endswith(".txt"):
         continue
     
-    with open(f"./chapters/cont/{file}", "r", encoding="utf-8") as f:
+    with open(f"./chapters/side/{file}", "r", encoding="utf-8") as f:
         textStr = f.read()
         text = textStr.split("\n")
     
@@ -44,7 +40,7 @@ for file in newFiles:
                 text[index] = line.replace("<!>", "<@>")
                 
 
-    with open(f"./chapters/cont/{file}", "w", encoding="utf-8") as f:
+    with open(f"./chapters/side/{file}", "w", encoding="utf-8") as f:
         f.write("\n".join(text))
 
 

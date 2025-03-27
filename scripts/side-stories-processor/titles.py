@@ -27,7 +27,7 @@ with open("./website/meta/cont_meta.json", "w", encoding="utf-8") as f:
     f.write(
         json.dumps(
             {
-                "title": "Omniscent Reader's Viewpoint Continued",
+                "title": "Omniscent Reader's Viewpoint Sequel (Ch 523+)",
                 "author": "Sing Shong",
                 "chapters": len(titles),
                 "status": "Ongoing",

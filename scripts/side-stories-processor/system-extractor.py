@@ -9,15 +9,22 @@ linesBackup1 = []
 data = []
 validChars = "abcdefghijklmnopqrstuvwxyz 0123456789'"
 
-for file in os.listdir("chapters/cont"):
-    if not file.endswith("txt"):
-        continue
-    with open(f"./chapters/cont/{file}", "r", encoding="utf-8") as f:
-        chap = f.readlines()
-        for line in chap:
-            if line.startswith("<!>["):
-                line = line.replace("<!>[", "").replace("]", "").replace("\n", "")
-                lines.append(line)
+with open("scripts/side-stories-processor/newFiles.txt", "r", encoding="utf-8") as f:
+    newFiles = f.read().split("\n")
+
+for file in newFiles:
+
+    try:
+        if not file.endswith("txt"):
+            continue
+        with open(f"./chapters/cont/{file}", "r", encoding="utf-8") as f:
+            chap = f.readlines()
+            for line in chap:
+                if line.startswith("<!>["):
+                    line = line.replace("<!>[", "").replace("]", "").replace("\n", "")
+                    lines.append(line)
+    except Exception as e:
+        print(e)
 
 linesBackup1 = lines.copy()
 
@@ -33,13 +40,16 @@ for index, line in enumerate(lines):
     match = match.replace("'", "")
     lines[index] = match
 
+    print(match)
+
 print(len(lines))
 print(len(list(set(lines))))
 
-csvData = csv.DictReader(open("scripts/main_epub_processor/data/data.csv", "r", encoding="utf-8"))
+csvData = csv.DictReader(open("scripts/side-stories-processor/data.csv", "r", encoding="utf-8"))
 
 newLines = []
 ParsedLines = []
+
 for index,row in enumerate(csvData):
     ParsedLines.append(row["line"])
 

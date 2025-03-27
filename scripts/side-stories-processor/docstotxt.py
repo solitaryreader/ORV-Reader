@@ -1,6 +1,9 @@
 import textract
 import os
 
+
+newFiles = []
+
 def docx_to_txt_and_modify_in_place(file_path):
     """
     Extracts text from a .docx file, modifies the lines, saves it as .txt, and removes the .docx.
@@ -9,7 +12,7 @@ def docx_to_txt_and_modify_in_place(file_path):
         file_path (str): The path to the .docx file.
     """
     try:
-        txt_file_path = os.path.splitext(file_path)[0] + ".txt"  # Create .txt path from .docx path
+        txt_file_path = os.path.splitext(file_path)[0] + ".txt"
         text = textract.process(file_path).decode('utf-8')
         text_lines = text.split("\n")
         modified_lines = []
@@ -26,7 +29,7 @@ def docx_to_txt_and_modify_in_place(file_path):
             f.write("\n".join(modified_lines))
         print(f"Successfully extracted and modified text from '{file_path}' to '{txt_file_path}'")
 
-        os.remove(file_path)  # Remove the original .docx file
+        os.remove(file_path)
         print(f"Removed: {file_path}")
 
     except Exception as e:
@@ -42,9 +45,12 @@ def process_directory_docx_to_txt_in_place(directory_path):
     for filename in os.listdir(directory_path):
         if filename.endswith(".docx"):
             file_path = os.path.join(directory_path, filename)
+            newFiles.append(filename.replace(".docx", ".txt"))
             docx_to_txt_and_modify_in_place(file_path)
 
-# Example usage:
-input_directory = "chapters/cont"  # Replace with your input directory
+input_directory = "chapters/cont"
 
 process_directory_docx_to_txt_in_place(input_directory)
+
+with open("scripts/side-stories-processor/newFiles.txt", "w", encoding="utf-8") as f:
+    f.write("\n".join(newFiles))

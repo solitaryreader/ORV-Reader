@@ -1,18 +1,17 @@
 import os
 import re
 
+with open("scripts/side-stories-processor/newFiles.txt", "r", encoding="utf-8") as f:
+    newFiles = f.read().split("\n")
 
+for i,file in enumerate(newFiles):
 
-for file_index,file in enumerate(os.listdir("downloads")):
-
-    file_index = re.match(r"[0-9]+", file)
-    file_index = int(file_index.group(0))
-    # if file_index != -1:
-    #     continue
+    file_index = re.match(r"[0-9]+", file).group(0)
+    print(file_index)
 
     if not file.endswith(".txt"):
         continue
-    with open(f"./downloads/{file}", "r", encoding="utf-8") as f:
+    with open(f"./chapters/cont/{file}", "r", encoding="utf-8") as f:
         text = f.read().split("\n")
 
     chap = ""
@@ -41,6 +40,12 @@ for file_index,file in enumerate(os.listdir("downloads")):
             chap += f"***\n"
         else:
             chap += line+"\n"
+
         
     with open(f"./chapters/cont/{file_index}.txt", "w", encoding="utf-8") as f:
         f.write(chap)
+    os.remove(f"./chapters/cont/{file}")
+    newFiles[i] = file_index+".txt"
+
+with open("scripts/side-stories-processor/newFiles.txt", "w", encoding="utf-8") as f:
+    f.write("\n".join(newFiles))
