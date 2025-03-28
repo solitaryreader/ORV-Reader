@@ -1,1 +1,69 @@
+# ORV-Reader
 
+The website [http://orv.pages.dev](http://orv.pages.dev) was created by **[@Bittu5134](https://github.com/Bittu5134)** to provide a seamless reading experience for **Omniscient Reader's Viewpoint** and its side stories.
+
+---
+
+## Features
+
+Explore the following features on the website:
+- **Custom Themes**: Personalize your reading environment with various themes.
+- **Enhanced Text Formatting**:
+    - Constellation dialogues
+    - Outer God dialogues
+    - System messages
+    - Scenario windows
+    - And more!
+- **Illustrations**: Browse hundreds of high-quality illustrations and cover art.
+- **Reader Settings**: Adjust font size, line height, and other preferences.
+- **Automatic Updates**: Stay up-to-date with the latest chapters.
+- **Accurate Translations**: Access well-edited and reliable translations.
+
+---
+
+## About ORV
+
+**Omniscient Reader's Viewpoint (ORV)** is a captivating web novel following Kim Dokja, a reader who becomes part of the world he once read about. The series includes:
+- **Main Story**: The original ORV chapters.
+- **Sequel**: Chapters 553 and beyond.
+- **Side Stories**: Additional tales expanding the ORV universe.
+
+Learn more about the authors **Sing Shong**:  
+[IMDB Profile](https://www.imdb.com/name/nm15543141/bio/)
+
+Discover **Black Box**, the official illustrator:  
+[Illustrator's Profile](https://x.com/1l9l2aa8ucl0igj?lang=en)
+
+---
+
+## Official Links
+
+### Webtoon and Novel
+- [English Webtoon](https://www.webtoons.com/en/action/omniscient-reader/list?title_no=2154)
+- [Korean Novel](https://novel.munpia.com/104753)
+- [Korean Webtoon](https://comic.naver.com/webtoon/list?titleId=747269)
+
+### English Releases
+- [English Novel (Preorder Physical)](https://yenpress.com/series/omniscient-reader-s-viewpoint-novel)
+- [English Manhwa](https://yenpress.com/series/omniscient-reader-s-viewpoint)
+
+### Upcoming Anime
+- [AniList Entry](https://anilist.co/manga/119257/Jeonjijeok-Dokja-Sijeom)
+- [MyAnimeList Entry](https://myanimelist.net/manga/132214/Omniscient_Readers_Viewpoint)
+
+---
+
+## Legal Information
+
+Support the creators by purchasing official releases through the links above. Unauthorized distribution or reproduction of content is prohibited.
+
+For additional details, refer to the [Contribution Guide](./contribute.md) and [Formatting Guide](./formatting.md).
+
+---
+
+### Sources
+The content is sourced from fan translations and online communities, including:
+- [ORV Epub with Illustrations](https://www.reddit.com/r/OmniscientReader/comments/17el055/linktree_to_orv_epub_with_illustrations_side/)
+- [ORV Subreddit](https://www.reddit.com/r/OmniscientReader)
+- [ORV Discord](https://discord.com/invite/orv)
+- [ORV Wiki](https://omniscient-readers-viewpoint.fandom.com/wiki/Omniscient_Reader%E2%80%99s_Viewpoint_Wiki)
