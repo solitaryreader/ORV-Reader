@@ -7,8 +7,10 @@ with open("./website/meta/orv.json", "r", encoding="utf-8") as f:
     chapters = json.loads(f.read())
 
 urls.append(sitemapStart)
-urls.append(f'''<url><loc>https://orv.pages.dev/stories/orv</loc><priority>1</priority></url>''')
-urls.append(f'''<url><loc>https://orv.pages.dev/stories/cont</loc><priority>0.9</priority></url>''')
+urls.append(f'''<url><loc>https://orv.pages.dev/</loc><priority>1</priority></url>''')
+urls.append(f'''<url><loc>https://orv.pages.dev/stories</loc><priority>1</priority></url>''')
+urls.append(f'''<url><loc>https://orv.pages.dev/stories/orv</loc><priority>0.9</priority></url>''')
+urls.append(f'''<url><loc>https://orv.pages.dev/stories/cont</loc><priority>0.85</priority></url>''')
 urls.append(f'''<url><loc>https://orv.pages.dev/stories/side</loc><priority>0.8</priority></url>''')
 
 for i in chapters:
