@@ -1,24 +1,36 @@
 # ORV-Reader
 
-The website [http://orv.pages.dev](http://orv.pages.dev) was created by **[@Bittu5134](https://github.com/Bittu5134)** to provide a seamless reading experience for **Omniscient Reader's Viewpoint** and its side stories.
+This is my first ever web based project, **ORV-Reader**
+
+Website: [http://orv.pages.dev](http://orv.pages.dev)
+
+GitHub Repo: [https://github.com/Bittu5134/ORV-Reader](https://github.com/Bittu5134/ORV-Reader) (For Nerds)
+
+I know the name is not that original, But leaving that aside here are some of the features offered on this website that makes it a better place to read ORV than any other website or app.
 
 ---
 
+## Available Content:
+
+* ORV Main story (CH1-CH551)
+* ORV Sequal/Side Story 5 (CH553-872 and counting)
+* ORV One Shots/Other single chapter side stories
+
 ## Features
 
-Explore the following features on the website:
+* **Custom Themes**: There are like 13 different themes to fit everyone's Asthetics
+   * 🌟 Constellation dialogues
+   * 👾 Outer God dialogues
+   * 💬 System messages
+   * 📝 Scenario windows
+   * ➕ And much more!
+   * you will have to check out the website to get a feel for it
+* **High-Quality Illustrations**: Hundreds or Illustrations made by Blackbox have been added to the site.
+* **Reader Settings**: Customize your reading experience with adjustable font size, line height, and more.
+* **Automatic Updates**: New Side Stories are automatically added everyday to the site (kinda?)
+* **Good Translations**: The website is build with the latest Fan-Translations and can be edited by the community, That includes you too!.
+* **Privacy**: The website does NOT have any kind of Trackers and/or ADs, I really hate those kind of stufff.
 
-- 🎨 **Custom Themes**: Personalize your reading environment with various themes.
-- ✍️ **Enhanced Text Formatting**:
-    - 🌟 Constellation dialogues
-    - 👾 Outer God dialogues
-    - 💬 System messages
-    - 📝 Scenario windows
-    - ➕ And more!
-- 🖼️ **Illustrations**: Browse hundreds of high-quality illustrations and cover art.
-- ⚙️ **Reader Settings**: Adjust font size, line height, and other preferences.
-- 🔄 **Automatic Updates**: Stay up-to-date with the latest chapters.
-- 📖 **Accurate Translations**: Access well-edited and reliable translations.
 
 ---
 
@@ -68,3 +80,6 @@ The content is sourced from fan translations and online communities, including:
 - [ORV Subreddit](https://www.reddit.com/r/OmniscientReader)
 - [ORV Discord](https://discord.com/invite/orv)
 - [ORV Wiki](https://omniscient-readers-viewpoint.fandom.com/wiki/Omniscient_Reader%E2%80%99s_Viewpoint_Wiki)
+
+
+And Finally Thy Shall Worship The Queen, **Han Sooyoung**!
