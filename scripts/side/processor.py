@@ -1,7 +1,7 @@
 import os
 import re
 
-with open("scripts/side-stories-processor/newFiles.txt", "r", encoding="utf-8") as f:
+with open("scripts/side/newFiles.txt", "r", encoding="utf-8") as f:
     newFiles = f.read().split("\n")
 
 for i,file in enumerate(newFiles):
@@ -47,5 +47,5 @@ for i,file in enumerate(newFiles):
     os.remove(f"./chapters/cont/{file}")
     newFiles[i] = file_index+".txt"
 
-with open("scripts/side-stories-processor/newFiles.txt", "w", encoding="utf-8") as f:
+with open("scripts/side/newFiles.txt", "w", encoding="utf-8") as f:
     f.write("\n".join(newFiles))

@@ -5,7 +5,7 @@ import random
 import urllib.parse
 import csv
 
-with open('.\scripts\side-stories-processor\data.csv', 'r') as file:
+with open('.\scripts\side\data.csv', 'r') as file:
     data = csv.DictReader(file)
     systemLines = []
     for i in data:

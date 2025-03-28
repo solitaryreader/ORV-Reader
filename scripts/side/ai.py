@@ -10,7 +10,7 @@ random.shuffle(api_keys)
 
 current_api_key_index = 0
 
-with open("scripts/side-stories-processor/lines.txt", "r", encoding="utf-8") as f:
+with open("scripts/side/lines.txt", "r", encoding="utf-8") as f:
     lines = f.read().split("\n")
     if lines[0] == "":
         exit()
@@ -24,7 +24,7 @@ def get_new_client():
 
 client = get_new_client()
 
-with open("scripts/main_epub_processor/data/ai.csv", "r", encoding="utf-8") as f:
+with open("scripts/side/ai.py", "r", encoding="utf-8") as f:
     csv = f.read()
 
 try:
@@ -51,7 +51,7 @@ except Exception as initial_error:
 lines = []
 data = []
 validChars = "abcdefghijklmnopqrstuvwxyz 0123456789'"
-csv = open("scripts/main_epub_processor/data/ai.csv", "r", encoding="utf-8").read()
+csv = open("scripts/side/ai.py", "r", encoding="utf-8").read()
 
 
 
@@ -60,15 +60,15 @@ loop = time.time()
 while True:
     try:
         if time.time() - loop >= 5:
-            with open("scripts/side-stories-processor/lines.txt", "r", encoding="utf-8") as f:
+            with open("scripts/side/lines.txt", "r", encoding="utf-8") as f:
                 lines = f.read().split("\n")
                 if lines[0] == "":
-                    with open("scripts/side-stories-processor/lines.txt", "w", encoding="utf-8") as f:
+                    with open("scripts/side/lines.txt", "w", encoding="utf-8") as f:
                         f.write("\n")
                     exit()
             line = random.choice(lines)
             lines.remove(line)
-            with open("scripts/side-stories-processor/lines.txt", "w", encoding="utf-8") as f:
+            with open("scripts/side/lines.txt", "w", encoding="utf-8") as f:
                 f.write("\n".join(lines))
             response = chat.send_message(line)
             response = response.text.replace("\n", "").lower()
@@ -81,7 +81,7 @@ while True:
                     + csv
                 )
                 continue
-            with open("scripts/side-stories-processor/data.csv", "a", encoding="utf-8") as f:
+            with open("scripts/side/data.csv", "a", encoding="utf-8") as f:
                 f.write(f"{response},{line}\n")
             
             loop = time.time()

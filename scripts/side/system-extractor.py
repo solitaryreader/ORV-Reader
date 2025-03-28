@@ -9,7 +9,7 @@ linesBackup1 = []
 data = []
 validChars = "abcdefghijklmnopqrstuvwxyz 0123456789'"
 
-with open("scripts/side-stories-processor/newFiles.txt", "r", encoding="utf-8") as f:
+with open("scripts/side/newFiles.txt", "r", encoding="utf-8") as f:
     newFiles = f.read().split("\n")
 
 for file in newFiles:
@@ -45,7 +45,7 @@ for index, line in enumerate(lines):
 print(len(lines))
 print(len(list(set(lines))))
 
-csvData = csv.DictReader(open("scripts/side-stories-processor/data.csv", "r", encoding="utf-8"))
+csvData = csv.DictReader(open("scripts/side/data.csv", "r", encoding="utf-8"))
 
 newLines = []
 ParsedLines = []
@@ -59,5 +59,5 @@ for line in set(lines):
 
 print(len(newLines))
 
-with open ("scripts\side-stories-processor\lines.txt", "w", encoding="utf-8") as f:
+with open ("scripts/side/lines.txt", "w", encoding="utf-8") as f:
     f.write("\n".join(list(set(newLines))))

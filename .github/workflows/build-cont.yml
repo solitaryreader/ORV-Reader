@@ -22,9 +22,9 @@ jobs:
 
       - name: Convert DOCX
         run: |
-          python scripts/side-stories-processor/doctotxt.py
-          python scripts/side-stories-processor/processor.py
-          python scripts/side-stories-processor/system-extractor.py
+          python scripts/side/docstotxt.py
+          python scripts/side/processor.py
+          python scripts/side/system-extractor.py
         env:
           PYTHONIOENCODING: "utf-8" #
 
@@ -57,7 +57,8 @@ jobs:
 
       - name: Run AI Model
         run: |
-          python scripts/side-stories-processor/ai.py
+          python -m pip install google-genai
+          python scripts/side/ai.py
         env:
           PYTHONIOENCODING: "utf-8"
           GEMINI_KEY: ${{ secrets.GENAI_KEY }}
@@ -90,9 +91,9 @@ jobs:
 
       - name: Build Chapters
         run: |
-          python scripts/main_epub_processor/system-text-format.py
-          python scripts/main_epub_processor/htmlBuilder.py
-          python scripts/main_epub_processor/titles.py
+          python scripts/side/system-text-format.py
+          python scripts/side/htmlBuilder.py
+          python scripts/side/titles.py
         env:
           PYTHONIOENCODING: "utf-8" #
 

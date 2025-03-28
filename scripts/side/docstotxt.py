@@ -56,5 +56,5 @@ input_directory = "chapters/cont"
 
 process_directory_docx_to_txt_in_place(input_directory)
 
-with open("scripts/side-stories-processor/newFiles.txt", "w", encoding="utf-8") as f:
+with open("scripts/side/newFiles.txt", "w", encoding="utf-8") as f:
     f.write("\n".join(newFiles))
