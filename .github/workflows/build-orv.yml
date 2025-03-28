@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - chapters/orv/**
+  workflow_dispatch: # Enables manual triggering
 
 jobs:
   run-script:
@@ -22,6 +23,8 @@ jobs:
         run: |
           python scripts/main_epub_processor/htmlBuilder.py
           python scripts/main_epub_processor/titles.py
+        env:
+          PYTHONIOENCODING: "utf-8" # Force UTF-8 encoding
 
       - name: Commit and push changes
         run: |
