@@ -13,7 +13,7 @@ current_api_key_index = 0
 with open("scripts/side/lines.txt", "r", encoding="utf-8") as f:
     lines = f.read().split("\n")
     if lines[0] == "":
-        exit()
+        exit(code=0)
 
 def get_new_client():
     global current_api_key_index
@@ -46,7 +46,7 @@ except Exception as initial_error:
         print("Initial context sent successfully after error!")
     except Exception as second_initial_error:
         print(f"Failed to send initial context again: {second_initial_error}")
-        exit()
+        exit(code=1)
 
 lines = []
 data = []
@@ -65,7 +65,7 @@ while True:
                 if lines[0] == "":
                     with open("scripts/side/lines.txt", "w", encoding="utf-8") as f:
                         f.write("\n")
-                    exit()
+                    exit(code=0)
             line = random.choice(lines)
             lines.remove(line)
             with open("scripts/side/lines.txt", "w", encoding="utf-8") as f:
