@@ -19,7 +19,6 @@ for file_index, file in enumerate(os.listdir("chapters/cont")):
 json.dump(
     titles,
     open("./website/meta/cont.json", "w", encoding="utf-8"),
-    indent=4,
     ensure_ascii=False,
 )
 

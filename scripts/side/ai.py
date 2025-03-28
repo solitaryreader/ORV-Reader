@@ -12,7 +12,7 @@ current_api_key_index = 0
 
 with open("scripts/side/lines.txt", "r", encoding="utf-8") as f:
     lines = f.read().split("\n")
-    if lines[0] == "":
+    if len(lines)== 0:
         exit(code=0)
 
 def get_new_client():
@@ -67,6 +67,7 @@ while True:
                         f.write("\n")
                     exit(code=0)
             line = random.choice(lines)
+            print(f"Trying Line: {line}")
             lines.remove(line)
             with open("scripts/side/lines.txt", "w", encoding="utf-8") as f:
                 f.write("\n".join(lines))
