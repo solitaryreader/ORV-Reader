@@ -22,7 +22,7 @@ jobs:
 
       - name: Run Python script
         run: |
-          python scripts/side-stories-processor/htmlBuilder.py
+          python scripts/one-shot-processor/htmlBuilder.py
         env:
           PYTHONIOENCODING: "utf-8" #
 
