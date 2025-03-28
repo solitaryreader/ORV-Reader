@@ -579,3 +579,7 @@ div.orv_quote.theme2::after {
     margin-right: auto;
     margin-top: var(--paragraph-space);
 }
+
+hr {
+    margin-top: var(--line-space);
+}
