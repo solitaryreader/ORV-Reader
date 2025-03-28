@@ -63,3 +63,6 @@ print(len(newLines))
 
 with open ("scripts/side/lines.txt", "w", encoding="utf-8") as f:
     f.write("\n".join(list(set(newLines))))
+
+for line in list(set(newLines)):
+    print(line)

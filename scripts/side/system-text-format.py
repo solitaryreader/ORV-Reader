@@ -22,9 +22,9 @@ images = []
 counter = 0
 
 for file in newFiles:
-    file_index = re.match(r"[0-9]+", file).group(0)
     if not file.endswith(".txt"):
         continue
+    file_index = re.match(r"[0-9]+", file).group(0)
     
     with open(f"./chapters/cont/{file}", "r", encoding="utf-8") as f:
         textStr = f.read()
