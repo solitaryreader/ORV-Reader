@@ -22,7 +22,7 @@ images = []
 counter = 0
 
 for file in newFiles:
-    file_index = int(file.replace(".txt", ""))
+    file_index = re.match(r"[0-9]+", file).group(0)
     if not file.endswith(".txt"):
         continue
     
