@@ -1,2 +1,5 @@
 /meta/*.json
   Cache-Control: public, max-age=21600
+
+/assets/*
+  Cache-Control: public, max-age=21600
