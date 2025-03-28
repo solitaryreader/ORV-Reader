@@ -21,7 +21,8 @@ jobs:
 
       - name: Convert DOCX
         run: |
-          pip install textract
+          python.exe -m pip install --upgrade pip
+          python.exe -m pip install textract==1.5.0
           python scripts/side/docstotxt.py
           python scripts/side/processor.py
           python scripts/side/system-extractor.py
