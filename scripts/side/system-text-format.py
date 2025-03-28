@@ -14,6 +14,8 @@ with open('./scripts/side/data.csv', 'r') as file:
 
 with open("scripts/side/newFiles.txt", "r", encoding="utf-8") as f:
     newFiles = f.read().split("\n")
+    if newFiles[0] == "":
+        exit()
 
 
 images = []

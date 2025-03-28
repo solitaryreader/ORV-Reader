@@ -11,6 +11,8 @@ validChars = "abcdefghijklmnopqrstuvwxyz 0123456789'"
 
 with open("scripts/side/newFiles.txt", "r", encoding="utf-8") as f:
     newFiles = f.read().split("\n")
+    if newFiles[0] == "":
+        exit()
 
 for file in newFiles:
 
