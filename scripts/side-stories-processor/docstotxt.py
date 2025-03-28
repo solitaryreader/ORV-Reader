@@ -1,5 +1,6 @@
 import textract
 import os
+import re
 
 
 newFiles = []
@@ -45,6 +46,9 @@ def process_directory_docx_to_txt_in_place(directory_path):
     for filename in os.listdir(directory_path):
         if filename.endswith(".docx"):
             file_path = os.path.join(directory_path, filename)
+            if not re.search(r"^\d+.*\.docx$", filename):
+                print(f"Skipping file: {filename}")
+                continue
             newFiles.append(filename.replace(".docx", ".txt"))
             docx_to_txt_and_modify_in_place(file_path)
 

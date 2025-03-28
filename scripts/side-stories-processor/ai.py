@@ -10,6 +10,10 @@ random.shuffle(api_keys)
 
 current_api_key_index = 0
 
+with open("scripts/side-stories-processor/lines.txt", "r", encoding="utf-8") as f:
+    lines = f.read().split("\n")
+    if lines[0] == "":
+        exit()
 
 def get_new_client():
     global current_api_key_index
@@ -48,8 +52,7 @@ lines = []
 data = []
 validChars = "abcdefghijklmnopqrstuvwxyz 0123456789'"
 csv = open("scripts/main_epub_processor/data/ai.csv", "r", encoding="utf-8").read()
-with open("scripts/side-stories-processor/lines.txt", "r", encoding="utf-8") as f:
-    lines = f.read().split("\n")
+
 
 
 loop = time.time()
@@ -59,7 +62,10 @@ while True:
         if time.time() - loop >= 5:
             with open("scripts/side-stories-processor/lines.txt", "r", encoding="utf-8") as f:
                 lines = f.read().split("\n")
-                if lines[0] == "": exit()
+                if lines[0] == "":
+                    with open("scripts/side-stories-processor/lines.txt", "w", encoding="utf-8") as f:
+                        f.write("\n")
+                    exit()
             line = random.choice(lines)
             lines.remove(line)
             with open("scripts/side-stories-processor/lines.txt", "w", encoding="utf-8") as f:
