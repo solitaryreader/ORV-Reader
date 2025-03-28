@@ -37,7 +37,8 @@ jobs:
           else
             git commit -m "Automated changes by GitHub Actions"
           fi
-          git pull --rebase origin main || (git stash && git pull --rebase origin main && git stash pop)
+          git fetch origin main
+          git rebase origin/main || (git rebase --abort && git stash && git pull --rebase origin main && git stash pop)
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
