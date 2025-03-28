@@ -11,13 +11,30 @@ for file_index, file in enumerate(os.listdir("chapters/orv")):
         textStr = f.read()
         text = textStr.split("\n")
 
-    for  line in text:
-        if line.startswith("<title>"):
-            line = re.sub(r"<title>", "", line)
-            titles.append({"index": file_index, "title": str(line)})
+    titles.append(
+        {"index": int(file.replace("chap_","").replace(".txt",""))-1, "title": text[0].replace("<title>", "")}
+    )
 
 # Ensure non-ASCII characters are written properly
-json.dump(titles, open("titles.json", "w", encoding="utf-8"), indent=4, ensure_ascii=False)
+json.dump(
+    titles,
+    open("./website/meta/orv.json", "w", encoding="utf-8"),
+    ensure_ascii=False,
+)
 
-for index,item in enumerate(titles):
-    print(f"""<div class="chapter_item"><p><a href="#chapter{index}">f{item}</a></p></div>""")
+with open("./website/meta/orv_meta.json", "w", encoding="utf-8") as f:
+    f.write(
+        json.dumps(
+            {
+                "title": "Omniscent Reader's Viewpoint",
+                "author": "Sing Shong",
+                "chapters": len(titles),
+                "status": "Completed",
+            }
+        )
+    )
+
+for index, item in enumerate(titles):
+    print(
+        f"""<div class="chapter_item"><p><a href="#chapter{index}">{item["title"]}</a></p></div>"""
+    )
