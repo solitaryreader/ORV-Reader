@@ -7,17 +7,18 @@ The website [http://orv.pages.dev](http://orv.pages.dev) was created by **[@Bitt
 ## Features
 
 Explore the following features on the website:
-- **Custom Themes**: Personalize your reading environment with various themes.
-- **Enhanced Text Formatting**:
-    - Constellation dialogues
-    - Outer God dialogues
-    - System messages
-    - Scenario windows
-    - And more!
-- **Illustrations**: Browse hundreds of high-quality illustrations and cover art.
-- **Reader Settings**: Adjust font size, line height, and other preferences.
-- **Automatic Updates**: Stay up-to-date with the latest chapters.
-- **Accurate Translations**: Access well-edited and reliable translations.
+
+- 🎨 **Custom Themes**: Personalize your reading environment with various themes.
+- ✍️ **Enhanced Text Formatting**:
+    - 🌟 Constellation dialogues
+    - 👾 Outer God dialogues
+    - 💬 System messages
+    - 📝 Scenario windows
+    - ➕ And more!
+- 🖼️ **Illustrations**: Browse hundreds of high-quality illustrations and cover art.
+- ⚙️ **Reader Settings**: Adjust font size, line height, and other preferences.
+- 🔄 **Automatic Updates**: Stay up-to-date with the latest chapters.
+- 📖 **Accurate Translations**: Access well-edited and reliable translations.
 
 ---
 
