@@ -29,9 +29,6 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Install Wrangler CLI
-        run: npm install -g wrangler
-
       - name: Build Chapters
         run: |
           python scripts/others/sitemap.py
