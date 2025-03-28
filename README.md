@@ -4,8 +4,6 @@ This is my first ever web based project, **ORV-Reader**
 
 Website: [http://orv.pages.dev](http://orv.pages.dev)
 
-GitHub Repo: [https://github.com/Bittu5134/ORV-Reader](https://github.com/Bittu5134/ORV-Reader) (For Nerds)
-
 I know the name is not that original, But leaving that aside here are some of the features offered on this website that makes it a better place to read ORV than any other website or app.
 
 ---
