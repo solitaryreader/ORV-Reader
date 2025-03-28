@@ -15,6 +15,8 @@ for file_index, file in enumerate(os.listdir("chapters/orv")):
         {"index": int(file.replace("chap_","").replace(".txt",""))-1, "title": text[0].replace("<title>", "")}
     )
 
+titles = sorted(titles, key=lambda d: d['index'])
+
 # Ensure non-ASCII characters are written properly
 json.dump(
     titles,
