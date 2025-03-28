@@ -63,7 +63,7 @@ For additional details, refer to the [Contribution Guide](./contribute.md) and [
 
 ### Sources
 The content is sourced from fan translations and online communities, including:
-- [ORV Epub with Illustrations](https://www.reddit.com/r/OmniscientReader/comments/17el055/linktree_to_orv_epub_with_illustrations_side/)
+- [ORV Epub with Illustrations](https://www.reddit.com/r/OmniscientReader/comments/17el055/linktree_to_orv_epub_with_illustrations_side)
 - [ORV Subreddit](https://www.reddit.com/r/OmniscientReader)
 - [ORV Discord](https://discord.com/invite/orv)
 - [ORV Wiki](https://omniscient-readers-viewpoint.fandom.com/wiki/Omniscient_Reader%E2%80%99s_Viewpoint_Wiki)

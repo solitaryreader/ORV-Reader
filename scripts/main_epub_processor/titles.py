@@ -26,7 +26,7 @@ with open("./website/meta/orv_meta.json", "w", encoding="utf-8") as f:
     f.write(
         json.dumps(
             {
-                "title": "Omniscent Reader's Viewpoint",
+                "title": "Omniscient Reader's Viewpoint",
                 "author": "Sing Shong",
                 "chapters": len(titles),
                 "status": "Completed",
