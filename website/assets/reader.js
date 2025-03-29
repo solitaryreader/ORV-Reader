@@ -1,6 +1,8 @@
 function changeGiscusTheme(theme) {
-    const scriptId = 'giscus-script';
-    const existingScript = document.getElementById(scriptId);
+    // const scriptId = 'giscus-script';
+    // const existingScript = document.getElementById(scriptId);
+    let theme = window.theme;
+
 
     if (theme === "dark") {
         theme = "dark";
@@ -30,41 +32,62 @@ function changeGiscusTheme(theme) {
         theme = "catppuccin_mocha";
     }
 
-    if (existingScript) {
-        existingScript.remove();
-        console.log('Giscus script removed.');
+    function sendMessage(message) {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
     }
 
-    document.getElementById("comments").innerHTML = ""
+    sendMessage({
+        setConfig: {
+            theme: theme
+        }
+    });
 
-    const script = document.createElement('script');
-    script.id = scriptId;
-    script.src = 'https://giscus.app/client.js';
-    script.setAttribute('data-repo', 'Bittu5134/ORV-Reader');
-    script.setAttribute('data-repo-id', 'R_kgDOOHNFOQ');
-    script.setAttribute('data-category', 'General');
-    script.setAttribute('data-category-id', 'DIC_kwDOOHNFOc4CoREL');
-    script.setAttribute('data-mapping', 'title');
-    script.setAttribute('data-strict', '1');
-    script.setAttribute('data-reactions-enabled', '1');
-    script.setAttribute('data-emit-metadata', '0');
-    script.setAttribute('data-input-position', 'top');
-    script.setAttribute('data-theme', theme);
-    script.setAttribute('data-lang', 'en');
-    script.setAttribute('crossorigin', 'anonymous');
-    script.async = true;
+    // if (existingScript) {
+    //     existingScript.remove();
+    //     console.log('Giscus script removed.');
+    // }
 
-    document.body.appendChild(script);
+    // document.getElementById("comments").innerHTML = ""
+
+    // const script = document.createElement('script');
+    // script.id = scriptId;
+    // script.src = 'https://giscus.app/client.js';
+    // script.setAttribute('data-repo', 'Bittu5134/ORV-Reader');
+    // script.setAttribute('data-repo-id', 'R_kgDOOHNFOQ');
+    // script.setAttribute('data-category', 'General');
+    // script.setAttribute('data-category-id', 'DIC_kwDOOHNFOc4CoREL');
+    // script.setAttribute('data-mapping', 'title');
+    // script.setAttribute('data-strict', '1');
+    // script.setAttribute('data-reactions-enabled', '1');
+    // script.setAttribute('data-emit-metadata', '0');
+    // script.setAttribute('data-input-position', 'top');
+    // script.setAttribute('data-theme', theme);
+    // script.setAttribute('data-lang', 'en');
+    // script.setAttribute('crossorigin', 'anonymous');
+    // script.async = true;
+
+    // document.body.appendChild(script);
     console.log('Giscus script added.');
 
 }
+
+
+setTimeout(() => {
+
+    changeGiscusTheme(window.theme)
+
+
+}, 2000)
+
 
 setTimeout(() => {
     const scriptElement = document.getElementById('main-script');
     let index = scriptElement.dataset.index;
     let type = scriptElement.dataset.type;
-    localStorage.setItem("lastread",String(index))
-    localStorage.setItem("lasttype",String(type))
+    localStorage.setItem("lastread", String(index))
+    localStorage.setItem("lasttype", String(type))
 }, 60000);
 
 function classChangeTheme(elementClass, elemetTheme) {
@@ -143,10 +166,11 @@ function loadSettingsFromLocalStorage() {
 loadSettingsFromLocalStorage();
 
 
+window.theme = "dark"
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    
+
 
     // this is for settings
     const settingsForm = document.getElementById('settings-form');
@@ -177,6 +201,8 @@ document.addEventListener('DOMContentLoaded', function () {
         lineHeight = lineHeight / 20
         root.style.setProperty('--line-space', lineHeight + "rem")
 
+        window.theme = theme;
+
         changeGiscusTheme(theme)
 
         if (theme === "dark") {
@@ -186,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
             root.style.setProperty("--text-primary", "#b6bccc");
             root.style.setProperty("--text-secondary", "#c6cee2");
             root.style.setProperty("--icons-color", "");
-            
+
         } else if (theme === "light") {
             root.style.setProperty("--body-background", "#ffffff");
             root.style.setProperty("--primary", "#f0f0f0");
@@ -194,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
             root.style.setProperty("--text-primary", "#000000");
             root.style.setProperty("--text-secondary", "#333333");
             root.style.setProperty("--icons-color", "brightness(40%)");
-            
+
         } else if (theme === "sepia") {
             root.style.setProperty("--body-background", "#cab793");
             root.style.setProperty("--primary", "#f5deb3");
@@ -203,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function () {
             root.style.setProperty("--text-secondary", "#000000");
             root.style.setProperty("--icons-color", "");
             root.style.setProperty("--icons-color", "brightness(40%)");
-            
+
         } else if (theme === "pastel") {
             root.style.setProperty("--body-background", "#f9f5f6");
             root.style.setProperty("--primary", "#f0e6ef");
@@ -218,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
             root.style.setProperty("--text-primary", "#c0c8d0");
             root.style.setProperty("--text-secondary", "#a8b0b8");
             root.style.setProperty("--icons-color", "brightness(100)");
-            
+
         } else if (theme === "forest") {
             root.style.setProperty("--body-background", "#e8f5e9");
             root.style.setProperty("--primary", "#c8e6c9");
@@ -226,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
             root.style.setProperty("--text-primary", "#2e7d32");
             root.style.setProperty("--text-secondary", "#388e3c");
             root.style.setProperty("--icons-color", "brightness(40%)");
-            
+
         } else if (theme === "paper") {
             root.style.setProperty("--body-background", "#f8f5f0");
             root.style.setProperty("--primary", "#f5f0e8");
@@ -234,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
             root.style.setProperty("--text-primary", "#333333");
             root.style.setProperty("--text-secondary", "#444444");
             root.style.setProperty("--icons-color", "brightness(40%)");
-            
+
         } else if (theme === "lavender") {
             root.style.setProperty("--body-background", "#f3efff");
             root.style.setProperty("--primary", "#ede7f6");
@@ -242,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function () {
             root.style.setProperty("--text-primary", "#4527a0");
             root.style.setProperty("--text-secondary", "#512da8");
             root.style.setProperty("--icons-color", "brightness(40%)");
-            
+
         } else if (theme === "dark-sepia") {
             root.style.setProperty("--body-background", "#2a241e");
             root.style.setProperty("--primary", "#322c26");
@@ -250,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
             root.style.setProperty("--text-primary", "#d2c8bc");
             root.style.setProperty("--text-secondary", "#c0b6aa");
             root.style.setProperty("--icons-color", "brightness(100%)");
-            
+
         } else if (theme === "dark-pastel") {
             root.style.setProperty("--body-background", "#1e1b1e");
             root.style.setProperty("--primary", "#28252a");
@@ -258,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function () {
             root.style.setProperty("--text-primary", "#d1c2d3");
             root.style.setProperty("--text-secondary", "#b9a9bc");
             root.style.setProperty("--icons-color", "brightness(100%)");
-            
+
         } else if (theme === "dark-forest") {
             root.style.setProperty("--body-background", "#121813");
             root.style.setProperty("--primary", "#1a221b");
@@ -266,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function () {
             root.style.setProperty("--text-primary", "#b8d2b9");
             root.style.setProperty("--text-secondary", "#a6c0a7");
             root.style.setProperty("--icons-color", "brightness(100%)");
-            
+
         } else if (theme === "dark-paper") {
             root.style.setProperty("--body-background", "#1c1b1a");
             root.style.setProperty("--primary", "#242322");
@@ -274,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function () {
             root.style.setProperty("--text-primary", "#d4d3d2");
             root.style.setProperty("--text-secondary", "#c2c1c0");
             root.style.setProperty("--icons-color", "brightness(100%)");
-            
+
         } else if (theme === "dark-lavender") {
             root.style.setProperty("--body-background", "#1c1920");
             root.style.setProperty("--primary", "#24202a");
@@ -282,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
             root.style.setProperty("--text-primary", "#d2c9e0");
             root.style.setProperty("--text-secondary", "#c0b7d0");
             root.style.setProperty("--icons-color", "brightness(100%)");
-            
+
         }
 
 
@@ -308,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function () {
             genericBoxStyle: document.getElementById('set-rich-box').value,
         };
 
-        
+
 
         try {
             localStorage.setItem('settings', JSON.stringify(settings));
@@ -387,7 +413,7 @@ let chFetchStatus = false;
 const ChapterList = [];
 
 function addAllChapters() {
-    
+
     // load data tags
 
     const scriptElement = document.getElementById('main-script');
