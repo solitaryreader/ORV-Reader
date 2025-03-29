@@ -261,6 +261,10 @@ select {
     width: min(150px, 25vw);
 }
 
+.setting_item select{
+    backdrop-filter: brightness(0) invert(100%);
+}
+
 /* for download tab */
 
 .download {

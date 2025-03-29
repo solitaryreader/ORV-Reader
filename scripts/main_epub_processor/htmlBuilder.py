@@ -61,7 +61,7 @@ for file_index, file in enumerate(os.listdir("chapters/orv")):
 
             if line.startswith("<title>"):
                 template = template.replace(r"{{TITLE}}", line.replace("<title>", ""))
-                print(file_index + 1, line.replace("<title>", ""))
+                # print(file_index + 1, line.replace("<title>", ""))
                 line = re.sub(r"<title>", '<div class="orv_title"><h1>', line)
                 html.insert(0, f"{line}</h1></div>")
             elif line.startswith("<!>"):
@@ -99,6 +99,7 @@ for file_index, file in enumerate(os.listdir("chapters/orv")):
                 )
             else:
                 html.append(f'<p class="orv_line">{line}</p>')
+
 
         if file_index == 0:
             template = template.replace(r"{{PREV}}", "..\\")
