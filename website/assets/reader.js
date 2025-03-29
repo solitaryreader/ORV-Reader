@@ -74,11 +74,8 @@ function changeGiscusTheme(theme) {
 }
 
 
-setTimeout(() => {
-
+setInterval(() => {
     changeGiscusTheme(window.theme)
-
-
 }, 2000)
 
 
