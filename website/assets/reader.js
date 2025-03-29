@@ -1,7 +1,7 @@
 function changeGiscusTheme(theme) {
     // const scriptId = 'giscus-script';
     // const existingScript = document.getElementById(scriptId);
-    let theme = window.theme;
+    // let theme = window.theme;
 
 
     if (theme === "dark") {
