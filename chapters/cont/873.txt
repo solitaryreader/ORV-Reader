@@ -41,8 +41,8 @@ The King of Fear, who reached out to me, was already on the verge of falling apa
 I felt his story flowing into the hand I was holding. It was a story that encompassed the entirety of the 'Fear Realm'.
 <#>【No matter what kind of dream it is, this is our farewell, youngest.】
 The moment I saw his weak expression, an intense hunger boiled inside me. When you become 'one Kim Dokja', one Kim Dokja is absorbed by the other Kim Dokja.
-<@>[The story, 'Heir of the Eternal Name', mocks your will.]
-<@>[The story, 'Heir of the Eternal Name', opens his mouth as if he had been waiting!]
+<!>[The story, 'Heir of the Eternal Name', mocks your will.]
+<!>[The story, 'Heir of the Eternal Name', opens his mouth as if he had been waiting!]
 I calmed down the story with firm patience and said.
 "What are you talking about?"
 It was certainly as he said. Normally, two fragments should be combined to become 'one Kim Dokja'.
@@ -120,7 +120,7 @@ I couldn't figure out what was happening.
 I briefly lost consciousness, a white hand appeared, and the white hand and the 'King of Fear' talked.
 And when I came to my senses, the 'King of Fear' was gone.
 <!>[You have achieved the impossible feat!]
-<@>[The Great Dokkaebi of the Management Bureau is watching your presence!]
+<!>[The Great Dokkaebi of the Management Bureau is watching your presence!]
 <!>[Your myth Tale' evolves once again!]
 <!>[Your Tale holds the possibility of a 'Giant Tale'!]
 <!>[The probability of the <Star Stream> begins to move!]
