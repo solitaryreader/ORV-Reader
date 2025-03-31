@@ -59,7 +59,7 @@ Even so, the Demon King of Salvation was calm.
 As I slowly blinked, second child Kim Dokja's story began to be heard through the [Fourth Wall].
 He was the 'Watcher of Light and Darkness'.
 The experience of the 'Great Battle of the Holy Demons' that he had preserved was being released through me. The story of the Archangels and Demon Kings fighting, and <Kim Dokja’s Company> being active.
-<@>[The great tale, 'Season of Light and Darkness', tells you.]
+<!>[The great tale, 'Season of Light and Darkness', tells you.]
 The temporarily activated great tale took hold of my body.
 I started to dash through the lightning waves as if I had a booster.
 Tsutsutsut!
@@ -114,9 +114,9 @@ And this was the result.
 <!>[Would you like to check the reader feedback?]
 I nodded.
 I guess I should hear the opinions of our kkoma Kim Dokjas. But I didn’t hear the evaluations of the readers. Instead, I heard.
-<@>[rlaehrwk37 is saddened by your story.]
-<@>[rlaehrwk61 is saddened by your story.]
-<@>[rlaehrwk99 is saddened by your story.]
+<&>[rlaehrwk37 is saddened by your story.]
+<&>[rlaehrwk61 is saddened by your story.]
+<&>[rlaehrwk99 is saddened by your story.]
 …
 I imagined the little readers reading this story in a movie theater, a library, or somewhere in a world I don’t know.
 <!>[Would you like to try to reproduce it?]
@@ -131,8 +131,8 @@ I ran with all my might. The magic power of my heart began to beat violently, an
 I replayed the history of Kim Dokja in my head over and over again. I wondered what they would have done.
 <&>「But now he has met the 'Demon King of Salvation' and the 'Watcher of Light and Darkness'.」
 So, in order to understand myself, you, and this world better, to endure all this tragedy without resenting it, I read the stories.
-<@>[The tale, 'Demon King of Salvation', continues its storytelling.]
-<@>[The great tale, 'Season of Light and Darkness', continues its storytelling.]
+<!>[The tale, 'Demon King of Salvation', continues its storytelling.]
+<!>[The great tale, 'Season of Light and Darkness', continues its storytelling.]
 But their tale was too big, too grand, too loud for me to understand. Understanding was far away, like reaching out to a distant star.
 That far awayness made me closer to Kim Dokja.
 <&>「Even if understanding is nothing more than the light of a star in the middle.」
