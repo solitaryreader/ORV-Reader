@@ -27,9 +27,9 @@ Not all the sentences I wrote through [□□] are necessarily reproduced in the
 <&>「And an unexpected constellation protected them.」
 While writing that sentence, can I really say that I didn't know she would come?
 <!>[Stigma, 'Hellfire Lv.???', has been activated!]
-<@>[The constellation, 'Demon-like Judge of Fire', has declared 'Deus Ex Machina'!]
+<!>[The constellation, 'Demon-like Judge of Fire', has declared 'Deus Ex Machina'!]
 Deus Ex Machina. An event where the constellation intervenes in the scenario at the cost of a huge probability.
-<@>[The constellation, 'Demon-like Judge of Fire', does not want your death.]
+<!>[The constellation, 'Demon-like Judge of Fire', does not want your death.]
 I looked up at the sky.
 "Uriel."
 I spoke to her on behalf of the Demon King of Salvation and the Watcher of Light and Darkness, or on behalf of Kim Dokja.
@@ -47,12 +47,12 @@ But there was a bigger problem.
 The door wouldn't close.
 Upon closer inspection, the door's hinges were melting and cracking due to the heat wave. If any more time passed, it might become impossible to close the door. There was no time to hesitate.
 "Heir-ah."
-<@>[The story, 'Heir of the Eternal Name', grumbles at you not to call it that.]
+<!>[The story, 'Heir of the Eternal Name', grumbles at you not to call it that.]
 "Help."
 The guy grumbled but also took out the skill I wanted.
-<@>[Activate exclusive skill, 'Bookmark'!]
+<!>[Activate exclusive skill, 'Bookmark'!]
 I immediately put a character in the empty bookmark.
-<@>[Activate exclusive skill, 'Incite Lv.???'!]
+<!>[Activate exclusive skill, 'Incite Lv.???'!]
 "I am Lee Hyunsung."
 <!>[Exclusive skill 'Incite' corresponds to 'Bookmark'!]
 <!>[You can temporarily use one 'stigma' held by the corresponding character!]
@@ -75,7 +75,7 @@ The reinforcements I had been waiting for arrived.
 Jang Hayoung, who had come through the lightning wave, stood next to me and started pushing the door together.
 <#>【Eww! My hand! My hand is burning!】
 Jang Hayoung originally had no skills related to 'Flames'. However, both of Jang Hayoung's hands were wrapped in bright red strong energy.
-<@>[Flame Yang Shingong.]
+<!>[Flame Yang Shingong.]
 It seems that she had traded skills through the 'Wall of Unknown Identity' in that short time.
 Jang Hayoung was an incarnation that reached a certain level of skill proficiency faster than any other incarnation of the <Star Stream>.
 With that level of proficiency, it would be difficult to offset the 'Flame Wave', but it seemed possible to push the door together with me.
@@ -153,7 +153,7 @@ I jumped into the gap in the open door. The explosive heat of the flame wave mel
 <!>[Exclusive skill, 'Fourth Wall', is activated to the extreme!]
 Fortunately, Uriel's [Hellfire] and the function of the [Fourth Wall] protected me.
 I immediately closed the door with [Mt. Taesan Push] and pushed the lock from the inside.
-<@>[The 'Time Fault Door' was locked.]
+<!>[The 'Time Fault Door' was locked.]
 The 'Time Fault Door' swirled and disappeared in the empty air.
 The problem was this.
 <!>[Warning! You are outside the 'World Line'!]
