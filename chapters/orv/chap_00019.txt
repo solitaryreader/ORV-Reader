@@ -136,3 +136,5 @@ It was followed by system messages.
 <!>[From now on, 100 coins will be deducted every night for the 'survival cost'. If you can't pay the 'survival cost,' you will die.]
 <!>[The 'survival cost' penalty will be maintained until the second main scenario is cleared.]
 I laughed as I read the rising messages. Yes, now it was like Ways of Survival.
+
+***
