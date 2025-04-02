@@ -10,6 +10,12 @@ for file_index,file in enumerate(os.listdir("chapters/side")):
     file_index = int(file.replace(".txt",""))-1
     with open(f"./chapters/side/{file}", "r", encoding="utf-8") as f:
         textStr = f.read()
+        def replace_match(match):
+            original_tag = match.group(0)
+            return f"&lt;{original_tag[1:-1]}&gt;"
+
+        pattern = r'<(?!img\b|title\b|cover\b)(?=[^>]{4,})(?=[^>]*\w)[^>]*?>'
+        textStr = re.sub(pattern, replace_match, textStr)
         text = textStr.split("\n")
 
     with open("website/stories/side/read/template.html","r",encoding="utf-8") as f:
