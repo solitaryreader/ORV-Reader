@@ -19,6 +19,7 @@ for file_index,file in enumerate(os.listdir("chapters/cont")):
 
         pattern = r'<(?!img\b|title\b|cover\b)(?=[^>]{4,})(?=[^>]*\w)[^>]*?>'
         textStr = re.sub(pattern, replace_match, textStr)
+        text = textStr.split("\n")
 
     with open("website/stories/cont/read/template.html","r",encoding="utf-8") as f:
         template = f.read()
