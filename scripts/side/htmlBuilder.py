@@ -1,21 +1,24 @@
 import re
 import os
 import urllib.parse as urlparse
-import html
 
-for file_index, file in enumerate(os.listdir("chapters/cont")):
+
+for file_index,file in enumerate(os.listdir("chapters/cont")):
+
+    # if not file_index == 1:
+    #     continue
 
     if not file.endswith(".txt"):
         continue
-    file_index = int(file.replace(".txt", "")) - 1
+    file_index = int(file.replace(".txt",""))-1
     with open(f"./chapters/cont/{file}", "r", encoding="utf-8") as f:
         textStr = f.read()
         text = textStr.split("\n")
 
-    with open("website/stories/cont/read/template.html", "r", encoding="utf-8") as f:
+    with open("website/stories/cont/read/template.html","r",encoding="utf-8") as f:
         template = f.read()
-
-    html_content = []
+    
+    html = []
 
     skip_line = 0
     for index, line in enumerate(text):
@@ -33,12 +36,12 @@ for file_index, file in enumerate(os.listdir("chapters/cont")):
                 if window_line == "+":
                     break
                 if window_line.startswith("["):
-                    window_line = f'<h3 class="orv_window_title">{html.escape(window_line)}</h3>'
+                    window_line = f'<h3 class="orv_window_title">{window_line}</h3>'
                 else:
-                    window_line = f"<p>{html.escape(window_line)}</p>"
+                    window_line = f"<p>{window_line}</p>"
                 window_text.append(window_line)
             window_text.append("</div>")
-            html_content.extend(window_text)
+            html.extend(window_text)
             continue
         if line == "++":
             window_text = []
@@ -49,47 +52,48 @@ for file_index, file in enumerate(os.listdir("chapters/cont")):
                 skip_line += 1
                 if window_line == "++":
                     break
-                window_line = f'<p>{html.escape(window_line)}</p>'
+                window_line = f'<p>{window_line}</p>'
                 window_text.append(window_line)
             window_text.append("</div>")
-            html_content.extend(window_text)
+            html.extend(window_text)
             continue
 
         if line.startswith("<title>"):
-            template = template.replace(r"{{TITLE}}", line.replace("<title>", ""))
-            print(file_index + 1, line.replace("<title>", ""))
-            line = re.sub(r"<title>", f'<div class="orv_title"><h1>{html.escape(line.replace("<title>", ""))}</h1>', line)
-            html_content.insert(0, f"{line}</div>")
+            template = template.replace(r"{{TITLE}}",line.replace("<title>",""))
+            print(file_index+1,line.replace("<title>",""))
+            line = re.sub(r"<title>", '<div class="orv_title"><h1>', line)
+            html.insert(0,f"{line}</h1></div>")
         elif line.startswith("<!>"):
-            line = re.sub(r"<!>", f'<div class="orv_system"><p>{html.escape(line.replace("<!>", ""))}</div>', line)
-            html_content.append(f"{line}</p>")
+            line = re.sub(r"<!>", '<div class="orv_system"><p>', line)
+            html.append(f"{line}</p></div>")
         elif line.startswith("<@>"):
-            line = re.sub(r"<@>", f'<div class="orv_constellation"><p>{html.escape(line.replace("<@>", ""))}</div>', line)
-            html_content.append(f"{line}</p>")
+            line = re.sub(r"<@>", '<div class="orv_constellation"><p>', line)
+            html.append(f"{line}</p></div>")
         elif line.startswith("<#>"):
-            line = re.sub(r"<#>", f'<div class="orv_outergod"><p>{html.escape(line.replace("<#>", ""))}</div>', line)
-            html_content.append(f"{line}</p>")
+            line = re.sub(r"<#>", '<div class="orv_outergod"><p>', line)
+            html.append(f"{line}</p></div>")
         elif line.startswith("<&>"):
-            line = re.sub(r"<&>", f'<div class="orv_quote"><p>{html.escape(line.replace("<&>", ""))}</div>', line)
-            html_content.append(f"{line}</p>")
+            line = re.sub(r"<&>", '<div class="orv_quote"><p>', line)
+            html.append(f"{line}</p></div>")
         elif line.startswith("<?>"):
-            line = re.sub(r"<\?>", f'<div class="orv_notice"><p>{html.escape(line.replace("<?>", ""))}</div>', line)
-            html_content.append(f"{line}</p>")
+            line = re.sub(r"<\?>", '<div class="orv_notice"><p>', line)
+            html.append(f"{line}</p></div>")
         elif line.startswith("<img>"):
             line = re.findall(r"\[(.*?)\]", line)
-            html_content.append(f'<div class="orv_image"><img src="../../../assets/images/{urlparse.quote(line[0])}" alt="{html.escape(line[1])}" loading="lazy"></div>')
+            html.append(f'<div class="orv_image"><img src="../../../assets/images/{line[0]}" alt="{line[1]}" loading="lazy"></div>')
         elif line == "":
-            html_content.append(f"<br>")
+            html.append(f"<br>")
         elif line == "***":
-            html_content.append(f"<hr>")
+            html.append(f"<hr>")
         elif line.startswith("<list>"):
             line = re.sub(r"<list>", "<ul>", line)
-            html_content.append(f"{line}")
+            html.append(f"{line}")
         elif line.startswith("<cover>"):
             line = re.findall(r"\[(.*?)\]", line)
-            template = template.replace(r"{{COVER}}", f'<div class="orv_cover"><img src="../../../assets/images/{urlparse.quote(line[0])}" alt="{html.escape(line[1])}"></div>')
+            template = template.replace(r"{{COVER}}",f'<div class="orv_cover"><img src="../../../assets/images/{urlparse.quote(line[0])}" alt="{line[1]}"></div>')
         else:
-            html_content.append(f'<p class="orv_line">{html.escape(line)}</p>')
+            html.append(f'<p class="orv_line">{line}</p>')
+
 
         if file_index == 0:
             template = template.replace(r"{{PREV}}", "..\\")
@@ -111,23 +115,26 @@ for file_index, file in enumerate(os.listdir("chapters/cont")):
                 '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>',
             )
         else:
-            template = template.replace(r"{{NEXT}}", f"ch_{file_index + 2}")
+            template = template.replace(r"{{NEXT}}", f"ch_{file_index+2}")
             template = template.replace(
                 r"{{NEXT-SVG}}",
                 '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" /></svg>',
             )
 
-    template = template.replace(r"{{CONTENT}}", str("\n".join(html_content)))
-    template = template.replace(r"{{PATH}}", f"cont/{file}")
+    template = template.replace(r"{{CONTENT}}",str("\n".join(html)))
+    template = template.replace(r"{{PATH}}",f"cont/{file}")
     template = template.replace(r"{{INDEX}}", str(file_index))
 
-    template = template.replace(r"{{TITLE}}", "")
-    template = template.replace(r"{{COVER}}", "")
-    template = template.replace(r"{{PREV}}", "")
-    template = template.replace(r"{{NEXT}}", "")
-    template = template.replace(r"{{PREV-SVG}}", "")
-    template = template.replace(r"{{NEXT-SVG}}", "")
+
+    template = template.replace(r"{{TITLE}}","")
+    template = template.replace(r"{{COVER}}","")
+    template = template.replace(r"{{PREV}}","")
+    template = template.replace(r"{{NEXT}}","")
+    template = template.replace(r"{{PREV-SVG}}","")
+    template = template.replace(r"{{NEXT-SVG}}","")
     template = template.replace(r"{{INDEX}}", "")
 
-    with open(f"website/stories/cont/read/ch_{file_index + 1}.html", "w", encoding="utf-8") as f:
+
+
+    with open(f"website/stories/cont/read/ch_{file_index+1}.html", "w", encoding="utf-8") as f:
         f.write(template)
