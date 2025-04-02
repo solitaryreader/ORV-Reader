@@ -2,6 +2,16 @@ import re
 import os
 import urllib.parse as urlparse
 
+def escape_html(text):
+    """Escapes HTML special characters."""
+    return (
+        text.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+        .replace("'", "&#39;")
+    )
+
 for file_index, file in enumerate(os.listdir("chapters/cont")):
     if not file.endswith(".txt"):
         continue
@@ -129,13 +139,3 @@ for file_index, file in enumerate(os.listdir("chapters/cont")):
 
     with open(f"website/stories/cont/read/ch_{file_index+1}.html", "w", encoding="utf-8") as f:
         f.write(template)
-
-def escape_html(text):
-    """Escapes HTML special characters."""
-    return (
-        text.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-        .replace("'", "&#39;")
-            )
