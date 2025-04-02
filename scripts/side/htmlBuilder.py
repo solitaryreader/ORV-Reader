@@ -13,6 +13,13 @@ for file_index,file in enumerate(os.listdir("chapters/cont")):
     file_index = int(file.replace(".txt",""))-1
     with open(f"./chapters/cont/{file}", "r", encoding="utf-8") as f:
         textStr = f.read()
+        def replace_match(match):
+            original_tag = match.group(0)
+            inner_text = original_tag[1:-1]  # Extract text between < and >
+            escaped_text = html.escape(inner_text)
+            return f"<{escaped_text}>"
+        pattern = r'<.{3,}>'
+        textStr = re.sub(pattern, replace_match, textStr)
         text = textStr.split("\n")
 
     with open("website/stories/cont/read/template.html","r",encoding="utf-8") as f:
