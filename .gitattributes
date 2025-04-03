@@ -1,2 +1,3 @@
-website/stories/*/read/[0-9]*.html linguist-vendored
-*.html linguist-vendored
+website/stories/orv/read/ linguist-vendored
+website/stories/cont/read/ linguist-vendored
+website/stories/side/read/ linguist-vendored
