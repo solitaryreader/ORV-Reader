@@ -1,1 +1,2 @@
 website/stories/*/read/[0-9]*.html linguist-vendored
+*.html linguist-vendored
