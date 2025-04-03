@@ -1,5 +1,113 @@
-let ChapterList=[];const script=document.getElementById("main-script");function addAllChapters(){fetch(script.dataset.title).then(t=>{if(!t.ok)throw Error("Network response was not ok "+t.statusText);return t.json()}).then(t=>{ChapterList.push(...t),ChapterList=ChapterList.slice().sort((t,e)=>e.index-t.index),console.log("Chapters loaded:",ChapterList),displayChapters()}).catch(t=>{console.error("There was a problem with the fetch operation:",t)})}function addMeta(){fetch(script.dataset.meta).then(t=>{if(!t.ok)throw Error("Network response was not ok "+t.statusText);return t.json()}).then(t=>{let e=document.getElementsByClassName("status")[0];console.log(t),e.innerHTML=`
-            <p>${t.title}</p>
-            <p>Author: ${t.author}<br>
-                Chapters: ${t.chapters}<br>
-                Status: ${t.status}</p>`}).catch(t=>{console.error("There was a problem with the fetch operation:",t)})}function displayChapters(){let t=document.getElementById("chapter-result");t.innerHTML="";let e=[];ChapterList.forEach(t=>{e.push(`<div class="chapter_item"><a href="./read/ch_${t.index+1}"><p>${t.title}</p></a></div>`)}),t.innerHTML=e.join("")}function filter(){ChapterList=ChapterList.slice().reverse(),document.getElementById("search").value="",console.log(document.getElementById("filter").style.transform);let t=document.getElementById("filter");"rotateX(180deg)"===t.style.transform?t.style.transform="rotateX(0deg)":t.style.transform="rotateX(180deg)",displayChapters()}function findChapter(t){let e=document.getElementById("chapter-result");e.innerHTML="";let r=[];for(let a=0;a<ChapterList.length;a++){let s=String(ChapterList[a].title).toLowerCase(),n=s.indexOf(t.toLowerCase()),i=ChapterList[a].index;-1!==n&&r.push(`<div class="chapter_item"><a href="./read/ch_${i+1}"><p>${s}</p></a></div>`)}e.innerHTML=r.join(""),0===r.length&&(e.innerHTML='<div class="chapter_item"><p>Chapter not found</p></div>')}document.addEventListener("DOMContentLoaded",function(){let t=parseInt(localStorage.getItem("lastread")),e=localStorage.getItem("lasttype");if(console.log(t,e),t&&e===script.dataset.type){let r=document.getElementById("read"),a=document.getElementById("read-a");a.href=`./read/ch_${t+1}`,r.textContent="Continue"}}),addMeta(),document.addEventListener("DOMContentLoaded",function(){addAllChapters()});
+let ChapterList = [];
+const script = document.getElementById('main-script');
+
+document.addEventListener('DOMContentLoaded', function () {
+    const LastRead = parseInt(localStorage.getItem("lastread"))
+    const lastType = localStorage.getItem("lasttype")
+
+    console.log(LastRead, lastType)
+
+    if (LastRead && lastType === script.dataset.type) {
+        const readbtn = document.getElementById("read");
+        const reada = document.getElementById("read-a");
+
+        reada.href = `./read/ch_${LastRead + 1}`;
+        readbtn.textContent = "Continue";
+    }
+});
+
+function addAllChapters() {
+    fetch(script.dataset.title)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            ChapterList.push(...data);
+            ChapterList = ChapterList.slice().sort((a, b) => b.index - a.index)
+            console.log("Chapters loaded:", ChapterList);
+            displayChapters();
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+}
+
+function addMeta() {
+    fetch(script.dataset.meta)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const info = document.getElementsByClassName("status")[0];
+            console.log(data);
+            
+            info.innerHTML = `
+            <p>${data.title}</p>
+            <p>Author: ${data.author}<br>
+                Chapters: ${data.chapters}<br>
+                Status: ${data.status}</p>`
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+}
+
+addMeta();
+
+function displayChapters() {
+    let chapterSearch = document.getElementById("chapter-result");
+    chapterSearch.innerHTML = "";
+    let chSearchresult = [];
+
+    ChapterList.forEach(chapter => {
+        chSearchresult.push(`<div class="chapter_item"><a href="./read/ch_${chapter.index + 1}"><p>${chapter.title}</p></a></div>`);
+    });
+
+    chapterSearch.innerHTML = chSearchresult.join("");
+}
+
+function filter() {
+    ChapterList = ChapterList.slice().reverse();
+    document.getElementById("search").value = ""
+    console.log(document.getElementById("filter").style.transform)
+    const FilterSVG = document.getElementById("filter");
+    if (FilterSVG.style.transform === "rotateX(180deg)") {
+        FilterSVG.style.transform = "rotateX(0deg)"
+    } else {
+        FilterSVG.style.transform = "rotateX(180deg)"
+    }
+    displayChapters()
+
+}
+
+
+function findChapter(value) {
+    let chapterSearch = document.getElementById("chapter-result");
+    chapterSearch.innerHTML = "";
+    let chSearchresult = [];
+
+    for (let i = 0; i < ChapterList.length; i++) {
+
+        let title = String(ChapterList[i].title).toLowerCase();
+        let chSearchindex = title.indexOf(value.toLowerCase());
+        let index = ChapterList[i].index;
+        if (chSearchindex !== -1) {
+            chSearchresult.push(`<div class="chapter_item"><a href="./read/ch_${index + 1}"><p>${title}</p></a></div>`);
+        }
+    }
+    chapterSearch.innerHTML = chSearchresult.join("");
+
+    if (chSearchresult.length === 0) {
+        chapterSearch.innerHTML = `<div class="chapter_item"><p>Chapter not found</p></div>`;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    addAllChapters();
+});
