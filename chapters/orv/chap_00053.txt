@@ -20,7 +20,7 @@ I paid attention the meteorite while protecting them.
 –We can't go. If you look behind, you can see a ward.
 –Huh? What ward?
 I didn't answer as I stared at the meteorite in the centre of the platform.
-<@>[Meteorite was the main event in the fifth scenario. The danger sleeping inside the meteorite would differ depending on the colour, brightness, size and type. However, the meteorite I was looking at now was one that should never hatch.]
+[Meteorite] was the main event in the fifth scenario. The danger sleeping inside the meteorite would differ depending on the colour, brightness, size and type. However, the meteorite I was looking at now was one that should never hatch.
 They seemed confused because the meteorite that gave the star relic in the third regression was 'bright red'…
 "I wonder what star relic will appear?"
 "That…"
@@ -72,7 +72,7 @@ It wasn't a low grade dokkaebi like Bihyung. He wore a tidy suit with two little
 I didn't know his name but I knew what he was. He was an intermediate dokkaebi.
 <@>[Hrmm. This is difficult. How did you guys get this 'root'? It was only installed recently…]
 Once his voice rang out, the movements of the lesser dragon stopped. Indeed, it was possible for an intermediate dokkaebi to intervene in the scenario to this level.
-<!>[A disaster woke up in the fourth scenario?]
+<@>[A disaster woke up in the fourth scenario?]
 The emergence of an intermediate dokkaebi meant that the 'early scenarios' had almost come to an end.
 As long as he took notice of this place, I would barely be able to see the contract benefits with Bihyung.
 <@>[Some constellations are poisonous so I can't spare you… it is also hard to downgrade the difficulty…]
@@ -94,7 +94,7 @@ Clear Conditions: Within the time limit, hunt down the 'lesser dragon Igneel' or
 Time Limit: 20 minutes.
 Compensation: 3,000 coins
 Failure: Death
-Hidden pieces are hidden in this mission.
+*Hidden pieces are hidden in this mission.
 +
 A 20 minute survival mission. From the title to the contents, it was ridiculous.
 Lee Hyunsung asked.
@@ -168,3 +168,5 @@ I pulled out my blade and opened my mouth.
 <!>[Due to the effect of your exclusive attribute, your memories of some scenes became stronger.]
 The story of Demon King Asmodeus appeared exactly in chapter 57 of Ways of Survival.
 A crack started to spread in this man's relaxed expression.
+
+***
