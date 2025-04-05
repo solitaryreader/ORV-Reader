@@ -66,7 +66,7 @@ Only two stages had occurred but there were less than a quarter prophets remaini
 <!>[The number of footholds created in the next turn will be reduced.]
 I spoke with narrowed eyes, "With your power alone?"
 "It is possible. I have prepared enough."
-I felt uneasy as I heard his confident voice. That reminded me, he was shedding a single drop of sweat in this heat. A bluish chill spread over his skin.
+I felt uneasy as I heard his confident voice. That reminded me, he wasn't shedding a single drop of sweat in this heat. A bluish chill spread over his skin.
 This was… I see. Their preparations were outstanding.
 "It is the ice pill."
 "That's right."
@@ -156,3 +156,5 @@ My vision soon became dim. There was the feeling of flesh being burnt and I lost
 .
 A moment later, a system message was heard.
 <!>[The privilege of the King of No Killing is activated.]
+
+***
