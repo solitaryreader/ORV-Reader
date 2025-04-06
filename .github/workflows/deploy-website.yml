@@ -2,7 +2,7 @@ name: Deploy to Cloudflare Pages
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 */12 * * *" 
   workflow_dispatch:
 
 jobs:
@@ -18,71 +18,20 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: echo "Deploying from main branch."
 
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: "3.x"
 
-      - name: Build Sitemap
-        id: build_sitemap
+      - name: Build Chapters
         run: |
           python scripts/others/sitemap.py
-          echo "sitemap_generated=true" >> "$GITHUB_OUTPUT"
         env:
           PYTHONIOENCODING: "utf-8"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Commit Sitemap
-        if: steps.build_sitemap.outputs.sitemap_generated == 'true'
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add website/sitemap.xml # Assuming sitemap.py outputs to this location
-          if git diff-index --quiet HEAD; then
-            echo "No sitemap changes to commit"
-          else
-            git commit -m "Automated commit: Update sitemap"
-            git pull --rebase origin $(git rev-parse --abbrev-ref HEAD) || (git stash && git pull --rebase origin $(git rev-parse --abbrev-ref HEAD) && git stash pop)
-            git push origin $(git rev-parse --abbrev-ref HEAD)
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Install minification dependencies
-        run: pip install cssmin rjsmin htmlmin
-
-      - name: Find files to minify
-        id: find_files
-        run: |
-          echo "css_files=$(find website -type f -name '*.css' -print0 | xargs -0 printf '%s\n')" >> "$GITHUB_OUTPUT"
-          echo "js_files=$(find website -type f -name '*.js' -print0 | xargs -0 printf '%s\n')" >> "$GITHUB_OUTPUT"
-          echo "html_files=$(find website -type f -name '*.html' -print0 | xargs -0 printf '%s\n')" >> "$GITHUB_OUTPUT"
-
-      - name: Minify CSS files
-        if: steps.find_files.outputs.css_files
-        run: |
-          while IFS= read -r -d $'\n' file; do
-            echo "Minifying $file"
-            python -m cssmin "$file" > "$file.min.css" && mv "$file.min.css" "$file"
-          done <<< "${{ steps.find_files.outputs.css_files }}"
-
-      - name: Minify JS files
-        if: steps.find_files.outputs.js_files
-        run: |
-          while IFS= read -r -d $'\n' file; do
-            echo "Minifying $file"
-            python -m rjsmin "$file" > "$file.min.js" && mv "$file.min.js" "$file"
-          done <<< "${{ steps.find_files.outputs.js_files }}"
-
-      - name: Minify HTML files
-        if: steps.find_files.outputs.html_files
-        run: |
-          while IFS= read -r -d $'\n' file; do
-            echo "Minifying $file"
-            python -m htmlmin "$file" -o "$file"
-          done <<< "${{ steps.find_files.outputs.html_files }}"
-
-      - name: Publish to Cloudflare Pages
+      - name: Publish
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -90,3 +39,18 @@ jobs:
           projectName: orv
           directory: website
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit"
+          else
+            git commit -m "Automated changes by GitHub Actions"
+          fi
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD) || (git stash && git pull --rebase origin $(git rev-parse --abbrev-ref HEAD) && git stash pop)
+          git push origin $(git rev-parse --abbrev-ref HEAD)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
