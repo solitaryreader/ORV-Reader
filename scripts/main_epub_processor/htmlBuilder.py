@@ -106,7 +106,8 @@ for file_index, file in enumerate(os.listdir("chapters/orv")):
             else:
                 html.append(f'<p class="orv_line">{line}</p>')
 
-
+        if html[-1] == "<br>":
+            html.pop()
         if file_index == 0:
             template = template.replace(r"{{PREV}}", "..\\")
             template = template.replace(
