@@ -55,6 +55,7 @@ The Tyrant King, Great King Heoncheon Hongdo Gyungmun Wimu.
 "History isn't scary. It is because from today onwards, I will make a new history for this land."
 The top tyrant of the Korean peninsula who wasn't recorded as a 'king' in history.
 "I am Yeonsangun¹, born Lee Yung!"
+<?>[1]Yeonsangun or Prince Yeonsan, personal name Yi Yung, was the 10th monarch of the Joseon dynasty of Korea.
 A tremendous magic power emerged from the Tyrant King as synchronization with the sponsor reached its limit.
 The group members in the way exploded. Level 30 magic power was inserted in the Three Ring Loop. It was very dangerous.
 "Don't back down!"
@@ -86,7 +87,7 @@ The intermediate dokkaebi laughed.
 The people started murmuring.
 "F-Fourteen?"
 "Are there still kings outside?"
-<!>[For your reference, there are 12 kings currently inside the hidden dungeon.]
+<@>[For your reference, there are 12 kings currently inside the hidden dungeon.]
 I was a bit surprised. There were so many kings in this dungeon. Well, I didn't think I would be the only 'hidden' king.
 "Who is it? Who is the king that is hiding?"
 The Tyrant King laughed at the confused people.
