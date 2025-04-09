@@ -4,31 +4,7 @@ This is my first ever web based project, **ORV-Reader**
 
 Website: [http://orv.pages.dev](http://orv.pages.dev)
 
-I know the name is not that original, But leaving that aside here are some of the features offered on this website that makes it a better place to read ORV than any other website or app.
-
----
-
-## Available Content:
-
-* ORV Main story (CH1-CH551)
-* ORV Sequal/Side Story 5 (CH553-872 and counting)
-* ORV One Shots/Other single chapter side stories
-
-## Features
-
-* **Custom Themes**: There are like 13 different themes to fit everyone's Asthetics
-   * 🌟 Constellation dialogues
-   * 👾 Outer God dialogues
-   * 💬 System messages
-   * 📝 Scenario windows
-   * ➕ And much more!
-   * you will have to check out the website to get a feel for it
-* **High-Quality Illustrations**: Hundreds or Illustrations made by Blackbox have been added to the site.
-* **Reader Settings**: Customize your reading experience with adjustable font size, line height, and more.
-* **Automatic Updates**: New Side Stories are automatically added everyday to the site (kinda?)
-* **Good Translations**: The website is build with the latest Fan-Translations and can be edited by the community, That includes you too!.
-* **Privacy**: The website does NOT have any kind of Trackers and/or ADs, I really hate those kind of stufff.
-
+I know the name is not that original, But whatever have fun Reading!
 
 ---
 
@@ -42,8 +18,25 @@ I know the name is not that original, But leaving that aside here are some of th
 Learn more about the authors **Sing Shong**:  
 [IMDB Profile](https://www.imdb.com/name/nm15543141/bio/)
 
-Discover **Black Box**, the official illustrator:  
+Discover **BlackBox**, the official illustrator:  
 [Illustrator's Profile](https://x.com/1l9l2aa8ucl0igj?lang=en)
+
+---
+
+## Features
+
+* **Custom Themes**: There are like 13 different themes to fit everyone's Asthetics
+   * 🌟 Constellation dialogues
+   * 👾 Outer God dialogues
+   * 💬 System messages
+   * 📝 Scenario windows
+   * ➕ And much more!
+   * you will have to check out the website to get a feel for it
+* **High-Quality Illustrations**: Hundreds or Illustrations made by Blackbox-nim have been added to the site.
+* **Reader Settings**: Customize your reading experience with adjustable font size, line height, and more.
+* **Automatic Updates**: New Side Stories are automatically added everyday to the site (kinda?)
+* **Good Translations**: The website is build with the latest Fan-Translations and can be edited by the community, That includes you too!.
+* **Privacy**: The website does NOT have any kind of Trackers and/or ADs, Nobody likes those kind of stufff.
 
 ---
 
@@ -64,20 +57,27 @@ Discover **Black Box**, the official illustrator:
 
 ---
 
-## Legal Information
+## Contributing 
 
-Support the creators by purchasing official releases through the links above. Unauthorized distribution or reproduction of content is prohibited.
-
-For additional details, refer to the [Contribution Guide](./contribute.md) and [Formatting Guide](./formatting.md).
+For how to contribute to this project follow the given links.
+- [Contribution Guide](./contribute.md)
+- [Formatting Guide](./formatting.md).
 
 ---
 
-### Sources
+## Legal Information 
+
+Support the creators by purchasing official releases through the links above. Unauthorized distribution or reproduction of content is prohibited.
+
+**Please note:** I do not own the rights to the original novel. All translations available on this page are fan translations sourced from the public internet. The sources for these translations are provided below under the "Sources" heading.
+
+For any inquiries, you can reach me via email at <a href="mailto: ssr7a5134@gmail.com">ssr7a5134@gmail.com</a>
+
+---
+
+## Sources
 The content is sourced from fan translations and online communities, including:
-- [ORV Epub with Illustrations](https://www.reddit.com/r/OmniscientReader/comments/17el055/linktree_to_orv_epub_with_illustrations_side)
-- [ORV Subreddit](https://www.reddit.com/r/OmniscientReader)
+- [ORV Wiki](https://omniscient-readers-viewpoint.fandom.com/wiki/Omniscient_Reader%E2%80%99s_Viewpoint_WiKi)
 - [ORV Discord](https://discord.com/invite/orv)
-- [ORV Wiki](https://omniscient-readers-viewpoint.fandom.com/wiki/Omniscient_Reader%E2%80%99s_Viewpoint_Wiki)
-
-
-And Finally Thy Shall Worship The Queen, **Han Sooyoung**!
+- [ORV Subreddit](https://www.reddit.com/r/OmniscientReader)
+- [ORV Epub with Illustrations](https://www.reddit.com/r/OmniscientReader/comments/17el055/linktree_to_orv_epub_with_illustrations_side)
