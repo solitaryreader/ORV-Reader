@@ -108,11 +108,6 @@ for file_index, file in enumerate(os.listdir("chapters/orv")):
             else:
                 html.append(f'<p class="orv_line">{line}</p>')
 
-        while html and (html[-1] == "<br>" or html[-1] == "<hr>"):
-            html.pop()
-
-        html.append("<br>")
-        html.append("<hr>")
 
         if file_index == 0:
             template = template.replace(r"{{PREV}}", "..\\")
@@ -139,6 +134,12 @@ for file_index, file in enumerate(os.listdir("chapters/orv")):
                 r"{{NEXT-SVG}}",
                 '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" /></svg>',
             )
+
+        while html and (html[-1] == "<br>" or html[-1] == "<hr>"):
+            html.pop()
+
+        html.append("<br>")
+        html.append("<hr>")
 
         template = template.replace(r"{{CONTENT}}", str("\n".join(html)))
         template = template.replace(r"{{PATH}}", f"orv/{file}")
