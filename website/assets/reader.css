@@ -56,6 +56,7 @@ body {
 
 /* This is for the images */
 .orv_image {
+    margin-top: var(--paragraph-space);
     display: flex;
     justify-content: center;
     align-content: center;
