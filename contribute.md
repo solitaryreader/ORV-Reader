@@ -5,11 +5,7 @@ This guide provides detailed instructions on how to contribute to the ORV-Reader
 ---
 
 ## Index
-1. [How to Contribute](#how-to-contribute)
-   - [Forking the Repository](#forking-the-repository)
-   - [Cloning the Repository](#cloning-the-repository)
-   - [Making Changes](#making-changes)
-   - [Submitting a Pull Request](#submitting-a-pull-request)
+1. [How to Contribute](#how-to-contribute-browser---quick-guide)
 2. [Editing Text Files](#editing-text-files)
 3. [Adding Images](#adding-images)
 4. [Improving the Front End](#improving-the-front-end)
@@ -17,41 +13,16 @@ This guide provides detailed instructions on how to contribute to the ORV-Reader
 
 ---
 
-## How to Contribute
+## How to Contribute (Browser - Quick Guide)
 
-### Forking the Repository
-1. Go to the [GitHub repository](https://github.com/Bittu5134/ORV-Reader).
-2. Click the "Fork" button in the top-right corner to create a copy of the repository in your GitHub account.
+1.  **Fork:** Go to [https://github.com/Bittu5134/ORV-Reader](https://github.com/Bittu5134/ORV-Reader) and click "Fork" (top-right).
+2.  **Edit:** In your fork, browse to the file, click the pencil icon ("Edit this file"). Make changes.
+3.  **Commit:** Scroll down, add a commit message, and click "Commit changes" (or "Propose changes").
+4.  **Pull Request:** Go to your fork, click "Compare & pull request". Add title/description, and click "Create pull request".
+5.  **Review:** Wait for maintainer feedback. Update your fork if needed.
 
-### Cloning the Repository
-1. Clone your forked repository to your local machine:
-   ```
-   git clone https://github.com/<your-username>/ORV-Reader.git
-   ```
-   Replace `<your-username>` with your GitHub username.
-
-2. Navigate to the project directory:
-   ```
-   cd ORV-Reader
-   ```
-
-### Making Changes
-1. Identify the files you want to edit. Refer to the sections below for specific instructions on editing text files, adding images, or improving the front end.
-2. Make your changes following the guidelines provided in this document and the [Formatting Guide](./formatting.md).
-
-### Submitting a Pull Request
-1. Commit your changes with a meaningful message:
-   ```
-   git add .
-   git commit -m "Describe your changes"
-   ```
-2. Push your changes to your forked repository:
-   ```
-   git push origin main
-   ```
-3. Go to your forked repository on GitHub and click the "Pull Request" button.
-4. Provide a clear description of the changes you made and submit the PR.
-5. Wait for the maintainers to review your PR. If changes are requested, update your branch and push the changes.
+> [!Note]
+> Most chapters on the [ORV-Reader](http://orv.pages.dev) have a pencil icon which can be used for directly going to the file which you will nead to edit.
 
 ---
 
