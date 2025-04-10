@@ -60,13 +60,19 @@ body {
     display: flex;
     justify-content: center;
     align-content: center;
+    align-items: center;
     width: 100%;
     height: auto;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
 }
 
 .orv_image img {
+    display: block;
+    max-height: 90vh; 
     width: auto;
-    height: min(90vh, 130vw);
+    height: auto;
+    max-width: 100%;
 }
 
 .orv_cover {
