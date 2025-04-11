@@ -483,3 +483,38 @@ function findChapter() {
         chapterSearch.innerHTML = `<div class="chapter_item"><p>Chapter not found</p></div>`;
     }
 }
+
+
+
+let wakeLock = null;
+
+async function requestWakeLock() {
+  try {
+    wakeLock = await navigator.wakeLock.request('screen');
+    console.log('Wake Lock is active!');
+
+    wakeLock.addEventListener('release', () => {
+      console.log('Wake Lock was released.');
+      wakeLock = null;
+    });
+  } catch (err) {
+    console.error(`Failed to acquire wake lock: ${err}`);
+  }
+}
+
+async function releaseWakeLock() {
+  if (wakeLock) {
+    await wakeLock.release();
+    wakeLock = null;
+    console.log('Wake Lock released.');
+  }
+}
+
+// Request wake lock when the page loads
+window.addEventListener('load', requestWakeLock);
+
+// Release wake lock when the page is unloaded (navigated away from or closed)
+window.addEventListener('beforeunload', releaseWakeLock);
+
+// Optional: Release wake lock on history navigation
+window.addEventListener('popstate', releaseWakeLock);
