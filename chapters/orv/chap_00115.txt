@@ -43,7 +43,8 @@ Persephone suddenly approached and grabbed my chin. I refrained from pushing bac
 "Will you be able to handle the storm that will occur if you harm an incarnation in the middle of the scenario?"
 <@>[Hrmm. You are disrespectful. Do you think I can't afford this probability?]
 "The constellations watching me also won't tolerate it."
-Persephone laughed. [Do you think the king will be afraid of such trivial constellations?]
+Persephone laughed. 
+<@>[Do you think the king will be afraid of such trivial constellations?]
 Of course, Hades deserved to be this arrogant. Still, the word 'trivial' shouldn't be used in such a way.
 <!>[The constellation 'Prisoner of the Golden Headband' swings his rod as if he has been provoked.]
 <!>[The constellation 'Demon-like Judge of Fire' pulls out her sword with cold eyes.]
