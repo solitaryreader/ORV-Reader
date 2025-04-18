@@ -1,10 +1,9 @@
 # ORV-Reader
 
-This is my first ever Fan Project, **ORV-Reader**
+ ***ORV-Reader*** is a Fan made project that hosts Fan translations of the popluar webnovel ***Omniscient Reader's Viewpoint!***
 
-Website: [http://orv.pages.dev](http://orv.pages.dev)
-
-I know the name is not that original, But whatever have fun Reading!
+🌐: [https://orv.pages.dev](https://ORV.pages.dev) \
+⭐: Dont forget to star this repository 
 
 ---
 
@@ -65,13 +64,9 @@ For how to contribute to this project follow the given links.
 
 ---
 
-## Legal Information 
+## Star History
 
-Support the creators by purchasing official releases through the links above. Unauthorized distribution or reproduction of content is prohibited.
-
-**Please note:** I do not own the rights to the original novel. All translations available on this page are fan translations sourced from the public internet. The sources for these translations are provided below under the "Sources" heading.
-
-For any inquiries, you can reach me via email at <a href="mailto: ssr7a5134@gmail.com">ssr7a5134@gmail.com</a>
+[![Star History Chart](https://api.star-history.com/svg?repos=Bittu5134/ORV-Reader&type=Date)](https://www.star-history.com/#Bittu5134/ORV-Reader&Date)
 
 ---
 
@@ -84,6 +79,11 @@ The content is sourced from fan translations and online communities, including:
 
 ---
 
-## Star History
+## Legal Information 
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Bittu5134/ORV-Reader&type=Date)](https://www.star-history.com/#Bittu5134/ORV-Reader&Date)
+Support the creators by purchasing official releases through the links above. Unauthorized distribution or reproduction of content is prohibited.
+
+**Please note:** I do not own the rights to the original novel. All translations available on this page are fan translations sourced from the public internet. The sources for these translations are provided under the ["Sources"](#sources) heading.
+
+For any inquiries, you can reach me via email at <a href="mailto: ssr7a5134@gmail.com">ssr7a5134@gmail.com</a>
+
