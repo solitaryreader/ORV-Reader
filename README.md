@@ -1,3 +1,5 @@
+![title image](./website/assets/od-stigma.webp)
+
 # ORV-Reader
 
  ***ORV-Reader*** is a Fan made project that hosts Fan translations of the popluar webnovel ***Omniscient Reader's Viewpoint!***
