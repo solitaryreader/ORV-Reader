@@ -81,3 +81,9 @@ The content is sourced from fan translations and online communities, including:
 - [ORV Discord](https://discord.com/invite/orv)
 - [ORV Subreddit](https://www.reddit.com/r/OmniscientReader)
 - [ORV Epub with Illustrations](https://www.reddit.com/r/OmniscientReader/comments/17el055/linktree_to_orv_epub_with_illustrations_side)
+
+---
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Bittu5134/ORV-Reader&type=Date)](https://www.star-history.com/#Bittu5134/ORV-Reader&Date)
