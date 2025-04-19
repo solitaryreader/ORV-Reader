@@ -2,19 +2,24 @@
 
 # ORV-Reader
 
- ***ORV-Reader*** is a Fan made project that hosts Fan translations of the popluar webnovel ***Omniscient Reader's Viewpoint!***
+ ***ORV-Reader*** is a Fan made project that hosts Unofficial Fan translations of the popluar webnovel ***Omniscient Reader's Viewpoint!***
 
 🌐: [https://orv.pages.dev](https://ORV.pages.dev) \
 ⭐: Dont forget to star this repository 
+
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Bittu5134/ORV-Reader/deploy-website.yml?branch=main&style=flat-square)
+![GitHub Discussions](https://img.shields.io/github/discussions/Bittu5134/ORV-Reader?style=flat-square)
+![GitHub Repo stars](https://img.shields.io/github/stars/Bittu5134/ORV-Reader?style=flat-square)
 
 ---
 
 ## About ORV
 
 **Omniscient Reader's Viewpoint (ORV)** is a captivating web novel following Kim Dokja, a reader who becomes part of the world he once read about. The series includes:
-- **Main Story**: The original ORV chapters.
-- **Sequel**: Chapters 553 and beyond.
-- **Side Stories**: Additional tales expanding the ORV universe.
+
+![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FBittu5134%2FORV-Reader%2Frefs%2Fheads%2Fmain%2Fwebsite%2Fmeta%2Forv_meta.json&query=%24.chapters&suffix=%20Chapters&style=flat-square&label=Main%20Story) \
+![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FBittu5134%2FORV-Reader%2Frefs%2Fheads%2Fmain%2Fwebsite%2Fmeta%2Fcont_meta.json&query=%24.chapters&suffix=%20Chapters&style=flat-square&label=ORV%20Sequel) \
+![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FBittu5134%2FORV-Reader%2Frefs%2Fheads%2Fmain%2Fwebsite%2Fmeta%2Fside_meta.json&query=%24.chapters&suffix=%20Chapters&style=flat-square&label=ORV%20One%20Shots)
 
 Learn more about the authors **Sing Shong**:  
 [IMDB Profile](https://www.imdb.com/name/nm15543141/bio/)
@@ -85,7 +90,8 @@ The content is sourced from fan translations and online communities, including:
 
 Support the creators by purchasing official releases through the links above. Unauthorized distribution or reproduction of content is prohibited.
 
+You can find the license for this page [here](./LICENSE.md)
+
 **Please note:** I do not own the rights to the original novel. All translations available on this page are fan translations sourced from the public internet. The sources for these translations are provided under the ["Sources"](#sources) heading.
 
 For any inquiries, you can reach me via email at <a href="mailto: ssr7a5134@gmail.com">ssr7a5134@gmail.com</a>
-
