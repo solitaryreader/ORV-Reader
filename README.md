@@ -17,9 +17,9 @@
 
 **Omniscient Reader's Viewpoint (ORV)** is a captivating web novel following Kim Dokja, a reader who becomes part of the world he once read about. The series includes:
 
-![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FBittu5134%2FORV-Reader%2Frefs%2Fheads%2Fmain%2Fwebsite%2Fmeta%2Forv_meta.json&query=%24.chapters&suffix=%20Chapters&style=flat-square&label=Main%20Story) \
-![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FBittu5134%2FORV-Reader%2Frefs%2Fheads%2Fmain%2Fwebsite%2Fmeta%2Fcont_meta.json&query=%24.chapters&suffix=%20Chapters&style=flat-square&label=ORV%20Sequel) \
-![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FBittu5134%2FORV-Reader%2Frefs%2Fheads%2Fmain%2Fwebsite%2Fmeta%2Fside_meta.json&query=%24.chapters&suffix=%20Chapters&style=flat-square&label=ORV%20One%20Shots)
+[![Main Story](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FBittu5134%2FORV-Reader%2Frefs%2Fheads%2Fmain%2Fwebsite%2Fmeta%2Forv_meta.json&query=%24.chapters&suffix=%20Chapters&style=flat-square&label=Main%20Story)](https://orv.pages.dev/stories/orv) \
+[![ORV Sequel](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FBittu5134%2FORV-Reader%2Frefs%2Fheads%2Fmain%2Fwebsite%2Fmeta%2Fcont_meta.json&query=%24.chapters&suffix=%20Chapters&style=flat-square&label=ORV%20Sequel)](https://orv.pages.dev/stories/cont) \
+[![One Shot](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FBittu5134%2FORV-Reader%2Frefs%2Fheads%2Fmain%2Fwebsite%2Fmeta%2Fside_meta.json&query=%24.chapters&suffix=%20Chapters&style=flat-square&label=ORV%20One%20Shots)](https://orv.pages.dev/stories/side)
 
 Learn more about the authors **Sing Shong**:  
 [IMDB Profile](https://www.imdb.com/name/nm15543141/bio/)
@@ -86,10 +86,11 @@ For how to contribute to this project follow the given links.
 ## Sources
 
 The content is sourced from fan translations and online communities, including:
-- [ORV Wiki](https://omniscient-readers-viewpoint.fandom.com/wiki/Omniscient_Reader%E2%80%99s_Viewpoint_WiKi)
-- [ORV Discord](https://discord.com/invite/orv)
-- [ORV Subreddit](https://www.reddit.com/r/OmniscientReader)
-- [ORV Epub with Illustrations](https://www.reddit.com/r/OmniscientReader/comments/17el055/linktree_to_orv_epub_with_illustrations_side)
+
+[![Fandom Wiki](https://img.shields.io/badge/WIKI-%23032133?style=for-the-badge&logo=fandom&logoColor=fff)](https://omniscient-readers-viewpoint.fandom.com/wiki/Omniscient_Reader%E2%80%99s_Viewpoint_Wiki)
+[![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/OmniscientReader)
+[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/invite/orv)
+[![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://www.reddit.com/r/OmniscientReader/comments/17el055/linktree_to_orv_epub_with_illustrations_side)
 
 ---
 
