@@ -73,11 +73,18 @@ For how to contribute to this project follow the given links.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Bittu5134/ORV-Reader&type=Date)](https://www.star-history.com/#Bittu5134/ORV-Reader&Date)
+<a href="https://www.star-history.com/#Bittu5134/ORV-Reader&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Bittu5134/ORV-Reader&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Bittu5134/ORV-Reader&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Bittu5134/ORV-Reader&type=Date" />
+ </picture>
+</a>
 
 ---
 
 ## Sources
+
 The content is sourced from fan translations and online communities, including:
 - [ORV Wiki](https://omniscient-readers-viewpoint.fandom.com/wiki/Omniscient_Reader%E2%80%99s_Viewpoint_WiKi)
 - [ORV Discord](https://discord.com/invite/orv)
@@ -90,7 +97,7 @@ The content is sourced from fan translations and online communities, including:
 
 Support the creators by purchasing official releases through the links above. Unauthorized distribution or reproduction of content is prohibited.
 
-You can find the license for this page [here](./LICENSE.md)
+You can find the license for this project [here](./LICENSE.md)
 
 **Please note:** I do not own the rights to the original novel. All translations available on this page are fan translations sourced from the public internet. The sources for these translations are provided under the ["Sources"](#sources) heading.
 
