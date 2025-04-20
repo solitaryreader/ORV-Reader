@@ -109,7 +109,8 @@ I've already seen two, so let's just take a look at the rest.
 How do I pay for the next episode?
 —(Omniscient Reader's Viewpoint, Chapter 25)
 +
-<!>[Pay coins to see additional comments.]
+[Pay coins to see additional comments.]
++
 For some reason, I felt like I could trust this man.
 Feeling unnecessarily apologetic, I held out my hand to him.
 "Allow me to introduce myself."
@@ -191,4 +192,3 @@ And a screen popped up in front of me.
 
 Author's Note
 Doki doki
-
