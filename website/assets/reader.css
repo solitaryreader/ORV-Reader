@@ -272,6 +272,11 @@ select {
     backdrop-filter: brightness(0) invert(100%);
 }
 
+.setting_item input,
+select[type="text"] {
+    backdrop-filter: brightness(0) invert(100%);
+}
+
 /* for download tab */
 
 .download {
