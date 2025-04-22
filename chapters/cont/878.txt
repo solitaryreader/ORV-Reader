@@ -36,7 +36,7 @@ Jophiel asked.
 "What nonsense are you talking about?"
 <@>[Why are you using 'Poker Face'?]
 <!>[Exclusive skill, 'Poker Face LV.???', is activated!]
-<!>[Poker Face is a skill used to avoid being caught in front of Lie Detection.]
+<@>[Poker Face is a skill used to avoid being caught in front of Lie Detection.]
 Han Sooyoung pursed her lips and turned off the skill.
 "It's just a habit. Are archangels originally this interested in other people's business?"
 It had already been two years since Kim Dokja had appeared in this world.
