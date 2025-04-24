@@ -27,8 +27,8 @@ def create_reddit_post(title, selftext):
         )
 
         subreddit = reddit.subreddit(subreddit_name)
-        submission = subreddit.submit(title, selftext=selftext)
-        print(f"Successfully created post: {submission.url}")
+        submission = subreddit.submit(title, selftext=selftext, spoiler=True)
+        print(f"Successfully created spoiler post: {submission.url}")
     except praw.exceptions.RedditAPIException as e:
         print(f"Error creating post: {e}")
     except Exception as e:
@@ -74,7 +74,36 @@ def extract_title_from_json(json_file_path):
 if __name__ == "__main__":
     extracted_title = extract_title_from_json(json_file_path)
     if extracted_title:
-        selftext = "This is a test post created using PRAW and a title extracted from a JSON file."
+        selftext = """**Author:** Sing Shong \
+**Release Date:** RELEASE_DATE
+
+Discussions threads for the latest chapters of ORV Side Stories.
+
+---
+
+**Read the chapter**
+- [Munipa](https://link.munpia.com/n/104753)
+- [Naver](http://naver.me/5eOtt9rN)
+- [ORV-Reader](https://orv.pages.dev/stories/cont/read/ch_INDEX) (Unofficial Fan TL)
+
+---
+
+All Discussions: [Github](https://github.com/Bittu5134/ORV-Reader/discussions)
+Previous Posts: [Reddit](https://www.reddit.com/r/OmniscientReader/search/?q=author%3Arealnpc_+title%3Adiscussion&type=posts&sort=new)
+
+---
+
+Please support the Authors by purchasing chapters on Munipa or Naver.
+
+You can read the English Translations on [ORV-Reader](https://orv.pages.dev/).
+
+If for some reason you can't buy the chapters then consider writing Reviews for ORV on Goodreads and/or other places.
+
+Spreading word about a Story is another good way to show your appreciation for the Authors.
+
+---
+
+***This post was (maybe?) not created by a Bot :)***"""
         create_reddit_post(extracted_title, selftext)
     else:
         print("Could not extract a valid title. Not creating Reddit post.")
