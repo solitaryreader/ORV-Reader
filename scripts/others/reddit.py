@@ -16,7 +16,7 @@ json_file_path = "./website/meta/cont.json"
 def create_reddit_post(title, selftext):
     if not all([client_id, client_secret, user_agent, username, password, subreddit_name]):
         print("Error: One or more Reddit API credentials or the subreddit name are not set as environment variables.")
-        return None  # Return None if post creation fails
+        return None
 
     try:
         reddit = praw.Reddit(
@@ -28,9 +28,23 @@ def create_reddit_post(title, selftext):
         )
 
         subreddit = reddit.subreddit(subreddit_name)
-        submission = subreddit.submit(title, selftext=selftext, spoiler=True)
-        print(f"Successfully created spoiler post: {submission.url}")
-        return submission  # Return the Submission object
+
+        # Fetch flair templates and find the one matching "Side Stories"
+        flair_id = None
+        for flair in subreddit.flair.link_templates:
+            if flair['text'].lower() == "side stories":
+                flair_id = flair['id']
+                break
+
+        if flair_id:
+            submission = subreddit.submit(title, selftext=selftext, spoiler=True, flair_id=flair_id)
+            print(f"Successfully created spoiler post with flair: {submission.url}")
+        else:
+            submission = subreddit.submit(title, selftext=selftext, spoiler=True)
+            print(f"Successfully created spoiler post (no matching flair found): {submission.url}")
+        
+        return submission
+
     except praw.exceptions.RedditAPIException as e:
         print(f"Error creating post: {e}")
         return None
@@ -38,26 +52,6 @@ def create_reddit_post(title, selftext):
         print(f"An unexpected error occurred: {e}")
         return None
 
-def unpin_previous_sticky(reddit, subreddit_name):
-    try:
-        subreddit = reddit.subreddit(subreddit_name)
-        search_results = subreddit.search("Side Stories", sort='new', limit=5)
-        print(search_results)
-        for post in search_results:
-            if isinstance(post, praw.models.Submission):
-                if post.author and post.author.name.lower() == username.lower() and post.stickied:
-                    if re.match(r"^Side Stories \d{3}", post.title):
-                        post.mod.sticky(state=False)
-                        print(f"Unpinned previous sticky post: '{post.title}'")
-                        return True
-        print("No matching stickied post found to unpin.")
-        return False
-    except praw.exceptions.RedditAPIException as e:
-        print(f"Error searching for or unpinning post: {e}")
-        return False
-    except Exception as e:
-        print(f"An unexpected error occurred while searching/unpinning: {e}")
-        return False
 
 
 def pin_reddit_post(submission):
