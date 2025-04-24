@@ -17,8 +17,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt  # Assuming you have a requirements.txt file
+          pip install praw
 
       - name: Run Reddit posting script
         env:
