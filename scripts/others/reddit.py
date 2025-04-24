@@ -45,7 +45,7 @@ def extract_title_from_json(json_file_path):
             highest_index_entry = max(data, key=lambda item: item.get('index', -1), default=None)
 
             if highest_index_entry and "index" in highest_index_entry and "title" in highest_index_entry:
-                chapter_number = highest_index_entry["index"]
+                chapter_number = highest_index_entry["index"]+1
                 full_title = highest_index_entry["title"]
                 parts = full_title.split(" Episode ", 1)
                 if len(parts) == 2:
