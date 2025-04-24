@@ -9,7 +9,7 @@ user_agent = "by u/RealNPC_"
 username = "RealNPC_"
 password = os.environ.get("REDDIT_PASSWORD")
 subreddit_name = "test"
-json_file_path = "/website/meta/cont.json"
+json_file_path = "./website/meta/cont.json"
 
 def create_reddit_post(title, selftext):
     if not all([client_id, client_secret, user_agent, username, password, subreddit_name]):
@@ -35,8 +35,9 @@ def create_reddit_post(title, selftext):
 
 def extract_title_from_json(json_file_path):
     try:
-        with open(json_file_path, 'r') as f:
-            data = json.load(f)
+        
+        with open("./website/meta/cont.json", "r", encoding="utf-8") as f:
+            data = json.loads(f.read())
             if not data or not isinstance(data, list):
                 print("Error: Invalid JSON format.")
                 return None
