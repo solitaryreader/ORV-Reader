@@ -80,7 +80,7 @@ if __name__ == "__main__":
         selftext = f"""**Author:** Sing Shong \\
 **Release Date:** {current_date}
 
-Discussions threads for the latest chapters of ORV Side Stories.
+Discussion thread for the latest chapter of ORV Side Stories.
 
 ___
 
@@ -101,7 +101,7 @@ Please support the Authors by purchasing chapters on Munipa or Naver.
 
 You can read the English Translations on [ORV-Reader](https://orv.pages.dev/). \\
 If for some reason you can't buy the chapters then consider writing Reviews for ORV on Goodreads and/or other places. \\
-Spreading word about a Story is another good way to show your appreciation for the Authors. \\
+Spreading word about a Story is another good way to show your appreciation for the Authors.
 
 ^(***This post was \(maybe?\) not created by a Bot :\)***)"""
         create_reddit_post(extracted_title, selftext)
