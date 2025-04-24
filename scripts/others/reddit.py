@@ -10,7 +10,7 @@ client_secret = os.environ.get("REDDIT_CLIENT_SECRET")
 user_agent = "by u/RealNPC_"
 username = "RealNPC_"
 password = os.environ.get("REDDIT_PASSWORD")
-subreddit_name = "test"
+subreddit_name = "OmniscientReader"
 json_file_path = "./website/meta/cont.json"
 
 def create_reddit_post(title, selftext):
@@ -77,7 +77,7 @@ if __name__ == "__main__":
     extracted_title = extract_title_from_json(json_file_path)
     current_date = datetime.now().strftime("%d-%m-%Y")
     if extracted_title:
-        selftext = f"""**Author:** Sing Shong \
+        selftext = f"""**Author:** Sing Shong \\
 **Release Date:** {current_date}
 
 Discussion thread for the latest chapter of ORV Side Stories.
@@ -92,8 +92,8 @@ ___
 
 ___
 
-All Discussions: [Github](https://github.com/Bittu5134/ORV-Reader/discussions) \
-Previous Posts: [Reddit](https://www.reddit.com/r/OmniscientReader/search/?q=author%3Arealnpc_+title%3Adiscussion&type=posts&sort=new) \
+All Discussions: [Github](https://github.com/Bittu5134/ORV-Reader/discussions) \\
+Previous Posts: [Reddit](https://www.reddit.com/r/OmniscientReader/search/?q=author%3Arealnpc_+title%3Adiscussion&type=posts&sort=new) \\
 Chapter Comments: [ORV-Reader](https://orv.pages.dev/stories/cont/read/ch_{chapter_number}#comments)
 
 ___
