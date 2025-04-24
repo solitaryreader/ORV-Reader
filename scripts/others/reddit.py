@@ -134,7 +134,7 @@ ___
 
 ___
 
-^(***This post was \(maybe?\) not created by a Bot :\)***)"""
+^(***This post was \\(maybe?\) not created by a Bot :\\)***)"""
         new_submission = create_reddit_post(extracted_title, selftext)
         if new_submission:
             pin_reddit_post(new_submission)
