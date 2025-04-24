@@ -4,7 +4,7 @@ import os
 # Retrieve credentials from environment variables
 client_id = os.environ.get("REDDIT_CLIENT_ID")
 client_secret = os.environ.get("REDDIT_CLIENT_SECRET")
-user_agent = os.environ.get("REDDIT_USER_AGENT")
+user_agent = "by u/RealNPC_"
 username = "RealNPC_"
 password = os.environ.get("REDDIT_PASSWORD")
 subreddit_name = "test"
