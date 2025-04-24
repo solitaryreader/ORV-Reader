@@ -23,6 +23,5 @@ jobs:
         env:
           REDDIT_CLIENT_ID: ${{ env.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET: ${{ env.REDDIT_CLIENT_SECRET }}
-          REDDIT_USER_AGENT: ${{ env.REDDIT_USER_AGENT }}
           REDDIT_PASSWORD: ${{ env.REDDIT_PASSWORD }}
         run: python scripts/others/reddit.py
