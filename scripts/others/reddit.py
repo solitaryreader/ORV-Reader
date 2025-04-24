@@ -2,6 +2,7 @@ import json
 import os
 import praw
 import re
+from datetime import datetime
 
 # Retrieve credentials from environment variables
 client_id = os.environ.get("REDDIT_CLIENT_ID")
@@ -35,6 +36,7 @@ def create_reddit_post(title, selftext):
         print(f"An unexpected error occurred: {e}")
 
 def extract_title_from_json(json_file_path):
+    global chapter_number
     try:
         with open(json_file_path, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -73,9 +75,10 @@ def extract_title_from_json(json_file_path):
 
 if __name__ == "__main__":
     extracted_title = extract_title_from_json(json_file_path)
+    current_date = datetime.now().strftime("%d-%m-%Y")
     if extracted_title:
-        selftext = """**Author:** Sing Shong \\
-**Release Date:** date
+        selftext = f"""**Author:** Sing Shong \\
+**Release Date:** {current_date}
 
 Discussions threads for the latest chapters of ORV Side Stories.
 
@@ -85,7 +88,7 @@ ___
 
 * [Munipa](https://link.munpia.com/n/104753)
 * [Naver](http://naver.me/5eOtt9rN)
-* [ORV-Reader](https://orv.pages.dev/stories/cont/read/ch_INDEX) (Unofficial Fan TL)
+* [ORV-Reader](https://orv.pages.dev/stories/cont/read/ch_{chapter_number}) (Unofficial Fan TL)
 
 ___
 
@@ -100,7 +103,7 @@ You can read the English Translations on [ORV-Reader](https://orv.pages.dev/). \
 If for some reason you can't buy the chapters then consider writing Reviews for ORV on Goodreads and/or other places. \\
 Spreading word about a Story is another good way to show your appreciation for the Authors. \\
 
-^(***This post was (maybe?) not created by a Bot :)***)"""
+^(***This post was \(maybe?\) not created by a Bot :\)***)"""
         create_reddit_post(extracted_title, selftext)
     else:
         print("Could not extract a valid title. Not creating Reddit post.")
