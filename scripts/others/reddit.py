@@ -74,7 +74,7 @@ def extract_title_from_json(json_file_path):
 if __name__ == "__main__":
     extracted_title = extract_title_from_json(json_file_path)
     if extracted_title:
-        selftext = """**Author:** Sing Shong \
+        selftext = """**Author:** Sing Shong \\
 **Release Date:** date
 
 Discussions threads for the latest chapters of ORV Side Stories.
