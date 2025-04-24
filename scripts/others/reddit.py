@@ -46,7 +46,7 @@ def unpin_previous_sticky(reddit, subreddit_name):
         for post in search_results:
             if isinstance(post, praw.models.Submission):
                 if post.author and post.author.name.lower() == username.lower() and post.stickied:
-                    if re.match(r"Side Stories \d{3}", post.title):
+                    if re.match(r"^Side Stories \d{3}", post.title):
                         post.mod.sticky(state=False)
                         print(f"Unpinned previous sticky post: '{post.title}'")
                         return True
@@ -67,7 +67,7 @@ def pin_reddit_post(submission):
 
     try:
         subreddit = submission.subreddit
-        submission.mod.sticky(state=True, num=1)
+        submission.mod.sticky(state=True, bottom=False)
         print(f"Post '{submission.title}' pinned as the first sticky in r/{subreddit.display_name}")
 
     except praw.exceptions.RedditAPIException as e:
