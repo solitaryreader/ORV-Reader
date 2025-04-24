@@ -1,6 +1,7 @@
 import json
 import os
 import praw
+import re
 
 # Retrieve credentials from environment variables
 client_id = os.environ.get("REDDIT_CLIENT_ID")
@@ -35,9 +36,8 @@ def create_reddit_post(title, selftext):
 
 def extract_title_from_json(json_file_path):
     try:
-        
-        with open("./website/meta/cont.json", "r", encoding="utf-8") as f:
-            data = json.loads(f.read())
+        with open(json_file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
             if not data or not isinstance(data, list):
                 print("Error: Invalid JSON format.")
                 return None
@@ -45,15 +45,15 @@ def extract_title_from_json(json_file_path):
             highest_index_entry = max(data, key=lambda item: item.get('index', -1), default=None)
 
             if highest_index_entry and "index" in highest_index_entry and "title" in highest_index_entry:
-                chapter_number = highest_index_entry["index"]+1
+                chapter_number = highest_index_entry["index"] + 1
                 full_title = highest_index_entry["title"]
-                parts = full_title.split(" Episode ", 1)
-                if len(parts) == 2:
-                    episode_part = parts[0].split()
-                    episode_number_str = episode_part[-1].rstrip('.')
-                    rest_of_title_from_json = parts[1]
-                    # Still need to know where "Side Stories" and "Avatar (1) ‒ [Release Discussion]" come from
-                    formatted_title = f"Side Stories {chapter_number} • Episode {episode_number_str} ‒ {rest_of_title_from_json}"
+
+                episode_match = re.match(r"(\d+)\s*Episode\s*(\d+)\s*(.*)", full_title)
+
+                if episode_match:
+                    episode_number = episode_match.group(2)
+                    remaining_title = episode_match.group(3).strip()
+                    formatted_title = f"Side Stories {chapter_number} • Episode {episode_number} ‒ {remaining_title} ‒ [Release Discussion]"
                     return formatted_title
                 else:
                     print("Warning: Unexpected title format in JSON.")
