@@ -3,12 +3,6 @@ name: Manual Reddit Post
 on:
   workflow_dispatch:
 
-env:
-  REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
-  REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
-  REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
-  REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
-
 jobs:
   post_to_reddit:
     runs-on: ubuntu-latest
