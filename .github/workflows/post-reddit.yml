@@ -16,8 +16,10 @@ jobs:
           python-version: '3.x'
 
       - name: Install PRAW
-        pip install --upgrade pip
-        run: pip install praw
+        run: |
+          pip install praw
+          pip install --upgrade pip
+
 
       - name: Run Reddit posting script
         env:
