@@ -38,6 +38,26 @@ def create_reddit_post(title, selftext):
         print(f"An unexpected error occurred: {e}")
         return None
 
+def unpin_previous_sticky(reddit, subreddit_name):
+    try:
+        subreddit = reddit.subreddit(subreddit_name)
+        query = f"author:{username} title:'Side Stories' subreddit:'{subreddit_name}'"
+        search_results = subreddit.search(query=query, sort='new', limit=5)  # Check the last few to be safe
+
+        for post in search_results:
+            if post.stickied and re.match(r"Side Stories \d{3}", post.title):
+                post.mod.sticky(state=False)
+                print(f"Unpinned previous sticky post: '{post.title}' by u/{post.author.name} from r/{subreddit.display_name}")
+                return True  # Indicate that a post was unpinned
+        print("No matching stickied post found to unpin.")
+        return False
+    except praw.exceptions.RedditAPIException as e:
+        print(f"Error searching for or unpinning post: {e}")
+        return False
+    except Exception as e:
+        print(f"An unexpected error occurred while searching/unpinning: {e}")
+        return False
+
 def pin_reddit_post(submission):
     if not submission:
         print("No submission object provided, cannot pin.")
@@ -45,24 +65,13 @@ def pin_reddit_post(submission):
 
     try:
         subreddit = submission.subreddit
-        stickied_submissions = subreddit.mod.stickied()
-
-        for sticky in stickied_submissions:
-            if sticky.author.name == "RealNPC_":
-                title_match = re.match(r"Side Stories \d{3}", sticky.title)
-                if title_match:
-                    sticky.mod.sticky(state=False)
-                    print(f"Unpinned matching sticky post: '{sticky.title}' by u/{sticky.author.name} from r/{subreddit.display_name}")
-                    break  # Assuming only one such sticky exists
-
-        # Pin the new submission as the first sticky
         submission.mod.sticky(state=True, num=1)
         print(f"Post '{submission.title}' pinned as the first sticky in r/{subreddit.display_name}")
 
     except praw.exceptions.RedditAPIException as e:
-        print(f"Error pinning/unpinning post: {e}")
+        print(f"Error pinning post: {e}")
     except Exception as e:
-        print(f"An unexpected error occurred while pinning/unpinning: {e}")
+        print(f"An unexpected error occurred while pinning: {e}")
 
 def extract_title_from_json(json_file_path):
     global chapter_number
@@ -105,7 +114,19 @@ def extract_title_from_json(json_file_path):
 if __name__ == "__main__":
     extracted_title = extract_title_from_json(json_file_path)
     current_date = datetime.now().strftime("%d-%m-%Y")
-    if extracted_title:
+
+    if not all([client_id, client_secret, user_agent, username, password, subreddit_name]):
+        print("Error: Reddit API credentials or subreddit name not fully set. Cannot proceed.")
+    elif extracted_title:
+        reddit = praw.Reddit(
+            client_id=client_id,
+            client_secret=client_secret,
+            user_agent=user_agent,
+            username=username,
+            password=password,
+        )
+        unpin_previous_sticky(reddit, subreddit_name)
+
         selftext = f"""**Author:** Sing Shong \\
 **Release Date:** {current_date}
 
