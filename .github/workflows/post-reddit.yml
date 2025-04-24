@@ -15,10 +15,10 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install PRAW
+      - name: Install dependencies
         run: |
-          pip install praw
-
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Assuming you have a requirements.txt file
 
       - name: Run Reddit posting script
         env:
