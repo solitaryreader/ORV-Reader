@@ -67,7 +67,7 @@ def pin_reddit_post(submission):
 
     try:
         subreddit = submission.subreddit
-        submission.mod.sticky(state=True, bottom=False)
+        submission.mod.sticky(state=True, bottom=True)
         print(f"Post '{submission.title}' pinned as the first sticky in r/{subreddit.display_name}")
 
     except praw.exceptions.RedditAPIException as e:
