@@ -41,14 +41,15 @@ def create_reddit_post(title, selftext):
 def unpin_previous_sticky(reddit, subreddit_name):
     try:
         subreddit = reddit.subreddit(subreddit_name)
-        query = f"author:{username} title:'Side Stories' subreddit:'{subreddit_name}'"
-        search_results = subreddit.search(query=query, sort='new', limit=5)  # Check the last few to be safe
-
+        search_results = subreddit.search("Side Stories", sort='new', limit=5)
+        print(search_results)
         for post in search_results:
-            if post.stickied and re.match(r"Side Stories \d{3}", post.title):
-                post.mod.sticky(state=False)
-                print(f"Unpinned previous sticky post: '{post.title}' by u/{post.author.name} from r/{subreddit.display_name}")
-                return True  # Indicate that a post was unpinned
+            if isinstance(post, praw.models.Submission):
+                if post.author and post.author.name.lower() == username.lower() and post.stickied:
+                    if re.match(r"Side Stories \d{3}", post.title):
+                        post.mod.sticky(state=False)
+                        print(f"Unpinned previous sticky post: '{post.title}'")
+                        return True
         print("No matching stickied post found to unpin.")
         return False
     except praw.exceptions.RedditAPIException as e:
@@ -57,6 +58,7 @@ def unpin_previous_sticky(reddit, subreddit_name):
     except Exception as e:
         print(f"An unexpected error occurred while searching/unpinning: {e}")
         return False
+
 
 def pin_reddit_post(submission):
     if not submission:
