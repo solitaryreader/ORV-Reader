@@ -51,7 +51,28 @@ def create_reddit_post(title, selftext):
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
         return None
+        
 
+def unpin_previous_sticky(reddit, subreddit_name):
+    try:
+        subreddit = reddit.subreddit(subreddit_name)
+        search_results = subreddit.search("Side Stories", sort='new', limit=5)
+        print(search_results)
+        for post in search_results:
+            if isinstance(post, praw.models.Submission):
+                if post.author and post.author.name.lower() == username.lower() and post.stickied:
+                    if re.match(r"^Side Stories \d{3}", post.title):
+                        post.mod.sticky(state=False)
+                        print(f"Unpinned previous sticky post: '{post.title}'")
+                        return True
+        print("No matching stickied post found to unpin.")
+        return False
+    except praw.exceptions.RedditAPIException as e:
+        print(f"Error searching for or unpinning post: {e}")
+        return False
+    except Exception as e:
+        print(f"An unexpected error occurred while searching/unpinning: {e}")
+        return False
 
 
 def pin_reddit_post(submission):
@@ -61,31 +82,14 @@ def pin_reddit_post(submission):
 
     try:
         subreddit = submission.subreddit
-        submission.mod.sticky(state=True, bottom=True)
+        submission.mod.sticky(state=True, bottom=False)
         print(f"Post '{submission.title}' pinned as the first sticky in r/{subreddit.display_name}")
 
     except praw.exceptions.RedditAPIException as e:
         print(f"Error pinning post: {e}")
     except Exception as e:
         print(f"An unexpected error occurred while pinning: {e}")
-        
-def set_flair(submission, flair_text, flair_template_id=None):
-    if not submission:
-        print("No submission object provided, cannot set flair.")
-        return
 
-    try:
-        if flair_template_id:
-            submission.flair.select(flair_template_id)
-            print(f"Successfully set flair using template ID: {flair_template_id}")
-        else:
-            submission.flair(text=flair_text, flair_class='')  # flair_class can be set if needed
-            print(f"Successfully set flair with text: '{flair_text}'")
-    except praw.exceptions.RedditAPIException as e:
-        print(f"Error setting flair: {e}")
-    except Exception as e:
-        print(f"An unexpected error occurred while setting flair: {e}")
-        
 def extract_title_from_json(json_file_path):
     global chapter_number
     try:
@@ -171,7 +175,6 @@ ___
 ^(***This post was \\(maybe?\) not created by a Bot :\\)***)"""
         new_submission = create_reddit_post(extracted_title, selftext)
         if new_submission:
-            set_flair(new_submission, "Side Stories")
             pin_reddit_post(new_submission)
     else:
         print("Could not extract a valid title. Not creating or pinning Reddit post.")
