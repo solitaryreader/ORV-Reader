@@ -79,23 +79,28 @@ if __name__ == "__main__":
 
 Discussions threads for the latest chapters of ORV Side Stories.
 
+___
+
 **Read the chapter**
 
 * [Munipa](https://link.munpia.com/n/104753)
 * [Naver](http://naver.me/5eOtt9rN)
 * [ORV-Reader](https://orv.pages.dev/stories/cont/read/ch_INDEX) (Unofficial Fan TL)
 
-All Discussions: [Github](https://github.com/Bittu5134/ORV-Reader/discussions) Previous Posts: [Reddit](https://www.reddit.com/r/OmniscientReader/search/?q=author%3Arealnpc_+title%3Adiscussion&type=posts&sort=new)
+___
+
+All Discussions: [Github](https://github.com/Bittu5134/ORV-Reader/discussions) \\
+Previous Posts: [Reddit](https://www.reddit.com/r/OmniscientReader/search/?q=author%3Arealnpc_+title%3Adiscussion&type=posts&sort=new)
+
+___
 
 Please support the Authors by purchasing chapters on Munipa or Naver.
 
-You can read the English Translations on [ORV-Reader](https://orv.pages.dev/).
+You can read the English Translations on [ORV-Reader](https://orv.pages.dev/). \\
+If for some reason you can't buy the chapters then consider writing Reviews for ORV on Goodreads and/or other places. \\
+Spreading word about a Story is another good way to show your appreciation for the Authors. \\
 
-If for some reason you can't buy the chapters then consider writing Reviews for ORV on Goodreads and/or other places.
-
-Spreading word about a Story is another good way to show your appreciation for the Authors.
-
-***This post was (maybe?) not created by a Bot :)***"""
+^(***This post was (maybe?) not created by a Bot :)***)"""
         create_reddit_post(extracted_title, selftext)
     else:
         print("Could not extract a valid title. Not creating Reddit post.")
