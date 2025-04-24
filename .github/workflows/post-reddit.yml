@@ -26,4 +26,4 @@ jobs:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
           REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
-        run: python your_script_directory/reddit.py  # Adjust path if needed
+        run: python scripts/other/reddit.py  # Adjust path if needed
