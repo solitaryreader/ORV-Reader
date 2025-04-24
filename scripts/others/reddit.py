@@ -10,13 +10,13 @@ client_secret = os.environ.get("REDDIT_CLIENT_SECRET")
 user_agent = "by u/RealNPC_"
 username = "RealNPC_"
 password = os.environ.get("REDDIT_PASSWORD")
-subreddit_name = "OmniscientReader"
+subreddit_name = os.environ.get("SUBREDDIT")
 json_file_path = "./website/meta/cont.json"
 
 def create_reddit_post(title, selftext):
     if not all([client_id, client_secret, user_agent, username, password, subreddit_name]):
         print("Error: One or more Reddit API credentials or the subreddit name are not set as environment variables.")
-        return
+        return None  # Return None if post creation fails
 
     try:
         reddit = praw.Reddit(
@@ -30,10 +30,39 @@ def create_reddit_post(title, selftext):
         subreddit = reddit.subreddit(subreddit_name)
         submission = subreddit.submit(title, selftext=selftext, spoiler=True)
         print(f"Successfully created spoiler post: {submission.url}")
+        return submission  # Return the Submission object
     except praw.exceptions.RedditAPIException as e:
         print(f"Error creating post: {e}")
+        return None
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+        return None
+
+def pin_reddit_post(submission):
+    if not submission:
+        print("No submission object provided, cannot pin.")
+        return
+
+    try:
+        subreddit = submission.subreddit
+        stickied_submissions = subreddit.mod.stickied()
+
+        for sticky in stickied_submissions:
+            if sticky.author.name == "RealNPC_":
+                title_match = re.match(r"Side Stories \d{3}", sticky.title)
+                if title_match:
+                    sticky.mod.sticky(state=False)
+                    print(f"Unpinned matching sticky post: '{sticky.title}' by u/{sticky.author.name} from r/{subreddit.display_name}")
+                    break  # Assuming only one such sticky exists
+
+        # Pin the new submission as the first sticky
+        submission.mod.sticky(state=True, num=1)
+        print(f"Post '{submission.title}' pinned as the first sticky in r/{subreddit.display_name}")
+
+    except praw.exceptions.RedditAPIException as e:
+        print(f"Error pinning/unpinning post: {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred while pinning/unpinning: {e}")
 
 def extract_title_from_json(json_file_path):
     global chapter_number
@@ -99,13 +128,15 @@ Chapter Comments: [ORV-Reader](https://orv.pages.dev/stories/cont/read/ch_{chapt
 ___
 
 - Please support the Authors by purchasing chapters on Munipa or Naver.
-- You can read the English Translations on [ORV-Reader](https://orv.pages.dev/). 
+- You can read the English Translations on [ORV-Reader](https://orv.pages.dev/).
 - If for some reason you can't buy the chapters then consider writing Reviews for ORV on Goodreads and/or other places.
 - Spreading word about a Story is another good way to show your appreciation for the Authors.
 
 ___
 
 ^(***This post was \(maybe?\) not created by a Bot :\)***)"""
-        create_reddit_post(extracted_title, selftext)
+        new_submission = create_reddit_post(extracted_title, selftext)
+        if new_submission:
+            pin_reddit_post(new_submission)
     else:
-        print("Could not extract a valid title. Not creating Reddit post.")
+        print("Could not extract a valid title. Not creating or pinning Reddit post.")
