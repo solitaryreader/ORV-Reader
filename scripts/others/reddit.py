@@ -56,7 +56,7 @@ def create_reddit_post(title, selftext):
 def unpin_previous_sticky(reddit, subreddit_name):
     try:
         subreddit = reddit.subreddit(subreddit_name)
-        search_results = subreddit.search("Side Stories", sort='new', limit=5)
+        search_results = subreddit.search('title:"Side Stories"', sort='new', limit=5)
         print(search_results)
         for post in search_results:
             if isinstance(post, praw.models.Submission):
