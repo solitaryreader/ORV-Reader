@@ -102,7 +102,7 @@ If a god of another world had appeared, it meant that there was a 'probability' 
 My heart sank.
 <&>「It’s because of me.」
 Up until now, my existence had been protected by a 'scenario'.
-<@>[The Management Bureau does not accept your existence.]
+<!>[The Management Bureau does not accept your existence.]
 However, there was no scenario assigned to me in this worldline. In other words, the current me was an existence that was not needed in the 'scenario'.
 Tsutsutsutsut!
 The spark that was immediately felt in my incarnation body was the proof.
