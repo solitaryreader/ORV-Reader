@@ -21,7 +21,7 @@
 [![ORV Sequel](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FBittu5134%2FORV-Reader%2Frefs%2Fheads%2Fmain%2Fwebsite%2Fmeta%2Fcont_meta.json&query=%24.chapters&suffix=%20Chapters&style=flat-square&label=ORV%20Sequel)](https://orv.pages.dev/stories/cont) \
 [![One Shot](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FBittu5134%2FORV-Reader%2Frefs%2Fheads%2Fmain%2Fwebsite%2Fmeta%2Fside_meta.json&query=%24.chapters&suffix=%20Chapters&style=flat-square&label=ORV%20One%20Shots)](https://orv.pages.dev/stories/side)
 
-Learn more about the authors **Sing Shong** and the Illustrator.
+Learn more about the authors **Sing Shong** and the **Illustrator**.
 
 [![Authors IMDB](https://img.shields.io/badge/Authors%20Sing%20Shong-gold?style=for-the-badge&logo=imdb&logoColor=000)](https://www.imdb.com/name/nm15543141/bio) \
 [![Illustrations by BlackBox](https://img.shields.io/badge/Illustrations%20by%20Blackbox-%23000000.svg?style=for-the-badge&logo=X&logoColor=white)](https://x.com/1l9l2aa8ucl0igj?lang=en) 
