@@ -70,7 +70,7 @@ This guide outlines the formatting rules for creating content in the [`/chapters
 - These are dialogues spoken by outer gods, including nameless ones or powerful entities like the Dream Eater.
 - Example:
   ```
-  <#>The void whispers in your mind.
+  <#>【The void whispers in your mind.<#>】
   ```
 
 ### Quotes
