@@ -72,7 +72,13 @@ For how to contribute to this project follow the given links.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Bittu5134/ORV-Reader&type=Date)](https://www.star-history.com/#Bittu5134/ORV-Reader&Date)
+<a href="https://www.star-history.com/#Bittu5134/ORV-Reader&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Bittu5134/ORV-Reader&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Bittu5134/ORV-Reader&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Bittu5134/ORV-Reader&type=Date" />
+ </picture>
+</a>
 
 ---
 
