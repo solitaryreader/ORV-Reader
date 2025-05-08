@@ -22,7 +22,8 @@ Originally, all souls planted in the giant soldier were overseen by the main sys
 <@>[What? Why is that?]
 I lifted my finger without any strength and pointed somewhere. Pluto's gaze followed my finger and its mouth moved curiously. I opened my mouth, "Finish it."
 The probability allowed me to summon the giant soldier for less than a minute. There was probably only 30 seconds left.
-The fear-stricken Duke was moving the Factory this way. [T-This is impossible! Why, why is the real giant soldier…!]
+The fear-stricken Duke was moving the Factory this way.
+<@>[T-This is impossible! Why, why is the real giant soldier…!]
 The fiercely rotating grinder struck Pluto's outer shell.
 <@>[What is this crappy toy?]
 The grinder that the duke was proud of was torn down with a simple swing of its hand.
@@ -58,7 +59,7 @@ Then the system messages came up.
 <!>[200,000 coins have been acquired.]
 I weakly laughed. However, it wasn't yet time to relax.
 <!>[You have defeated the 'ruler' of the industrial complex.]
-<@>[You aren't a 'revolutionary'.]
+<!>[You aren't a 'revolutionary'.]
 <!>[The normal scenario route wasn't followed and the 'ruler' inheritance has been cancelled.]
 <!>[The inheritance is automatically transferred to the most prestigious person in the current scenario.]
 <!>[The current 'hidden scenario' is in progress.]
