@@ -100,7 +100,7 @@ I somehow opened my eyes and looked at the text. However, my vision was blurred 
 At last, even Aileen's face was blurred.
 <!>[The hidden scenario 'Self-Proclaimed Revolutionary' has been cleared.]
 It was an auditory hallucination.
-<@>[You have become a revolutionary.]
+<!>[You have become a revolutionary.]
 I definitely thought it was a hallucination.
 <!>[Congratulations. You have officially entered the main scenario.]
 <!>[The exile penalty has ended.]
