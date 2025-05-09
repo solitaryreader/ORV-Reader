@@ -62,8 +62,8 @@ I also looked at my face quietly and nodded.
 Lee Seolhwa personally pushed the wheelchair and guided me to another floor. I thought I would head to the penthouse office, but unexpectedly, I arrived at a large lobby on the 4th floor of the base.
 "I haven't been here many times either. The captain seems to be in a good mood."
 As Lee Seolhwa muttered as if she was jealous, the guard waiting at the lobby entrance let me in.
-<@>[The 'Soundwave Blocking' skill is activated in the area.]
-<@>[The 'Interference Screen' skill is activated in the area.]
+<!>[The 'Soundwave Blocking' skill is activated in the area.]
+<!>[The 'Interference Screen' skill is activated in the area.]
 …
 After passing through the strict security system and narrow entrance, a small living room appeared. The living room, which had a more simple feel than the penthouse office, had a sense of life everywhere.
 I realized something for a moment.
@@ -183,15 +183,15 @@ Han Sooyoung added with a grin.
 There were incarnations here, and the constellations they had contracted with.
 In other words, Han Sooyoung is now.
 <!>[The constellation, 'Maritime War God', admires your spirit.]
-<@>[The constellation, 'Bald General of Justice', asks if that man is really the hero who protected Gwanghwamun.]
-<@>[The constellation, 'Abyssal Black Flame Dragon', likes your hairstyle.]
-<@>[A very small number of constellations say that you look more neat than they thought.]
+<!>[The constellation, 'Bald General of Justice', asks if that man is really the hero who protected Gwanghwamun.]
+<!>[The constellation, 'Abyssal Black Flame Dragon', likes your hairstyle.]
+<!>[A very small number of constellations say that you look more neat than they thought.]
 She wants to imprint my existence on the constellations of the last scenario.
 <!>[All the constellations of the Korean Peninsula are looking at you.]
 The last scenario.
 The few stars left in this world were focused on me. Following the desires of the stars, I could hear the faint sound of probability moving.
 <!>[The Management Bureau acknowledges your contribution in this scenario.]
-<@>[You will be assigned a new scenario.]
+<!>[You will be assigned a new scenario.]
 The moment I heard the message echoing in my head, I thought I knew why Han Sooyoung had dressed me up and why she had called me to this place.
 "You don’t have to save anyone anymore. You don’t have to live as the Demon King of Salvation. You don’t have to become the Kim Dokja that people want."
 Han Sooyoung was now showing me her world.
