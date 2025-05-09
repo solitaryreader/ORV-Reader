@@ -33,6 +33,9 @@ This guide provides detailed instructions on how to contribute to the ORV-Reader
 
 9.  **Click "Propose changes":** Submit your edits.
 
+> [!NOTE]
+> Make sure you are not creating new branch everything you make an edit, when prompted choose the `commit to main brach option` and periodically keep syncing your repository to keep it upto date.
+
 ---
 
 ### What You Can Edit
