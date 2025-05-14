@@ -62,7 +62,8 @@ This guide outlines the formatting rules for creating content in the [`/chapters
 - These are dialogues spoken by constellations.
 - Example:
   ```
-  <@>The stars are watching you.
+  <@>[The stars are watching you].
+
   ```
 
 ### Outer God Speech
@@ -79,7 +80,9 @@ This guide outlines the formatting rules for creating content in the [`/chapters
 - For quotes with additional context (e.g., author names), use `<br>` for line breaks.
 - Example:
   ```
-  <&>「This is the power of a Transcendent.」<br>- Yoo Jonghyuk
+  <&>「 To the Breaking the Sky Sword Namgung Minyoung, the First Murim was home. 」
+  <&>「...」
+  <&>「This is the power of Transcendence <br>- Yoo Jonghyuk」
   ```
 
 ### Notices
