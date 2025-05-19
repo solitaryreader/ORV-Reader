@@ -28,7 +28,7 @@ Han Sooyoung's expression distorted.
 ***
 
 I hadn't intended to take Han Sooyoung with me at first.
-To be honest, Han Sooyoung was a bad person considering what she had don so far. However, her 'avatar' ability was quite useful and I had a few things to figure out. Most of all, she would be useful to clear the current sub scenario…
+To be honest, Han Sooyoung was a bad person considering what she had done so far. However, her 'avatar' ability was quite useful and I had a few things to figure out. Most of all, she would be useful to clear the current sub scenario…
 "I don't have a spare battery. I lost everything in Gwanghwamun."
 "Then give me your novel."
 "No. Pay for it if you want to read it."
@@ -99,7 +99,7 @@ I pulled out an item I just bought.
 <!>[The item Temporary Pledge has been used.]
 +
 [Temporary Pledge]
-1. Kim Dokja (Gab) will sign a contract with Han Sooyoung (Eul) until the sub scenario currently in progress is over.
+1. Kim Dokja (Gap) will sign a contract with Han Sooyoung (Eul) until the sub scenario currently in progress is over.
 2. Kim Dokja (Gap) and Han Sooyoung (Eul) will not harm each other until the sub scenario currently in progress is over.
 3. During the contract period, Kim Dokja (Gap) and Han Sooyoung (Eul) will sleep alternately in prepared for the 'sleeping penalty'.
 ·····.
